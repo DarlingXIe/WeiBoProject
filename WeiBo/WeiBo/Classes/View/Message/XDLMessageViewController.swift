@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XDLMessageViewController: UIViewController {
+class XDLMessageViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

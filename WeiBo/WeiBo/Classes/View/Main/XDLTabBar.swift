@@ -33,34 +33,47 @@ class XDLTabBar: UITabBar {
     }
 
     override func layoutSubviews() {
-        
+    
         super.layoutSubviews()
         
-        composeButton.center = CGPoint(x: self.bounds.width * 0.5, y: self.bounds.height * 0.5)
+        //set composeButton Width
         
-        let itemW = self.bounds.size.width/5
-        
+        composeButton.center = CGPoint(x: self.bounds.size.width * 0.5, y: self.bounds.size.height * 0.5)
+    
+        //set index to change x of subviews
         var index = 0
         
-        for subView in self.subviews{
+        //calculate all subviews button's itemW
+        let itemW = UIScreen.main.bounds.size.width/5
         
-            if subView.isKind(of: NSClassFromString("UITabBarButton")!){
+        //for in function--- to set postion of subviews
+        for subview in self.subviews{
+            
+        //judge that the value of subview is "UITabBarButton"
+        
+            if subview.isKind(of: NSClassFromString("UITabBarButton")!){
                 
+                // according to index to calculate each button width
                 let itemX = CGFloat(index) * itemW
+                // update values of each button frame
+                subview.frame.origin.x = itemX
                 
-                subView.frame.size.width = itemW
+                subview.frame.size.width = itemW
                 
-                subView.frame.origin.x = itemX
-              
+                // index +1
+                
                 index = index + 1
                 
                 if index == 2{
-                
-                    index = index+1
+                    
+                    index = index + 1
+                    
                 }
+            
             }
             
         }
+        
     }
     
     lazy var composeButton: UIButton = {

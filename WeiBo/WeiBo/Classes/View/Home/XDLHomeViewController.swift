@@ -8,14 +8,24 @@
 
 import UIKit
 
-class XDLHomeViewController: UIViewController {
+class XDLHomeViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        setupUI()
+    
     }
 
+    
+    func setupUI(){
+    
+       self.view.backgroundColor = UIColor.red
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
