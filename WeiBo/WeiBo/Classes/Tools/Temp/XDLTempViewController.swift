@@ -14,8 +14,16 @@ class XDLTempViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        setupUI()
     }
 
+    private func setupUI(){
+        
+        self.view.backgroundColor = UIColor.white
+    
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

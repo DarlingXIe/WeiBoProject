@@ -19,16 +19,26 @@ class XDLHomeViewController: UITableViewController {
     
     }
 
-    
     func setupUI(){
     
-       self.view.backgroundColor = UIColor.red
+       self.view.backgroundColor = UIColor.white
         
+       navigationItem.leftBarButtonItem = UIBarButtonItem(imgName: "navigationbar_friendsearch", target: nil, action: nil)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imgName: "navigationbar_pop", target: self, action: #selector(pop))
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func pop(){
+        
+            let vc = XDLTempViewController()
+        
+            self.navigationController?.pushViewController(vc, animated: true)
+    
     }
     
 

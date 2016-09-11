@@ -36,7 +36,6 @@ class XDLTabBarViewController: UITabBarController {
         addChildViewController(vc:XDLDiscoverViewController() , title: "Discover", imageName: "tabbar_discover")
         addChildViewController(vc:XDLProfileViewController(), title: "Mine", imageName:"tabbar_profile")
         
-    
     }
     
     func addChildViewController(vc:UIViewController, title: String, imageName: String)
