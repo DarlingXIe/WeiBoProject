@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F725B9491D856FF200F3556A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9481D856FF200F3556A /* AppDelegate.swift */; };
+		F725B94E1D856FF200F3556A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F725B94C1D856FF200F3556A /* Main.storyboard */; };
+		F725B9501D856FF200F3556A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F725B94F1D856FF200F3556A /* Assets.xcassets */; };
+		F725B9691D85726900F3556A /* XDLTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9681D85726900F3556A /* XDLTabBarViewController.swift */; };
+		F725B96B1D85727F00F3556A /* XDLNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B96A1D85727F00F3556A /* XDLNavigationViewController.swift */; };
+		F725B96D1D85735900F3556A /* XDLTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B96C1D85735900F3556A /* XDLTempViewController.swift */; };
+		F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B96E1D85758600F3556A /* XDLTabBar.swift */; };
+		F725B9711D8575D700F3556A /* UIView+IBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9701D8575D700F3556A /* UIView+IBExtension.swift */; };
+		F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9721D85760200F3556A /* UIBarButtonItem+Extension.swift */; };
+		F725B97D1D85773000F3556A /* XDLDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B97C1D85773000F3556A /* XDLDiscoverViewController.swift */; };
+		F725B97F1D85776400F3556A /* XDLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B97E1D85776400F3556A /* XDLHomeViewController.swift */; };
+		F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9801D85778300F3556A /* XDLMessageViewController.swift */; };
+		F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9821D8577B700F3556A /* XDLProfileViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F725B9451D856FF200F3556A /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F725B9481D856FF200F3556A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F725B94D1D856FF200F3556A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F725B94F1D856FF200F3556A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F725B9541D856FF200F3556A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F725B9681D85726900F3556A /* XDLTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLTabBarViewController.swift; sourceTree = "<group>"; };
+		F725B96A1D85727F00F3556A /* XDLNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLNavigationViewController.swift; sourceTree = "<group>"; };
+		F725B96C1D85735900F3556A /* XDLTempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLTempViewController.swift; sourceTree = "<group>"; };
+		F725B96E1D85758600F3556A /* XDLTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLTabBar.swift; sourceTree = "<group>"; };
+		F725B9701D8575D700F3556A /* UIView+IBExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBExtension.swift"; sourceTree = "<group>"; };
+		F725B9721D85760200F3556A /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		F725B97C1D85773000F3556A /* XDLDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLDiscoverViewController.swift; sourceTree = "<group>"; };
+		F725B97E1D85776400F3556A /* XDLHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLHomeViewController.swift; sourceTree = "<group>"; };
+		F725B9801D85778300F3556A /* XDLMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLMessageViewController.swift; sourceTree = "<group>"; };
+		F725B9821D8577B700F3556A /* XDLProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLProfileViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F725B9421D856FF200F3556A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F725B93C1D856FF200F3556A = {
+			isa = PBXGroup;
+			children = (
+				F725B9471D856FF200F3556A /* WeiBo */,
+				F725B9461D856FF200F3556A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F725B9461D856FF200F3556A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9451D856FF200F3556A /* WeiBo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F725B9471D856FF200F3556A /* WeiBo */ = {
+			isa = PBXGroup;
+			children = (
+				F725B95A1D85715E00F3556A /* Classes */,
+				F725B9481D856FF200F3556A /* AppDelegate.swift */,
+				F725B94C1D856FF200F3556A /* Main.storyboard */,
+				F725B94F1D856FF200F3556A /* Assets.xcassets */,
+				F725B9541D856FF200F3556A /* Info.plist */,
+			);
+			path = WeiBo;
+			sourceTree = "<group>";
+		};
+		F725B95A1D85715E00F3556A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F725B95B1D85715E00F3556A /* Model */,
+				F725B95C1D85715E00F3556A /* Tools */,
+				F725B95F1D85715E00F3556A /* View */,
+				F725B9651D85715E00F3556A /* ViewModel */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F725B95B1D85715E00F3556A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F725B95C1D85715E00F3556A /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F725B95D1D85715E00F3556A /* Extension */,
+				F725B95E1D85715E00F3556A /* Temp */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		F725B95D1D85715E00F3556A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9701D8575D700F3556A /* UIView+IBExtension.swift */,
+				F725B9721D85760200F3556A /* UIBarButtonItem+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F725B95E1D85715E00F3556A /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				F725B96C1D85735900F3556A /* XDLTempViewController.swift */,
+			);
+			path = Temp;
+			sourceTree = "<group>";
+		};
+		F725B95F1D85715E00F3556A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9601D85715E00F3556A /* Discover */,
+				F725B9611D85715E00F3556A /* Home */,
+				F725B9621D85715E00F3556A /* Main */,
+				F725B9631D85715E00F3556A /* Message */,
+				F725B9641D85715E00F3556A /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F725B9601D85715E00F3556A /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9771D8576B600F3556A /* View */,
+				F725B9761D8576AE00F3556A /* Controller */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		F725B9611D85715E00F3556A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9751D8576A200F3556A /* View */,
+				F725B9741D85769600F3556A /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F725B9621D85715E00F3556A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9671D85720800F3556A /* View */,
+				F725B9661D85720500F3556A /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F725B9631D85715E00F3556A /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9791D8576CF00F3556A /* View */,
+				F725B9781D8576C400F3556A /* Controller */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		F725B9641D85715E00F3556A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F725B97B1D8576E200F3556A /* View */,
+				F725B97A1D8576D700F3556A /* Controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F725B9651D85715E00F3556A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F725B9661D85720500F3556A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9681D85726900F3556A /* XDLTabBarViewController.swift */,
+				F725B96A1D85727F00F3556A /* XDLNavigationViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F725B9671D85720800F3556A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F725B96E1D85758600F3556A /* XDLTabBar.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F725B9741D85769600F3556A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F725B97E1D85776400F3556A /* XDLHomeViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F725B9751D8576A200F3556A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F725B9761D8576AE00F3556A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F725B97C1D85773000F3556A /* XDLDiscoverViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F725B9771D8576B600F3556A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F725B9781D8576C400F3556A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9801D85778300F3556A /* XDLMessageViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F725B9791D8576CF00F3556A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F725B97A1D8576D700F3556A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F725B9821D8577B700F3556A /* XDLProfileViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F725B97B1D8576E200F3556A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F725B9441D856FF200F3556A /* WeiBo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F725B9571D856FF200F3556A /* Build configuration list for PBXNativeTarget "WeiBo" */;
+			buildPhases = (
+				F725B9411D856FF200F3556A /* Sources */,
+				F725B9421D856FF200F3556A /* Frameworks */,
+				F725B9431D856FF200F3556A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeiBo;
+			productName = WeiBo;
+			productReference = F725B9451D856FF200F3556A /* WeiBo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F725B93D1D856FF200F3556A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = XDL;
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = itcast;
+				TargetAttributes = {
+					F725B9441D856FF200F3556A = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F725B9401D856FF200F3556A /* Build configuration list for PBXProject "WeiBo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F725B93C1D856FF200F3556A;
+			productRefGroup = F725B9461D856FF200F3556A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F725B9441D856FF200F3556A /* WeiBo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F725B9431D856FF200F3556A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F725B9501D856FF200F3556A /* Assets.xcassets in Resources */,
+				F725B94E1D856FF200F3556A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F725B9411D856FF200F3556A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F725B97D1D85773000F3556A /* XDLDiscoverViewController.swift in Sources */,
+				F725B9491D856FF200F3556A /* AppDelegate.swift in Sources */,
+				F725B9711D8575D700F3556A /* UIView+IBExtension.swift in Sources */,
+				F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */,
+				F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */,
+				F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */,
+				F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */,
+				F725B96B1D85727F00F3556A /* XDLNavigationViewController.swift in Sources */,
+				F725B9691D85726900F3556A /* XDLTabBarViewController.swift in Sources */,
+				F725B97F1D85776400F3556A /* XDLHomeViewController.swift in Sources */,
+				F725B96D1D85735900F3556A /* XDLTempViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F725B94C1D856FF200F3556A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F725B94D1D856FF200F3556A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F725B9551D856FF200F3556A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F725B9561D856FF200F3556A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F725B9581D856FF200F3556A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = WeiBo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.itcast.ios.WeiBo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F725B9591D856FF200F3556A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = WeiBo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.itcast.ios.WeiBo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F725B9401D856FF200F3556A /* Build configuration list for PBXProject "WeiBo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F725B9551D856FF200F3556A /* Debug */,
+				F725B9561D856FF200F3556A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F725B9571D856FF200F3556A /* Build configuration list for PBXNativeTarget "WeiBo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F725B9581D856FF200F3556A /* Debug */,
+				F725B9591D856FF200F3556A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F725B93D1D856FF200F3556A /* Project object */;
+}
