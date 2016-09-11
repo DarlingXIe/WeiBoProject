@@ -15,8 +15,19 @@ class XDLTabBarViewController: UITabBarController {
 
         // Do any additional setup after loading the view.
    
+        //self.tabBar = XDLTabBar()
+        
+        let composeClosure = {[weak self] in
+        
+            print("ClickComposeButton")
+            
+        }
         
         
+        
+        let tabBar = XDLTabBar()
+        
+        self.setValue(tabBar, forKey: "tabBar")
         
         addChildViewController()
        
