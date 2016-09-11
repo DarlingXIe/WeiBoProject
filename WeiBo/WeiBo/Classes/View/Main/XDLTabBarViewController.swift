@@ -25,10 +25,10 @@ class XDLTabBarViewController: UITabBarController {
     
     func addChildViewController(){
     
-        addChildViewController(vc:XDLHomeViewController() , title: "首页", imageName:"tabbar_home")
-        addChildViewController(vc:XDLMessageViewController() , title: "消息", imageName: "tabbar_message_center")
-        addChildViewController(vc:XDLDiscoverViewController() , title: "发现", imageName: "tabbar_discover")
-        addChildViewController(vc:XDLProfileViewController(), title: "我", imageName:"tabbar_profile")
+        addChildViewController(vc:XDLHomeViewController() , title: "Home", imageName:"tabbar_home")
+        addChildViewController(vc:XDLMessageViewController() , title: "Message", imageName: "tabbar_message_center")
+        addChildViewController(vc:XDLDiscoverViewController() , title: "Discover", imageName: "tabbar_discover")
+        addChildViewController(vc:XDLProfileViewController(), title: "Mine", imageName:"tabbar_profile")
         
     
     }
