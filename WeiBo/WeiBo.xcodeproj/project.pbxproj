@@ -20,6 +20,23 @@
 		F725B97F1D85776400F3556A /* XDLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B97E1D85776400F3556A /* XDLHomeViewController.swift */; };
 		F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9801D85778300F3556A /* XDLMessageViewController.swift */; };
 		F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9821D8577B700F3556A /* XDLProfileViewController.swift */; };
+		F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */; };
+		F75E9B321D86D6C400D11392 /* XDLDiscoverSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */; };
+		F75E9B421D86E88A00D11392 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B351D86E88A00D11392 /* Constraint.swift */; };
+		F75E9B431D86E88A00D11392 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B361D86E88A00D11392 /* ConstraintAttributes.swift */; };
+		F75E9B441D86E88A00D11392 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B371D86E88A00D11392 /* ConstraintDescription.swift */; };
+		F75E9B451D86E88A00D11392 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B381D86E88A00D11392 /* ConstraintItem.swift */; };
+		F75E9B461D86E88A00D11392 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B391D86E88A00D11392 /* ConstraintMaker.swift */; };
+		F75E9B471D86E88A00D11392 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B3A1D86E88A00D11392 /* ConstraintRelation.swift */; };
+		F75E9B481D86E88A00D11392 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B3B1D86E88A00D11392 /* Debugging.swift */; };
+		F75E9B491D86E88A00D11392 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B3C1D86E88A00D11392 /* EdgeInsets.swift */; };
+		F75E9B4A1D86E88A00D11392 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B3D1D86E88A00D11392 /* LayoutConstraint.swift */; };
+		F75E9B4B1D86E88A00D11392 /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B3F1D86E88A00D11392 /* SnapKit.swift */; };
+		F75E9B4C1D86E88A00D11392 /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B401D86E88A00D11392 /* View+SnapKit.swift */; };
+		F75E9B4D1D86E88A00D11392 /* ViewController+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B411D86E88A00D11392 /* ViewController+SnapKit.swift */; };
+		F75E9B4F1D86E92F00D11392 /* XDLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B4E1D86E92F00D11392 /* XDLVisitorView.swift */; };
+		F75E9B511D86E95700D11392 /* XDLVisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B501D86E95700D11392 /* XDLVisitorTableViewController.swift */; };
+		F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +55,24 @@
 		F725B97E1D85776400F3556A /* XDLHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLHomeViewController.swift; sourceTree = "<group>"; };
 		F725B9801D85778300F3556A /* XDLMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLMessageViewController.swift; sourceTree = "<group>"; };
 		F725B9821D8577B700F3556A /* XDLProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLProfileViewController.swift; sourceTree = "<group>"; };
+		F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLDiscoverSearchView.xib; sourceTree = "<group>"; };
+		F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLDiscoverSearchView.swift; sourceTree = "<group>"; };
+		F75E9B351D86E88A00D11392 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		F75E9B361D86E88A00D11392 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
+		F75E9B371D86E88A00D11392 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
+		F75E9B381D86E88A00D11392 /* ConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintItem.swift; sourceTree = "<group>"; };
+		F75E9B391D86E88A00D11392 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
+		F75E9B3A1D86E88A00D11392 /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
+		F75E9B3B1D86E88A00D11392 /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
+		F75E9B3C1D86E88A00D11392 /* EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		F75E9B3D1D86E88A00D11392 /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		F75E9B3E1D86E88A00D11392 /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
+		F75E9B3F1D86E88A00D11392 /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
+		F75E9B401D86E88A00D11392 /* View+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+SnapKit.swift"; sourceTree = "<group>"; };
+		F75E9B411D86E88A00D11392 /* ViewController+SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SnapKit.swift"; sourceTree = "<group>"; };
+		F75E9B4E1D86E92F00D11392 /* XDLVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLVisitorView.swift; sourceTree = "<group>"; };
+		F75E9B501D86E95700D11392 /* XDLVisitorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLVisitorTableViewController.swift; sourceTree = "<group>"; };
+		F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ ConvenienceExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +135,7 @@
 		F725B95C1D85715E00F3556A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F75E9B331D86E88A00D11392 /* ThirdLib */,
 				F725B95D1D85715E00F3556A /* Extension */,
 				F725B95E1D85715E00F3556A /* Temp */,
 			);
@@ -111,6 +147,7 @@
 			children = (
 				F725B9701D8575D700F3556A /* UIView+IBExtension.swift */,
 				F725B9721D85760200F3556A /* UIBarButtonItem+Extension.swift */,
+				F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -192,6 +229,7 @@
 			children = (
 				F725B9681D85726900F3556A /* XDLTabBarViewController.swift */,
 				F725B96A1D85727F00F3556A /* XDLNavigationViewController.swift */,
+				F75E9B501D86E95700D11392 /* XDLVisitorTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -200,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				F725B96E1D85758600F3556A /* XDLTabBar.swift */,
+				F75E9B4E1D86E92F00D11392 /* XDLVisitorView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -230,6 +269,8 @@
 		F725B9771D8576B600F3556A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */,
+				F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -262,6 +303,34 @@
 			children = (
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		F75E9B331D86E88A00D11392 /* ThirdLib */ = {
+			isa = PBXGroup;
+			children = (
+				F75E9B341D86E88A00D11392 /* SnapKit修改版 */,
+			);
+			path = ThirdLib;
+			sourceTree = "<group>";
+		};
+		F75E9B341D86E88A00D11392 /* SnapKit修改版 */ = {
+			isa = PBXGroup;
+			children = (
+				F75E9B351D86E88A00D11392 /* Constraint.swift */,
+				F75E9B361D86E88A00D11392 /* ConstraintAttributes.swift */,
+				F75E9B371D86E88A00D11392 /* ConstraintDescription.swift */,
+				F75E9B381D86E88A00D11392 /* ConstraintItem.swift */,
+				F75E9B391D86E88A00D11392 /* ConstraintMaker.swift */,
+				F75E9B3A1D86E88A00D11392 /* ConstraintRelation.swift */,
+				F75E9B3B1D86E88A00D11392 /* Debugging.swift */,
+				F75E9B3C1D86E88A00D11392 /* EdgeInsets.swift */,
+				F75E9B3D1D86E88A00D11392 /* LayoutConstraint.swift */,
+				F75E9B3E1D86E88A00D11392 /* SnapKit.h */,
+				F75E9B3F1D86E88A00D11392 /* SnapKit.swift */,
+				F75E9B401D86E88A00D11392 /* View+SnapKit.swift */,
+				F75E9B411D86E88A00D11392 /* ViewController+SnapKit.swift */,
+			);
+			path = "SnapKit修改版";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */,
 				F725B9501D856FF200F3556A /* Assets.xcassets in Resources */,
 				F725B94E1D856FF200F3556A /* Main.storyboard in Resources */,
 			);
@@ -337,16 +407,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				F725B97D1D85773000F3556A /* XDLDiscoverViewController.swift in Sources */,
+				F75E9B511D86E95700D11392 /* XDLVisitorTableViewController.swift in Sources */,
 				F725B9491D856FF200F3556A /* AppDelegate.swift in Sources */,
+				F75E9B4C1D86E88A00D11392 /* View+SnapKit.swift in Sources */,
+				F75E9B491D86E88A00D11392 /* EdgeInsets.swift in Sources */,
 				F725B9711D8575D700F3556A /* UIView+IBExtension.swift in Sources */,
+				F75E9B451D86E88A00D11392 /* ConstraintItem.swift in Sources */,
+				F75E9B4A1D86E88A00D11392 /* LayoutConstraint.swift in Sources */,
 				F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */,
 				F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */,
 				F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */,
+				F75E9B321D86D6C400D11392 /* XDLDiscoverSearchView.swift in Sources */,
 				F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */,
+				F75E9B461D86E88A00D11392 /* ConstraintMaker.swift in Sources */,
+				F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */,
+				F75E9B471D86E88A00D11392 /* ConstraintRelation.swift in Sources */,
 				F725B96B1D85727F00F3556A /* XDLNavigationViewController.swift in Sources */,
+				F75E9B4F1D86E92F00D11392 /* XDLVisitorView.swift in Sources */,
+				F75E9B431D86E88A00D11392 /* ConstraintAttributes.swift in Sources */,
 				F725B9691D85726900F3556A /* XDLTabBarViewController.swift in Sources */,
+				F75E9B4B1D86E88A00D11392 /* SnapKit.swift in Sources */,
+				F75E9B481D86E88A00D11392 /* Debugging.swift in Sources */,
+				F75E9B4D1D86E88A00D11392 /* ViewController+SnapKit.swift in Sources */,
 				F725B97F1D85776400F3556A /* XDLHomeViewController.swift in Sources */,
 				F725B96D1D85735900F3556A /* XDLTempViewController.swift in Sources */,
+				F75E9B421D86E88A00D11392 /* Constraint.swift in Sources */,
+				F75E9B441D86E88A00D11392 /* ConstraintDescription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +586,7 @@
 				F725B9591D856FF200F3556A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

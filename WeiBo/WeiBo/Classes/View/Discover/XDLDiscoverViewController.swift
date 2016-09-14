@@ -14,8 +14,22 @@ class XDLDiscoverViewController: UITableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        setupUI()
+    
     }
 
+    private func setupUI(){
+    
+        let searchView = XDLDiscoverSearchView.searchView()
+        
+        searchView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 30)
+        
+        navigationItem.titleView = searchView
+    
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

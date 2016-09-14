@@ -8,18 +8,24 @@
 
 import UIKit
 
-class XDLHomeViewController: UITableViewController {
+class XDLHomeViewController: XDLVisitorTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         
+        if userlogin == false{
+            
+            self.visitorView.visitorImageInfo(imageName: nil, messageTitle: "关注一些人，回这里看看有什么惊喜")
+            
+            return
+            
+        }
         setupUI()
     
     }
 
-    func setupUI(){
+   private func setupUI(){
     
        self.view.backgroundColor = UIColor.white
         
