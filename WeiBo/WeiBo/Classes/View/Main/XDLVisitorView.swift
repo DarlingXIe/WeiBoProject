@@ -10,7 +10,7 @@ import UIKit
 
 class XDLVisitorView: UIView {
     
-    var delegateClosure:(()->())?
+    var delegateLoginClosure:(()->())?
     
     override init(frame: CGRect){
     
@@ -45,7 +45,7 @@ class XDLVisitorView: UIView {
         
         messageLabel.snp_makeConstraints { (make) -> Void in
             make.centerX.equalTo(iconView)
-            make.top.equalTo(circleView.snp_bottom).offset(16)
+            make.top.equalTo(circleView.snp_bottom).offset(18)
             make.width.equalTo(224)
         }
     
@@ -139,7 +139,7 @@ class XDLVisitorView: UIView {
         
         let button = UIButton(textColor: UIColor.darkGray, fontSize: 14)
 
-        button.setTitle("注册", for:.normal)
+        button.setTitle("Register", for:.normal)
         
         button.setBackgroundImage(#imageLiteral(resourceName: "common_button_white"), for: .normal)
         
@@ -153,7 +153,7 @@ class XDLVisitorView: UIView {
         
         button.addTarget(self, action: #selector(loginButtonClick), for: .touchUpInside)
         
-        button.setTitle("登录", for:.normal)
+        button.setTitle("Login", for:.normal)
         
         button.setBackgroundImage(#imageLiteral(resourceName: "common_button_white"), for: .normal)
         
@@ -162,9 +162,9 @@ class XDLVisitorView: UIView {
 
     @objc private func loginButtonClick(){
         
-        print("登录")
+       // print("Longin")
         
-        delegateClosure?()
+        delegateLoginClosure?()
         
     }
     

@@ -16,7 +16,7 @@ class XDLHomeViewController: XDLVisitorTableViewController {
         
         if userlogin == false{
             
-            self.visitorView.visitorImageInfo(imageName: nil, messageTitle: "关注一些人，回这里看看有什么惊喜")
+            self.visitorView.visitorImageInfo(imageName: nil, messageTitle: "NO INTERNET SERVICE")
             
             return
             

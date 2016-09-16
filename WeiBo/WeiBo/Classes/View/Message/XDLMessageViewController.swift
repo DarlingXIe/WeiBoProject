@@ -8,11 +8,20 @@
 
 import UIKit
 
-class XDLMessageViewController: UITableViewController {
+class XDLMessageViewController: XDLVisitorTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if userlogin == false{
+            
+            self.visitorView.visitorImageInfo(imageName: "visitordiscover_image_message", messageTitle: "NO INTERNET SERVICE")
+            
+            return
+            
+        }
+
+        
         // Do any additional setup after loading the view.
     }
 

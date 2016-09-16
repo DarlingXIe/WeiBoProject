@@ -12,6 +12,8 @@ class XDLVisitorTableViewController: UITableViewController {
 
     var userlogin = false
     
+    var clickLoginClosure:(()->())?
+    
     override func loadView() {
         if userlogin{
             
@@ -31,16 +33,21 @@ class XDLVisitorTableViewController: UITableViewController {
         
         self.view = v
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", target: self, action: #selector(registerButtonClick))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", target: nil, action: nil)
-
-        v.delegateClosure = {[weak self] in
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Register", target: self, action: #selector(registerButtonClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Login", target: self, action: #selector(visitorViewWillLogin))
         
+        v.delegateLoginClosure = { [weak self] in
             
+            print("Login")
+            
+            let vc = XDLNavigationViewController(rootViewController: XDLOAuthViewController())
+            
+          self?.present(vc, animated: true, completion: nil)
+        
         }
-
-    }
     
+    
+    }
     lazy var visitorView : XDLVisitorView = {()-> XDLVisitorView in
         
        let visitorView = XDLVisitorView()
@@ -55,14 +62,16 @@ class XDLVisitorTableViewController: UITableViewController {
     }
 
     @objc private func registerButtonClick() {
-        print("注册")
-    
+        
+        print("register")
     }
     
     // MARK: - HMVisitorViewDelegate
     
-    func visitorViewWillLogin() {
-        print(#function)
+  @objc private func visitorViewWillLogin() {
+       // print(#function)
+       print("Login")
+    
     }
 
     
