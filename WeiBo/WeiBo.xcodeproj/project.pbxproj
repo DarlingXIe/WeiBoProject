@@ -39,6 +39,7 @@
 		F75E9B511D86E95700D11392 /* XDLVisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B501D86E95700D11392 /* XDLVisitorTableViewController.swift */; };
 		F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */; };
 		F7FB6A371D8C3BDE00F94BC2 /* XDLOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A361D8C3BDE00F94BC2 /* XDLOAuthViewController.swift */; };
+		F7FB6A7F1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		F75E9B501D86E95700D11392 /* XDLVisitorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLVisitorTableViewController.swift; sourceTree = "<group>"; };
 		F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ ConvenienceExtension.swift"; sourceTree = "<group>"; };
 		F7FB6A361D8C3BDE00F94BC2 /* XDLOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLOAuthViewController.swift; sourceTree = "<group>"; };
+		F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLUserAccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 		F725B9651D85715E00F3556A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				F75E9B461D86E88A00D11392 /* ConstraintMaker.swift in Sources */,
 				F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */,
 				F75E9B471D86E88A00D11392 /* ConstraintRelation.swift in Sources */,
+				F7FB6A7F1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift in Sources */,
 				F725B96B1D85727F00F3556A /* XDLNavigationViewController.swift in Sources */,
 				F75E9B4F1D86E92F00D11392 /* XDLVisitorView.swift in Sources */,
 				F75E9B431D86E88A00D11392 /* ConstraintAttributes.swift in Sources */,
