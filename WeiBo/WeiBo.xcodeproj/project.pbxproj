@@ -40,6 +40,8 @@
 		F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */; };
 		F7FB6A371D8C3BDE00F94BC2 /* XDLOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A361D8C3BDE00F94BC2 /* XDLOAuthViewController.swift */; };
 		F7FB6A7F1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */; };
+		F7FB6A811D8D96DE00F94BC2 /* XDLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A801D8D96DE00F94BC2 /* XDLUserAccount.swift */; };
+		F7FB6A831D8D9BD200F94BC2 /* XDLNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A821D8D9BD200F94BC2 /* XDLNetWorkTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ ConvenienceExtension.swift"; sourceTree = "<group>"; };
 		F7FB6A361D8C3BDE00F94BC2 /* XDLOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLOAuthViewController.swift; sourceTree = "<group>"; };
 		F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLUserAccountViewModel.swift; sourceTree = "<group>"; };
+		F7FB6A801D8D96DE00F94BC2 /* XDLUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLUserAccount.swift; sourceTree = "<group>"; };
+		F7FB6A821D8D9BD200F94BC2 /* XDLNetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLNetWorkTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 		F725B95B1D85715E00F3556A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F7FB6A801D8D96DE00F94BC2 /* XDLUserAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 		F725B95C1D85715E00F3556A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F7FB6A821D8D9BD200F94BC2 /* XDLNetWorkTools.swift */,
 				F75E9B331D86E88A00D11392 /* ThirdLib */,
 				F725B95D1D85715E00F3556A /* Extension */,
 				F725B95E1D85715E00F3556A /* Temp */,
@@ -520,10 +526,12 @@
 				F75E9B461D86E88A00D11392 /* ConstraintMaker.swift in Sources */,
 				F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */,
 				F75E9B471D86E88A00D11392 /* ConstraintRelation.swift in Sources */,
+				F7FB6A831D8D9BD200F94BC2 /* XDLNetWorkTools.swift in Sources */,
 				F7FB6A7F1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift in Sources */,
 				F725B96B1D85727F00F3556A /* XDLNavigationViewController.swift in Sources */,
 				F75E9B4F1D86E92F00D11392 /* XDLVisitorView.swift in Sources */,
 				F75E9B431D86E88A00D11392 /* ConstraintAttributes.swift in Sources */,
+				F7FB6A811D8D96DE00F94BC2 /* XDLUserAccount.swift in Sources */,
 				F725B9691D85726900F3556A /* XDLTabBarViewController.swift in Sources */,
 				F75E9B4B1D86E88A00D11392 /* SnapKit.swift in Sources */,
 				F75E9B481D86E88A00D11392 /* Debugging.swift in Sources */,
