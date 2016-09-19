@@ -25,4 +25,10 @@ class XDLStatus: NSObject {
 
     var user : XDLUsers?
     
+    var reposts_count: Int = 0
+
+    var comments_count: Int = 0
+    
+    var attitudes_count: Int = 0
+    
 }

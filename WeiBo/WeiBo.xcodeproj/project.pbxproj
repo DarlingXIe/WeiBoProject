@@ -46,6 +46,7 @@
 		F7CE3C4D1D8F318700AB3224 /* XDLStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C4C1D8F318700AB3224 /* XDLStatusViewModel.swift */; };
 		F7CE3C4F1D9024F100AB3224 /* XDLOriginalStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C4E1D9024F100AB3224 /* XDLOriginalStatusView.swift */; };
 		F7CE3C511D903EF500AB3224 /* XDLUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C501D903EF500AB3224 /* XDLUsers.swift */; };
+		F7CE3C531D90647900AB3224 /* XDLStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C521D90647900AB3224 /* XDLStatusToolBar.swift */; };
 		F7FB6A371D8C3BDE00F94BC2 /* XDLOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A361D8C3BDE00F94BC2 /* XDLOAuthViewController.swift */; };
 		F7FB6A7F1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */; };
 		F7FB6A811D8D96DE00F94BC2 /* XDLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A801D8D96DE00F94BC2 /* XDLUserAccount.swift */; };
@@ -97,6 +98,7 @@
 		F7CE3C4C1D8F318700AB3224 /* XDLStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusViewModel.swift; sourceTree = "<group>"; };
 		F7CE3C4E1D9024F100AB3224 /* XDLOriginalStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLOriginalStatusView.swift; sourceTree = "<group>"; };
 		F7CE3C501D903EF500AB3224 /* XDLUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLUsers.swift; sourceTree = "<group>"; };
+		F7CE3C521D90647900AB3224 /* XDLStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusToolBar.swift; sourceTree = "<group>"; };
 		F7FB6A361D8C3BDE00F94BC2 /* XDLOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLOAuthViewController.swift; sourceTree = "<group>"; };
 		F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLUserAccountViewModel.swift; sourceTree = "<group>"; };
 		F7FB6A801D8D96DE00F94BC2 /* XDLUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLUserAccount.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			children = (
 				F7CE3C481D8F07AD00AB3224 /* XDLStatusTableViewCell.swift */,
 				F7CE3C4E1D9024F100AB3224 /* XDLOriginalStatusView.swift */,
+				F7CE3C521D90647900AB3224 /* XDLStatusToolBar.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */,
 				F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */,
 				F7CE3C491D8F07AD00AB3224 /* XDLStatusTableViewCell.swift in Sources */,
+				F7CE3C531D90647900AB3224 /* XDLStatusToolBar.swift in Sources */,
 				F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */,
 				F75E9B321D86D6C400D11392 /* XDLDiscoverSearchView.swift in Sources */,
 				F7CE3C4F1D9024F100AB3224 /* XDLOriginalStatusView.swift in Sources */,

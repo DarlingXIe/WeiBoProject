@@ -19,4 +19,6 @@ class XDLUsers: NSObject {
     // 会员等级
     var mbrank: Int = 0
     
+    
+    
 }

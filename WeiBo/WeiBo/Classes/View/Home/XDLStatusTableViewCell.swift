@@ -26,6 +26,8 @@ class XDLStatusTableViewCell: UITableViewCell {
         didSet{
             
            OriginalStatusView.statusViewModel = XDLStatusViewModel
+           statusToolBar.statusViewModel = XDLStatusViewModel
+           
         }
     
     }
@@ -49,21 +51,40 @@ class XDLStatusTableViewCell: UITableViewCell {
     
     private func setupUI(){
         
-        
         contentView.addSubview(OriginalStatusView)
         
-       // contentView.addSubview(nameLabel)
+        contentView.addSubview(statusToolBar)
         
         OriginalStatusView.snp_makeConstraints { (make) in
-            make.edges.equalTo(contentView)
+            
+            make.left.top.right.equalTo(contentView)
+           // make.bottom.equalTo(contentView)
         }
+    
+        statusToolBar.snp_makeConstraints { (make) in
+            
+            make.top.equalTo(OriginalStatusView.snp_bottom)
+            make.left.right.bottom.equalTo(contentView)
+            make.height.equalTo(35)
+        }
+
     }
+    
     
    private lazy var OriginalStatusView : XDLOriginalStatusView = {()-> XDLOriginalStatusView in
         
         let originalView = XDLOriginalStatusView()
         //label.textColor = UIcolor.red
         return originalView
+    }()
+
+   private lazy var statusToolBar :XDLStatusToolBar = {()-> XDLStatusToolBar in
+        
+        let toolBar = XDLStatusToolBar()
+        
+        //label.textColor = UIcolor.red
+        
+        return toolBar
     }()
 
     

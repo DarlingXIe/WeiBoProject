@@ -19,7 +19,7 @@ class XDLHomeViewModel: NSObject {
     
     func loadData(completion:@escaping (Bool)->()){
         
-        let urlString = "https://api.weibo.com/2/statuses/public_timeline.json"
+        let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
         
         let parameters = [
             
