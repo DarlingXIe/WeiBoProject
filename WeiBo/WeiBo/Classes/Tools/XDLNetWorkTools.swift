@@ -25,6 +25,7 @@ class XDLNetWorkTools: AFHTTPSessionManager {
         let tools = XDLNetWorkTools()
         
         tools.responseSerializer.acceptableContentTypes?.insert("text/html")
+        tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
         
         return tools
     }()
@@ -45,7 +46,7 @@ class XDLNetWorkTools: AFHTTPSessionManager {
         
         if method == .Get {
             
-            self.get(urlSting, parameters: nil, progress: nil, success: successClosure, failure: failureClosure)
+            self.get(urlSting, parameters: parameters, progress: nil, success: successClosure, failure: failureClosure)
         }else{
             
             self.post(urlSting, parameters: parameters, progress: nil, success: successClosure, failure: failureClosure)

@@ -10,7 +10,7 @@ import UIKit
 
 class XDLVisitorTableViewController: UITableViewController {
 
-    var userlogin = false
+    var userlogin = XDLUserAccountViewModel.shareModel.userlogin
     
     var clickLoginClosure:(()->())?
     
@@ -26,7 +26,6 @@ class XDLVisitorTableViewController: UITableViewController {
         }
         
     }
-    
     func setupVisitorView(){
         
         let v = visitorView
@@ -42,7 +41,7 @@ class XDLVisitorTableViewController: UITableViewController {
             
             let vc = XDLNavigationViewController(rootViewController: XDLOAuthViewController())
             
-          self?.present(vc, animated: true, completion: nil)
+            self?.present(vc, animated: true, completion: nil)
         
         }
     

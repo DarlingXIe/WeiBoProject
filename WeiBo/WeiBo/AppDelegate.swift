@@ -17,16 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        NotificationCenter.default.addObserver(self, selector: #selector(switchRootControllerVC(noti:)), name: NSNotification.Name(XDLChangeRootController), object: nil)
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        window?.rootViewController = XDLTabBarViewController()
-
+        //window?.rootViewController = XDLTabBarViewController()
+       
+        window?.rootViewController = XDLUserAccountViewModel.shareModel.userlogin ? XDLWelcomViewController() : XDLTabBarViewController()
+        
         self.window?.backgroundColor = UIColor.white
         
         window?.makeKeyAndVisible()
-
         
         return true
+    }
+    
+    func switchRootControllerVC(noti:Notification){
+        
+        if noti.object != nil{
+            
+            window?.rootViewController = XDLWelcomViewController()
+            
+        }else{
+        
+            window?.rootViewController = XDLTabBarViewController()
+        }
+    
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -8,6 +8,7 @@ target 'WeiBo' do
 pod ‘AFNetworking’
 pod ’SDWebImage’
 pod ’SVProgressHUD’
+pod 'YYModel'
 
   # Pods for WeiBo
 

@@ -11,8 +11,8 @@ import SVProgressHUD
 
  let WB_APPKEY = "952701227"
  let WB_SECRET = "ddd422359bcb972236c6f9663ee720a7"
- let WB_REDIRECT_URL = "http://www.itheima.com/"
- let WB_LANGUAGE = "en"
+ let WB_REDIRECT_URI = "http://www.itheima.com/"
+ //let WB_LANGUAGE = "en"
 class XDLOAuthViewController: UIViewController, UIWebViewDelegate{
 
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class XDLOAuthViewController: UIViewController, UIWebViewDelegate{
         
         }
         
-       let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WB_APPKEY)&redirect_uri=\(WB_REDIRECT_URL)&language%20=%20en"
+       let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WB_APPKEY)&redirect_uri=\(WB_REDIRECT_URI)"
         
        let url = URL(string: urlString)!
        
@@ -84,21 +84,21 @@ class XDLOAuthViewController: UIViewController, UIWebViewDelegate{
             
             let urlString = url.absoluteString
             
-            if !urlString.hasPrefix(WB_REDIRECT_URL){
+            if !urlString.hasPrefix(WB_REDIRECT_URI){
                 return true
             }
         }
         
         if let query = request.url?.query{
             let code = query.substring(from: "code=".endIndex);
-            print(code)
+            print("------\(code)")
             XDLUserAccountViewModel.shareModel.loadAccessToken(code: code, completion: { (isSuccess) in
                 if isSuccess{
                     //swich to other UI
-                    print("switch to other UI")
+                    print("switch to welcomePage")
+                   NotificationCenter.default.post(name: NSNotification.Name(XDLChangeRootController), object: self)
                     
                 }else{
-                
                     print("failed to login")
                 }
             })

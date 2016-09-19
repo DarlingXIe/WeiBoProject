@@ -14,6 +14,40 @@ class XDLUserAccountViewModel: NSObject {
     
     static let shareModel:XDLUserAccountViewModel = XDLUserAccountViewModel()
     
+    
+    var access_token : String?{
+    
+        return countModel?.access_token
+    }
+    
+    var userlogin:Bool {
+        
+        if countModel?.access_token != nil && isExpires == false{
+        return true
+        
+        }
+        return false
+    }
+    
+    var isExpires: Bool{
+        
+        if let expireData = countModel?.expiresDate{
+            if expireData.compare(Date()) == .orderedDescending{
+            return false
+            }
+        }
+          return true
+    }
+    
+    override init(){
+        
+        super.init()
+        
+        countModel = self.loadAccount()
+        
+       // print("countModel")
+    }
+    
     // MARK: - 2. get AccessToken
     /*
      https://api.weibo.com/oauth2/access_token
@@ -38,11 +72,11 @@ class XDLUserAccountViewModel: NSObject {
             "client_secret": WB_SECRET,
             "grant_type" : "authorization_code",
             "code": code,
-            "redirect_uri" : WB_REDIRECT_URL
+            "redirect_uri" : WB_REDIRECT_URI
         ]
         
         XDLNetWorkTools.sharedTools.request(method: .Post, urlSting: urlSting, parameters: parameters) { (response, error) in
-            if error != nil && response == nil{
+            if response == nil && error != nil{
                 print("requestError!\(error)")
                 completion(false)
                 return
@@ -50,7 +84,10 @@ class XDLUserAccountViewModel: NSObject {
             
             let countModel = XDLUserAccount(dict: response as! [String : Any])
            
+            print("-----\(response)")
+            
             self.loadUserInfo(userAccount: countModel, completion: completion)
+            
         }
         
     }
@@ -69,8 +106,7 @@ class XDLUserAccountViewModel: NSObject {
             
             "access_token" : (userAccount.access_token ?? ""),
             "uid": (userAccount.uid ?? ""),
-            
-            ]
+        ]
         
         XDLNetWorkTools.sharedTools.request(method: .Get, urlSting: urlStirng, parameters: patameters) { (response, error) in
             
@@ -86,16 +122,30 @@ class XDLUserAccountViewModel: NSObject {
             
             userAccount.profile_image_url = dict["profile_image_url"] as? String
             
+            self.saveAccount(account: userAccount)
+            
+            self.countModel = userAccount
+            
+            print("------\(userAccount)")
+            
             completion(true)
         }
         
     }
 
-    func saveAccount(account:XDLUserAccount)
+   private func saveAccount(account:XDLUserAccount)
     {
         let file = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as NSString).appendingPathComponent("userAccount.archive")
         
         NSKeyedArchiver.archiveRootObject(account, toFile: file)
+    
+    }
+    
+    private func loadAccount() -> XDLUserAccount? {
+    
+        let file = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as NSString).appendingPathComponent("userAccount.archive")
+        
+       return NSKeyedUnarchiver.unarchiveObject(withFile: file) as? XDLUserAccount
     
     }
     

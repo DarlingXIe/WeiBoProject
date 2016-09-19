@@ -29,7 +29,7 @@ class XDLUserAccount: NSObject, NSCoding {
     
         var expiresDate : Date?
     
-        var remind_in : String?
+        //var remind_in : String?
     
         var uid : String?
     

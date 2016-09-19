@@ -38,6 +38,12 @@
 		F75E9B4F1D86E92F00D11392 /* XDLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B4E1D86E92F00D11392 /* XDLVisitorView.swift */; };
 		F75E9B511D86E95700D11392 /* XDLVisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B501D86E95700D11392 /* XDLVisitorTableViewController.swift */; };
 		F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */; };
+		F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */; };
+		F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */; };
+		F7CE3C471D8F06D200AB3224 /* XDLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */; };
+		F7CE3C491D8F07AD00AB3224 /* XDLStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C481D8F07AD00AB3224 /* XDLStatusTableViewCell.swift */; };
+		F7CE3C4B1D8F1FEE00AB3224 /* XDLHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C4A1D8F1FEE00AB3224 /* XDLHomeViewModel.swift */; };
+		F7CE3C4D1D8F318700AB3224 /* XDLStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C4C1D8F318700AB3224 /* XDLStatusViewModel.swift */; };
 		F7FB6A371D8C3BDE00F94BC2 /* XDLOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A361D8C3BDE00F94BC2 /* XDLOAuthViewController.swift */; };
 		F7FB6A7F1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */; };
 		F7FB6A811D8D96DE00F94BC2 /* XDLUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB6A801D8D96DE00F94BC2 /* XDLUserAccount.swift */; };
@@ -81,6 +87,12 @@
 		F75E9B4E1D86E92F00D11392 /* XDLVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLVisitorView.swift; sourceTree = "<group>"; };
 		F75E9B501D86E95700D11392 /* XDLVisitorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLVisitorTableViewController.swift; sourceTree = "<group>"; };
 		F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ ConvenienceExtension.swift"; sourceTree = "<group>"; };
+		F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLWelcomViewController.swift; sourceTree = "<group>"; };
+		F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLCommonTools.swift; sourceTree = "<group>"; };
+		F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatus.swift; sourceTree = "<group>"; };
+		F7CE3C481D8F07AD00AB3224 /* XDLStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusTableViewCell.swift; sourceTree = "<group>"; };
+		F7CE3C4A1D8F1FEE00AB3224 /* XDLHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLHomeViewModel.swift; sourceTree = "<group>"; };
+		F7CE3C4C1D8F318700AB3224 /* XDLStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusViewModel.swift; sourceTree = "<group>"; };
 		F7FB6A361D8C3BDE00F94BC2 /* XDLOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLOAuthViewController.swift; sourceTree = "<group>"; };
 		F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLUserAccountViewModel.swift; sourceTree = "<group>"; };
 		F7FB6A801D8D96DE00F94BC2 /* XDLUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLUserAccount.swift; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				F7FB6A801D8D96DE00F94BC2 /* XDLUserAccount.swift */,
+				F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +195,7 @@
 				F725B9701D8575D700F3556A /* UIView+IBExtension.swift */,
 				F725B9721D85760200F3556A /* UIBarButtonItem+Extension.swift */,
 				F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */,
+				F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -256,6 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */,
+				F7CE3C4A1D8F1FEE00AB3224 /* XDLHomeViewModel.swift */,
+				F7CE3C4C1D8F318700AB3224 /* XDLStatusViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -290,6 +306,7 @@
 		F725B9751D8576A200F3556A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F7CE3C481D8F07AD00AB3224 /* XDLStatusTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -381,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				F7FB6A361D8C3BDE00F94BC2 /* XDLOAuthViewController.swift */,
+				F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -511,16 +529,21 @@
 			files = (
 				F725B97D1D85773000F3556A /* XDLDiscoverViewController.swift in Sources */,
 				F75E9B511D86E95700D11392 /* XDLVisitorTableViewController.swift in Sources */,
+				F7CE3C471D8F06D200AB3224 /* XDLStatus.swift in Sources */,
+				F7CE3C4B1D8F1FEE00AB3224 /* XDLHomeViewModel.swift in Sources */,
 				F7FB6A371D8C3BDE00F94BC2 /* XDLOAuthViewController.swift in Sources */,
 				F725B9491D856FF200F3556A /* AppDelegate.swift in Sources */,
 				F75E9B4C1D86E88A00D11392 /* View+SnapKit.swift in Sources */,
 				F75E9B491D86E88A00D11392 /* EdgeInsets.swift in Sources */,
+				F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */,
 				F725B9711D8575D700F3556A /* UIView+IBExtension.swift in Sources */,
 				F75E9B451D86E88A00D11392 /* ConstraintItem.swift in Sources */,
 				F75E9B4A1D86E88A00D11392 /* LayoutConstraint.swift in Sources */,
 				F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */,
 				F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */,
 				F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */,
+				F7CE3C491D8F07AD00AB3224 /* XDLStatusTableViewCell.swift in Sources */,
+				F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */,
 				F75E9B321D86D6C400D11392 /* XDLDiscoverSearchView.swift in Sources */,
 				F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */,
 				F75E9B461D86E88A00D11392 /* ConstraintMaker.swift in Sources */,
@@ -538,6 +561,7 @@
 				F75E9B4D1D86E88A00D11392 /* ViewController+SnapKit.swift in Sources */,
 				F725B97F1D85776400F3556A /* XDLHomeViewController.swift in Sources */,
 				F725B96D1D85735900F3556A /* XDLTempViewController.swift in Sources */,
+				F7CE3C4D1D8F318700AB3224 /* XDLStatusViewModel.swift in Sources */,
 				F75E9B421D86E88A00D11392 /* Constraint.swift in Sources */,
 				F75E9B441D86E88A00D11392 /* ConstraintDescription.swift in Sources */,
 			);
@@ -575,6 +599,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -624,6 +649,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -20,8 +20,21 @@ class XDLTempViewController: UIViewController {
 
     private func setupUI(){
         
+        //test
+        
+        title = "The\(navigationController?.childViewControllers.count)controller"
+        
         self.view.backgroundColor = UIColor.white
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "PUSH", target: self, action: #selector(pushTestVc))
     
+    }
+    
+    func pushTestVc(){
+    
+         let vc = XDLTempViewController()
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
