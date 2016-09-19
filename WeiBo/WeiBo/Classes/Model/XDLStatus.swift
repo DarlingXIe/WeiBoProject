@@ -23,4 +23,6 @@ class XDLStatus: NSObject {
     
     var source : String?
 
+    var user : XDLUsers?
+    
 }

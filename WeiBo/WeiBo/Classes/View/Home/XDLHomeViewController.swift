@@ -64,6 +64,10 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     
        tableView.register(XDLStatusTableViewCell.self, forCellReuseIdentifier: "cellid")
     
+       tableView.rowHeight = UITableViewAutomaticDimension
+    
+       tableView.estimatedRowHeight = 200
+    
     }
     
     override func didReceiveMemoryWarning() {

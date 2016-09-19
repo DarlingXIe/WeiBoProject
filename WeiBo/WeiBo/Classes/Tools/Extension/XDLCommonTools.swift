@@ -8,3 +8,6 @@
 import UIKit
 
 let XDLChangeRootController = "XDLChangeRootController"
+
+let XDLScreenW = UIScreen.main.bounds.width
+let XDLScreenH = UIScreen.main.bounds.height

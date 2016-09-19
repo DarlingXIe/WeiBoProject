@@ -8,6 +8,8 @@
 
 import UIKit
 
+let XDLStatusCellMargin: CGFloat = 10
+
 class XDLStatusTableViewCell: UITableViewCell {
 
     //before: cell will load data to UItext
@@ -19,15 +21,14 @@ class XDLStatusTableViewCell: UITableViewCell {
   //      }
  //   }
     
-    var XDLStatusViewModel : XDLStatusViewModel?{
+    var XDLStatusViewModel: XDLStatusViewModel?{
         
         didSet{
             
-             nameLabel.text = XDLStatusViewModel?.status?.text
+           OriginalStatusView.statusViewModel = XDLStatusViewModel
         }
     
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,32 +49,24 @@ class XDLStatusTableViewCell: UITableViewCell {
     
     private func setupUI(){
         
-        contentView.addSubview(nameLabel)
         
-        nameLabel.snp_makeConstraints { (make) in
-            
-            make.centerY.equalTo(contentView)
-            
-            make.left.equalTo(contentView).offset(12)
-            
-            make.right.equalTo(contentView).offset(10)
-            
+        contentView.addSubview(OriginalStatusView)
+        
+       // contentView.addSubview(nameLabel)
+        
+        OriginalStatusView.snp_makeConstraints { (make) in
+            make.edges.equalTo(contentView)
         }
-        
     }
     
-    
-   private lazy var nameLabel :UILabel = {()-> UILabel in
+   private lazy var OriginalStatusView : XDLOriginalStatusView = {()-> XDLOriginalStatusView in
         
-        let label = UILabel(textColor: UIColor.darkGray, fontSize: 14)
-    
-        label.numberOfLines = 0
-    
-        label.textAlignment = NSTextAlignment.center
-    
-        return label
-    
+        let originalView = XDLOriginalStatusView()
+        //label.textColor = UIcolor.red
+        return originalView
     }()
+
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
