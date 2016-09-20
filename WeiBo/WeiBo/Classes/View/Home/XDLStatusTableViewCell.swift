@@ -26,8 +26,35 @@ class XDLStatusTableViewCell: UITableViewCell {
         didSet{
             
            OriginalStatusView.statusViewModel = XDLStatusViewModel
-           statusToolBar.statusViewModel = xdl
+           statusToolBar.statusViewModel =  XDLStatusViewModel
            
+            if XDLStatusViewModel?.status?.retweeted_status != nil {
+                
+                retweetView.isHidden = false
+                
+                retweetView.statusViewModel = XDLStatusViewModel
+                
+                statusToolBar.snp_remakeConstraints(closure: { (make) in
+                
+                    make.top.equalTo(retweetView.snp_bottom)
+                    make.left.right.bottom.equalTo(contentView)
+                    make.height.equalTo(35)
+               })
+            
+            }else{
+                
+                retweetView.isHidden = true
+                
+                statusToolBar.snp_remakeConstraints(closure: { (make) in
+                    
+                    make.top.equalTo(OriginalStatusView.snp_bottom)
+                    make.left.right.bottom.equalTo(contentView)
+                    make.height.equalTo(35)
+               
+                })
+            }
+            
+            
         }
     
     }
@@ -55,15 +82,22 @@ class XDLStatusTableViewCell: UITableViewCell {
         
         contentView.addSubview(statusToolBar)
         
+        contentView.addSubview(retweetView)
+        
         OriginalStatusView.snp_makeConstraints { (make) in
             
             make.left.top.right.equalTo(contentView)
            // make.bottom.equalTo(contentView)
         }
+        
+        retweetView.snp_makeConstraints { (make) in
+            make.top.equalTo(OriginalStatusView.snp_bottom)
+            make.left.right.equalTo(contentView)
+        }
     
         statusToolBar.snp_makeConstraints { (make) in
             
-            make.top.equalTo(OriginalStatusView.snp_bottom)
+            make.top.equalTo(retweetView.snp_bottom)
             make.left.right.bottom.equalTo(contentView)
             make.height.equalTo(35)
         }
@@ -85,6 +119,15 @@ class XDLStatusTableViewCell: UITableViewCell {
         //label.textColor = UIcolor.red
         
         return toolBar
+    }()
+
+   private lazy var retweetView :XDLRetweetStatusView = {()-> XDLRetweetStatusView in
+        
+        let retweetView = XDLRetweetStatusView()
+        
+        //label.textColor = UIcolor.red
+        
+        return retweetView
     }()
 
     

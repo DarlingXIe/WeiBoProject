@@ -23,7 +23,7 @@ class XDLHomeViewModel: NSObject {
         
         let parameters = [
             
-            "access_token" : XDLUserAccountViewModel.shareModel.access_token ?? ""
+            "access_token" : XDLUserAccountViewModel.shareModel.access_token ?? " "
         ]
         
         XDLNetWorkTools.sharedTools.request(method: .Get, urlSting: urlString, parameters: parameters) { (response, error) in

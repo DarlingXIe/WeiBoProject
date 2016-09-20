@@ -31,4 +31,6 @@ class XDLStatus: NSObject {
     
     var attitudes_count: Int = 0
     
+    var retweeted_status: XDLStatus?
+    
 }
