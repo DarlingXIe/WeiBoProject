@@ -26,7 +26,7 @@ class XDLStatusTableViewCell: UITableViewCell {
         didSet{
             
            OriginalStatusView.statusViewModel = XDLStatusViewModel
-           statusToolBar.statusViewModel = XDLStatusViewModel
+           statusToolBar.statusViewModel = xdl
            
         }
     
