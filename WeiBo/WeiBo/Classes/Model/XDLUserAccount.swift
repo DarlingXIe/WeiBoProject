@@ -56,8 +56,7 @@ class XDLUserAccount: NSObject, NSCoding {
         profile_image_url = decoder.decodeObject(forKey: "profile_image_url") as? String
 
     }
-    
-    
+
     func encode(with encoder: NSCoder){
     
         encoder.encode(access_token, forKey: "access_token")

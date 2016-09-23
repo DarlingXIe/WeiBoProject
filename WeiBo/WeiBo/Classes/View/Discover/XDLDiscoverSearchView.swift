@@ -16,9 +16,9 @@ import UIKit
         
        // let view = Bundle.main.loadNibNamed("XDLDiscoverSearchView", owner: nil, options: nil)!.last! as! XDLDiscoverSearchView
         
-        let view = Bundle.main.loadNibNamed("XDLDiscoverSearchView", owner: nil, options: nil)?.last as! XDLDiscoverSearchView
+       let view = Bundle.main.loadNibNamed("XDLDiscoverSearchView", owner: nil, options: nil)?.last as! XDLDiscoverSearchView
         
-        return view
+       return view
         
     }
     

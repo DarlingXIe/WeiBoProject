@@ -133,8 +133,7 @@ class XDLHomeViewController: XDLVisitorTableViewController {
         return homeViewModel.statusArray?.count ?? 0
         
     }
-    
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath) as! XDLStatusTableViewCell

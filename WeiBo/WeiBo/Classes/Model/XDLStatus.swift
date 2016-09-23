@@ -33,4 +33,14 @@ class XDLStatus: NSObject {
     
     var retweeted_status: XDLStatus?
     
+    //oriPictureWithText
+    var pic_urls : [XDLStatusPictureInfo]?
+    
+    class func modelContainerPropertyGenericClass() -> ([String: Any]) {
+       
+        return [
+            "pic_urls": XDLStatusPictureInfo.self
+        ]
+    }
+
 }

@@ -21,6 +21,8 @@
 		F725B97F1D85776400F3556A /* XDLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B97E1D85776400F3556A /* XDLHomeViewController.swift */; };
 		F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9801D85778300F3556A /* XDLMessageViewController.swift */; };
 		F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9821D8577B700F3556A /* XDLProfileViewController.swift */; };
+		F72F2E051D93077200F952DB /* XDLStatusPictureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */; };
+		F72F2E091D930A5100F952DB /* XDLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */; };
 		F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */; };
 		F75E9B321D86D6C400D11392 /* XDLDiscoverSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */; };
 		F75E9B421D86E88A00D11392 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B351D86E88A00D11392 /* Constraint.swift */; };
@@ -73,6 +75,8 @@
 		F725B97E1D85776400F3556A /* XDLHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLHomeViewController.swift; sourceTree = "<group>"; };
 		F725B9801D85778300F3556A /* XDLMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLMessageViewController.swift; sourceTree = "<group>"; };
 		F725B9821D8577B700F3556A /* XDLProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLProfileViewController.swift; sourceTree = "<group>"; };
+		F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureInfo.swift; sourceTree = "<group>"; };
+		F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureView.swift; sourceTree = "<group>"; };
 		F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLDiscoverSearchView.xib; sourceTree = "<group>"; };
 		F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLDiscoverSearchView.swift; sourceTree = "<group>"; };
 		F75E9B351D86E88A00D11392 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				F7FB6A801D8D96DE00F94BC2 /* XDLUserAccount.swift */,
 				F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */,
 				F7CE3C501D903EF500AB3224 /* XDLUsers.swift */,
+				F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				F7CE3C4E1D9024F100AB3224 /* XDLOriginalStatusView.swift */,
 				F7CE3C521D90647900AB3224 /* XDLStatusToolBar.swift */,
 				F7CE3C541D918AC100AB3224 /* XDLRetweetStatusView.swift */,
+				F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -562,8 +568,10 @@
 				F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */,
 				F75E9B461D86E88A00D11392 /* ConstraintMaker.swift in Sources */,
 				F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */,
+				F72F2E051D93077200F952DB /* XDLStatusPictureInfo.swift in Sources */,
 				F75E9B471D86E88A00D11392 /* ConstraintRelation.swift in Sources */,
 				F7FB6A831D8D9BD200F94BC2 /* XDLNetWorkTools.swift in Sources */,
+				F72F2E091D930A5100F952DB /* XDLStatusPictureView.swift in Sources */,
 				F7FB6A7F1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift in Sources */,
 				F725B96B1D85727F00F3556A /* XDLNavigationViewController.swift in Sources */,
 				F75E9B4F1D86E92F00D11392 /* XDLVisitorView.swift in Sources */,
@@ -619,7 +627,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -669,7 +677,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

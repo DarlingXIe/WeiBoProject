@@ -38,7 +38,7 @@ class XDLStatusTableViewCell: UITableViewCell {
                 
                     make.top.equalTo(retweetView.snp_bottom)
                     make.left.right.bottom.equalTo(contentView)
-                    make.height.equalTo(35)
+                    //make.height.equalTo(35)
                })
             
             }else{
@@ -49,7 +49,7 @@ class XDLStatusTableViewCell: UITableViewCell {
                     
                     make.top.equalTo(OriginalStatusView.snp_bottom)
                     make.left.right.bottom.equalTo(contentView)
-                    make.height.equalTo(35)
+                    //make.height.equalTo(35)
                
                 })
             }

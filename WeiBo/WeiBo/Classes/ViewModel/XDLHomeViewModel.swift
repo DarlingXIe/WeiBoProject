@@ -47,6 +47,10 @@ class XDLHomeViewModel: NSObject {
             var tempArray = [XDLStatusViewModel]()
             
             for status in modelArray{
+                //print---oriPictureWithText..
+                if let pic_urls = status.pic_urls, pic_urls.count > 0 {
+                    print(status.pic_urls?.first?.thumbnail_pic)
+                }
                 
                 let viewModel = XDLStatusViewModel()
                 viewModel.status = status
