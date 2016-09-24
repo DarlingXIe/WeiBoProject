@@ -11,3 +11,5 @@ let XDLChangeRootController = "XDLChangeRootController"
 
 let XDLScreenW = UIScreen.main.bounds.width
 let XDLScreenH = UIScreen.main.bounds.height
+
+let color = UIColor(red: CGFloat(arc4random()%256)/255, green: CGFloat(arc4random()%256)/255, blue: CGFloat(arc4random()%256)/255, alpha: 1)

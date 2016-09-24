@@ -10,6 +10,6 @@ import UIKit
 
 class XDLStatusPictureInfo: NSObject {
     
-    var thumbnail_pic: String?
+    var thumbnail_pic : String?
     
 }
