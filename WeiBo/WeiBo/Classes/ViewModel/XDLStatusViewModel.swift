@@ -48,6 +48,7 @@ class XDLStatusViewModel: NSObject {
                 }
     
             }
+            
         reposts_count = calCount(count: (status?.reposts_count) ?? 0, defaultTitle: "share")
             
         comments_count = calCount(count: (status?.comments_count) ?? 0, defaultTitle: "comments")
@@ -55,8 +56,7 @@ class XDLStatusViewModel: NSObject {
         attitudes_count = calCount(count: (status?.attitudes_count) ?? 0, defaultTitle: "like")
             
         }
-    
-        
+
     }
     
     private func calCount(count: Int, defaultTitle: String) -> String{
