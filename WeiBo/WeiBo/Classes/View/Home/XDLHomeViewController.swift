@@ -68,6 +68,8 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     
        tableView.estimatedRowHeight = 200
     
+       tableView.separatorStyle = .none
+    
     }
     
     override func didReceiveMemoryWarning() {

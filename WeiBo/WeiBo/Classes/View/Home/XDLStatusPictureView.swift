@@ -93,7 +93,7 @@ extension XDLStatusPictureView:UICollectionViewDataSource{
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:XDLPictureViewCellId, for: indexPath) as! XDLStatusPictureCollectionViewCell
 
-        //cell.backgroundColor = color
+
         
         cell.pictureInfo = pic_urls![indexPath.item]
         

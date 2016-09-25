@@ -23,6 +23,7 @@ class XDLUserAccount: NSObject, NSCoding {
         var expires_in : TimeInterval = 0{
           
             didSet{
+                
                 expiresDate = Date(timeIntervalSinceNow: expires_in)
             }
     }

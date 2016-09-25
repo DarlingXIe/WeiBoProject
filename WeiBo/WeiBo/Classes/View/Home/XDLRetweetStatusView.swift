@@ -50,7 +50,9 @@ class XDLRetweetStatusView: UIView {
     }
     
     private func setupUI(){
-
+        
+            backgroundColor = UIColor.gray
+       
             addSubview(retweetContentLabel)
         
             addSubview(pictureView)
@@ -85,8 +87,15 @@ class XDLRetweetStatusView: UIView {
         
     }()
 
-    private lazy var pictureView: XDLStatusPictureView = XDLStatusPictureView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+   // private lazy var pictureView: XDLStatusPictureView = XDLStatusPictureView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
     
+    private lazy var pictureView :XDLStatusPictureView = {()-> XDLStatusPictureView in
+        
+        let pictureView = XDLStatusPictureView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+        //label.textColor = UIcolor.red
+        pictureView.backgroundColor = self.backgroundColor
+        return pictureView
+    }()
 
 
 }

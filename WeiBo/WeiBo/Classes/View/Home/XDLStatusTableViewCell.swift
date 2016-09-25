@@ -78,6 +78,8 @@ class XDLStatusTableViewCell: UITableViewCell {
     
     private func setupUI(){
         
+        contentView.backgroundColor = UIColor.gray
+        
         contentView.addSubview(OriginalStatusView)
         
         contentView.addSubview(statusToolBar)
@@ -86,7 +88,8 @@ class XDLStatusTableViewCell: UITableViewCell {
         
         OriginalStatusView.snp_makeConstraints { (make) in
             
-            make.left.top.right.equalTo(contentView)
+            make.top.equalTo(contentView).offset(XDLStatusCellMargin)
+            make.left.right.equalTo(contentView)
            // make.bottom.equalTo(contentView)
         }
         

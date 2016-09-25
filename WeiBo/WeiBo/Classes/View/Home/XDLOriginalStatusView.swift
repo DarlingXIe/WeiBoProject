@@ -10,6 +10,8 @@ import UIKit
 
 class XDLOriginalStatusView: UIView {
     
+    var bottomCons : Constraint?
+    
     var statusViewModel: XDLStatusViewModel?{
     
         didSet{
@@ -23,6 +25,25 @@ class XDLOriginalStatusView: UIView {
             avatarView.image = statusViewModel?.avatarImage
             
             contentLabel.text = statusViewModel?.status?.text
+        
+            bottomCons?.uninstall()
+            
+            if let pic_urls = statusViewModel?.status?.pic_urls, pic_urls.count > 0 {
+                
+                pictureView.isHidden = false
+                pictureView.pic_urls = pic_urls
+                self.snp_updateConstraints(closure: { (make) in
+                  self.bottomCons = make.bottom.equalTo(pictureView.snp_bottom).offset(XDLStatusCellMargin).constraint
+                })
+            
+            }else{
+                pictureView.isHidden = true
+                self.snp_updateConstraints(closure: { (make) in
+                  self.bottomCons = make.bottom.equalTo(contentLabel.snp_bottom).offset(XDLStatusCellMargin).constraint
+                })
+                
+            }
+    
         }
         
     }
@@ -43,6 +64,8 @@ class XDLOriginalStatusView: UIView {
     
     private func setupUI(){
        
+        backgroundColor = UIColor.white
+        
         addSubview(iconView)
         addSubview(nameLabel)
         addSubview(memberIconView)
@@ -50,6 +73,7 @@ class XDLOriginalStatusView: UIView {
         addSubview(sourceLabel)
         addSubview(avatarView)
         addSubview(contentLabel)
+        addSubview(pictureView)
         
         iconView.snp_makeConstraints { (make) in
             
@@ -95,8 +119,15 @@ class XDLOriginalStatusView: UIView {
            
         }
         
+        pictureView.snp_makeConstraints { (make) in
+            
+            make.top.equalTo(contentLabel.snp_bottom).offset(XDLStatusCellMargin)
+            make.leading.equalTo(contentLabel)
+        }
+        
         self.snp_makeConstraints { (make) in
-            make.bottom.equalTo(contentLabel).offset(XDLStatusCellMargin)
+         
+        self.bottomCons = make.bottom.equalTo(pictureView).offset(XDLStatusCellMargin).constraint
         }
         
     }
@@ -168,5 +199,12 @@ class XDLOriginalStatusView: UIView {
         return contentLabel
     }()
 
-    
+    private lazy var pictureView :XDLStatusPictureView = {()-> XDLStatusPictureView in
+        
+        let pictureView = XDLStatusPictureView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+        //label.textColor = UIcolor.red
+        pictureView.backgroundColor = self.backgroundColor
+        return pictureView
+    }()
+
 }
