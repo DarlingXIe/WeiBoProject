@@ -97,6 +97,7 @@ class XDLOriginalStatusView: UIView {
             //make.top.equalTo(nameLabel.snp_bottom).offset(8)
             make.left.equalTo(nameLabel)
             make.bottom.equalTo(iconView)
+            
         }
         
         sourceLabel.snp_makeConstraints { (make) in

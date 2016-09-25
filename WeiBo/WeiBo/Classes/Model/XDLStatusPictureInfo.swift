@@ -12,4 +12,5 @@ class XDLStatusPictureInfo: NSObject {
     
     var thumbnail_pic : String?
     
+    var size : CGSize?
 }

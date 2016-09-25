@@ -16,7 +16,7 @@ class XDLRetweetStatusView: UIView {
        /**/
         didSet{
             
-            retweetContentLabel.text = statusViewModel?.status?.retweeted_status?.text
+            retweetContentLabel.text = statusViewModel?.status?.retweeted_status?.retweeted_status_text
             
             self.bottomCons?.uninstall()
             

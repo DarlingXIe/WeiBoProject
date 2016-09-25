@@ -33,6 +33,19 @@ class XDLStatus: NSObject {
     
     var retweeted_status: XDLStatus?
     
+    var retweeted_status_text: String?{
+        
+        didSet{
+            
+            if let text = retweeted_status?.user?.name, let name = retweeted_status?.text{
+                
+                retweeted_status_text = "@\(text):\(name)"
+                
+            }
+        }
+    
+    }
+    
     //oriPictureWithText
     var pic_urls : [XDLStatusPictureInfo]?
     
@@ -42,5 +55,5 @@ class XDLStatus: NSObject {
             "pic_urls": XDLStatusPictureInfo.self
         ]
     }
-
+    
 }

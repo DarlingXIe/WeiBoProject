@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SDWebImage
+
 class XDLHomeViewModel: NSObject {
 
     // var statusArray: [XDLStatus]?
@@ -61,12 +63,53 @@ class XDLHomeViewModel: NSObject {
             
             self.statusArray = tempArray
             
-            completion(true)
+            
+            //completion(true)
             
            // self.tableView.reloadData()
+            
+           //download the singlePic for origView
+            self.cacheSingleImage(status: tempArray, completion: completion)
+            
         }
         
     }
 
+    private func cacheSingleImage(status:[XDLStatusViewModel], completion:@escaping (Bool)->()){
+        
+        let group = DispatchGroup.init()
+        
+        for piValue in status{
+            
+            guard let pic_urls = (piValue.status?.pic_urls?.count == 1) ? piValue.status?.pic_urls : piValue.status?.retweeted_status?.pic_urls, pic_urls.count == 1 else{
+                continue
+            }
+            
+            let photoInfo = pic_urls.first!
+            
+            let urlString = photoInfo.thumbnail_pic
+            
+            let url = URL(string: urlString ?? "")
+            
+            group.enter()
+            
+            SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, error, _, _, _) in
+                
+                photoInfo.size = image?.size
+                
+                print("download completed:")
+                
+                group.leave()
+                
+            })
+            
+            group.notify(queue: DispatchQueue.main, execute: { 
+                print("download all pics")
+                completion(true)
+            })
+        }
+        
+    }
+    
     
 }

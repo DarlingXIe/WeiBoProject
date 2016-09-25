@@ -56,6 +56,7 @@ class XDLStatusViewModel: NSObject {
             
         }
     
+        
     }
     
     private func calCount(count: Int, defaultTitle: String) -> String{

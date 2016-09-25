@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SDWebImage
+
 private let itemMargin : CGFloat = 5
 
 private let itemWH = (XDLScreenW - 2 * XDLStatusCellMargin - 2 * itemMargin) / 3
@@ -61,6 +63,26 @@ class XDLStatusPictureView: UICollectionView{
     
     private func calcSize(count: Int) -> CGSize{
     
+        
+        if count == 1{
+            
+            if let size = pic_urls?.first?.size{
+                
+                let scale = UIScreen.main.scale
+                
+                let result = CGSize(width: scale * size.width, height: scale * size.height)
+                
+                let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
+                
+                layout.itemSize = result
+                
+                return result
+            
+            }
+            
+        }
+        
+        
         var col = count > 3 ? 3 : count
         
         if count == 4 {
@@ -74,6 +96,10 @@ class XDLStatusPictureView: UICollectionView{
         let height = CGFloat(row) * itemWH  + CGFloat(row - 1) * itemMargin
         
         let size = CGSize(width: width, height: height)
+        
+        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        layout.itemSize = CGSize(width: itemWH, height: itemWH)
         
         return size
     }
