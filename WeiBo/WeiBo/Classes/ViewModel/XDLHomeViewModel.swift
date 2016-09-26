@@ -19,13 +19,26 @@ class XDLHomeViewModel: NSObject {
     static let shareModel:XDLHomeViewModel = XDLHomeViewModel()
     
     
-    func loadData(completion:@escaping (Bool)->()){
+    func loadData(pullUp: Bool, completion:@escaping (Bool)->()){
         
         let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
         
-        let parameters = [
+        var max_id: Int64 = 0
+        
+        //if pullUp is true, set the value of max_id for the last datemodel, the function request will load the pullUpDate with this max_id
+        if pullUp{
             
-            "access_token" : XDLUserAccountViewModel.shareModel.access_token ?? " "
+            if let id = statusArray?.last?.status?.id{
+                
+                max_id = id + 1
+            
+            }
+        }
+        
+        let parameters = [
+        
+            "access_token" : XDLUserAccountViewModel.shareModel.access_token ?? " ",
+            "max_id": "\(max_id)"
         ]
         
         XDLNetWorkTools.sharedTools.request(method: .Get, urlSting: urlString, parameters: parameters) { (response, error) in
@@ -61,7 +74,16 @@ class XDLHomeViewModel: NSObject {
             
             //self.statusArray = modelArray
             
-            self.statusArray = tempArray
+            // if the first load data, the self.status would be nill and save the first load modelData
+            if(self.statusArray == nil){
+                self.statusArray = tempArray
+            }
+            
+            if pullUp{
+                
+                self.statusArray = self.statusArray! + tempArray
+                
+            }
             
             
             //completion(true)

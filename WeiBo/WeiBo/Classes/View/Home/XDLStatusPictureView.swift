@@ -99,7 +99,6 @@ class XDLStatusPictureView: UICollectionView{
             
         }
         
-        
         var col = count > 3 ? 3 : count
         
         if count == 4 {

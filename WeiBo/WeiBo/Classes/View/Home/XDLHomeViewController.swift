@@ -41,6 +41,19 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     
     private func homeTableViewReload(){
     
+        homeViewModel.loadData(pullUp: pullUpView.isAnimating) { (isSuccess) in
+           
+            if isSuccess {
+                
+                self.tableView.reloadData()
+                // this bug: if keep the status of pullUpView.isAnimating is true, than can't load the next action for pull cause cannot recall reload the data for tableView
+            }else{
+                print("load error")
+            }
+            
+               self.pullUpView.stopAnimating()
+        }
+      /*
         homeViewModel.loadData { (isSuccess) in
           
             if isSuccess {
@@ -52,7 +65,7 @@ class XDLHomeViewController: XDLVisitorTableViewController {
            
             }
       }
-  
+  */
  }
    private func setupUI(){
     
@@ -69,7 +82,9 @@ class XDLHomeViewController: XDLVisitorTableViewController {
        tableView.estimatedRowHeight = 200
     
        tableView.separatorStyle = .none
-    
+       //pullUpFunction tableView set the footerView
+       tableView.tableFooterView = pullUpView
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,7 +102,7 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     
     /*
      access_token	true	string	采用OAuth授权方式为必填参数，OAuth授权后获得。
-     count	false	int	单页返回的记录条数，默认为50。
+     count	false	int	单页返回的记  录条数，默认为50。
      page	false	int	返回结果的页码，默认为1。
      base_app	false	int	是否只获取当前应用的数据。0为否（所有数据），1为是（仅当前应用），默认为0.
      */
@@ -127,7 +142,6 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     }
     
    */
-
     //MARK: - tableView loadData
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -147,5 +161,33 @@ class XDLHomeViewController: XDLVisitorTableViewController {
        return cell
         
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == (homeViewModel.statusArray?.count)! - 1 && pullUpView.isAnimating == false{
+            
+            print("**************have to show the last row for cell*************")
+            
+            pullUpView.startAnimating()
+            
+            homeTableViewReload()
+            
+        }
+    
+    }
+    
+    
+    //MARK: - pullUpFunction
+    
+    private lazy var pullUpView : UIActivityIndicatorView = {()-> UIActivityIndicatorView in
+        
+        let pullUpView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+    
+       pullUpView.color = UIColor.black
+        
+        return pullUpView
+    }()
+
+    
     
 }
