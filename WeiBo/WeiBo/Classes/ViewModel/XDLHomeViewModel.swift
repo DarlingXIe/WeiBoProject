@@ -76,7 +76,7 @@ class XDLHomeViewModel: NSObject {
     }
 
     private func cacheSingleImage(status:[XDLStatusViewModel], completion:@escaping (Bool)->()){
-        
+        // group to download images when it's completed, recall the block for inform controller 
         let group = DispatchGroup.init()
         
         for piValue in status{

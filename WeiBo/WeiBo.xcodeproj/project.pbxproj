@@ -23,6 +23,7 @@
 		F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9821D8577B700F3556A /* XDLProfileViewController.swift */; };
 		F72F2E051D93077200F952DB /* XDLStatusPictureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */; };
 		F72F2E091D930A5100F952DB /* XDLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */; };
+		F75D68691D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */; };
 		F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */; };
 		F75E9B321D86D6C400D11392 /* XDLDiscoverSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */; };
 		F75E9B421D86E88A00D11392 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B351D86E88A00D11392 /* Constraint.swift */; };
@@ -78,6 +79,7 @@
 		F725B9821D8577B700F3556A /* XDLProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLProfileViewController.swift; sourceTree = "<group>"; };
 		F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureInfo.swift; sourceTree = "<group>"; };
 		F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureView.swift; sourceTree = "<group>"; };
+		F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg; sourceTree = "<group>"; };
 		F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLDiscoverSearchView.xib; sourceTree = "<group>"; };
 		F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLDiscoverSearchView.swift; sourceTree = "<group>"; };
 		F75E9B351D86E88A00D11392 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				F725B9481D856FF200F3556A /* AppDelegate.swift */,
 				F725B94C1D856FF200F3556A /* Main.storyboard */,
 				F725B94F1D856FF200F3556A /* Assets.xcassets */,
+				F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */,
 				F725B9541D856FF200F3556A /* Info.plist */,
 			);
 			path = WeiBo;
@@ -490,6 +493,7 @@
 				F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */,
 				F725B9501D856FF200F3556A /* Assets.xcassets in Resources */,
 				F725B94E1D856FF200F3556A /* Main.storyboard in Resources */,
+				F75D68691D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

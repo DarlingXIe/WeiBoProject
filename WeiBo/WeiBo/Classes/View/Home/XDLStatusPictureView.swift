@@ -70,7 +70,24 @@ class XDLStatusPictureView: UICollectionView{
                 
                 let scale = UIScreen.main.scale
                 
-                let result = CGSize(width: scale * size.width, height: scale * size.height)
+                var result = CGSize(width: scale * size.width, height: scale * size.height)
+                
+                if result.width < 50{
+                    
+                    result.width = 50
+                    
+                    result.height = 50 /  result.width * result.height
+                    
+                    if result.height > 300{
+                        // 60 400
+                        //    300
+                        result.height = 300
+                        
+                        result.width = 300 * result.width/result.height
+                    
+                    }
+                }
+                
                 
                 let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
                 
@@ -118,8 +135,6 @@ extension XDLStatusPictureView:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:XDLPictureViewCellId, for: indexPath) as! XDLStatusPictureCollectionViewCell
-
-
         
         cell.pictureInfo = pic_urls![indexPath.item]
         
