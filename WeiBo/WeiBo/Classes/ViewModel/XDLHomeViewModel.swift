@@ -26,6 +26,7 @@ class XDLHomeViewModel: NSObject {
         var max_id: Int64 = 0
         
         //if pullUp is true, set the value of max_id for the last datemodel, the function request will load the pullUpDate with this max_id
+        
         if pullUp{
             
             if let id = statusArray?.last?.status?.id{
@@ -39,6 +40,7 @@ class XDLHomeViewModel: NSObject {
         
             "access_token" : XDLUserAccountViewModel.shareModel.access_token ?? " ",
             "max_id": "\(max_id)"
+            
         ]
         
         XDLNetWorkTools.sharedTools.request(method: .Get, urlSting: urlString, parameters: parameters) { (response, error) in
@@ -75,6 +77,7 @@ class XDLHomeViewModel: NSObject {
             //self.statusArray = modelArray
             
             // if the first load data, the self.status would be nill and save the first load modelData
+            
             if(self.statusArray == nil){
                 self.statusArray = tempArray
             }
@@ -83,14 +86,19 @@ class XDLHomeViewModel: NSObject {
                 
                 self.statusArray = self.statusArray! + tempArray
                 
+            }else{
+            // if next load pullDown......
+                
+                self.statusArray = tempArray + self.statusArray!
+                
             }
             
-            
-            //completion(true)
+           //completion(true)
             
            // self.tableView.reloadData()
             
            //download the singlePic for origView
+            
             self.cacheSingleImage(status: tempArray, completion: completion)
             
         }

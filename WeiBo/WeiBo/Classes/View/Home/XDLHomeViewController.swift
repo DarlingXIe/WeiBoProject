@@ -37,37 +37,8 @@ class XDLHomeViewController: XDLVisitorTableViewController {
         homeTableViewReload()
         
     }
-    
-    
-    private func homeTableViewReload(){
-    
-        homeViewModel.loadData(pullUp: pullUpView.isAnimating) { (isSuccess) in
-           
-            if isSuccess {
-                
-                self.tableView.reloadData()
-                // this bug: if keep the status of pullUpView.isAnimating is true, than can't load the next action for pull cause cannot recall reload the data for tableView
-            }else{
-                print("load error")
-            }
-            
-               self.pullUpView.stopAnimating()
-        }
-      /*
-        homeViewModel.loadData { (isSuccess) in
-          
-            if isSuccess {
-             self.tableView.reloadData()
-            
-        }else{
-             
-             print("load error")
-           
-            }
-      }
-  */
- }
-   private func setupUI(){
+
+    private func setupUI(){
     
        self.view.backgroundColor = UIColor.white
         
@@ -84,9 +55,64 @@ class XDLHomeViewController: XDLVisitorTableViewController {
        tableView.separatorStyle = .none
        //pullUpFunction tableView set the footerView
        tableView.tableFooterView = pullUpView
-
+        
+       tableView.tableFooterView?.addSubview(pullUpViewText)
+        
+       pullUpViewText.snp_makeConstraints { (make) in
+        
+          make.centerX.equalTo(tableView.tableFooterView!).offset(80)
+          make.centerY.equalTo(tableView.tableFooterView!)
+       }
+        
+       tableView.contentInset = UIEdgeInsetsMake(-10, 0, 0, 0)
+       //1. using xcode pullDownUI for load new data
+       /*
+       self.refreshControl = UIRefreshControl()
+    
+       self.refreshControl?.addTarget(self, action: #selector(homeTableViewReload), for: .valueChanged)
+       */
+       //2. the twoMethod by using our refreshControl
+        
+       tableView.addSubview(xdlRefreshControl)
+       
+       xdlRefreshControl.addTarget(self, action:#selector(homeTableViewReload), for: .valueChanged)
+     //  xdlRefreshControl.snp_makeConstraints { (make) in
+        
+     //  }
+       
     }
     
+    internal func homeTableViewReload(){
+        
+        homeViewModel.loadData(pullUp: pullUpView.isAnimating) { (isSuccess) in
+            
+            if isSuccess {
+                
+                self.tableView.reloadData()
+                // this bug: if keep the status of pullUpView.isAnimating is true, than can't load the next action for pull cause cannot recall reload the data for tableView
+            }else{
+                print("load error")
+                
+            }
+            self.pullUpView.stopAnimating()
+            
+            self.xdlRefreshControl.endRefreshing()
+        }
+        /*
+         homeViewModel.loadData { (isSuccess) in
+         
+         if isSuccess {
+         self.tableView.reloadData()
+         
+         }else{
+         
+         print("load error")
+         
+         }
+         }
+         */
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -170,24 +196,42 @@ class XDLHomeViewController: XDLVisitorTableViewController {
             
             pullUpView.startAnimating()
             
-            homeTableViewReload()
-            
+            //homeTableViewReload()
         }
-    
     }
-    
-    
-    //MARK: - pullUpFunction
+    //MARK: - pullUpUI
     
     private lazy var pullUpView : UIActivityIndicatorView = {()-> UIActivityIndicatorView in
         
-        let pullUpView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+       let pullUpView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
     
        pullUpView.color = UIColor.black
+       
+       pullUpView.frame.origin.x = -60
         
-        return pullUpView
+       return pullUpView
+    }()
+    
+    private lazy var pullUpViewText :UILabel = {()-> UILabel in
+    
+        let label = UILabel(textColor:UIColor.gray, fontSize: 11)
+        
+        label.text = "loading............"
+        
+        return label
+    
+    }()
+    
+    //MARK: - PullDown-refreshController
+    
+    private lazy var xdlRefreshControl :XDLRefreshControl = {()-> XDLRefreshControl in
+        
+        let xdlRefreshControl = XDLRefreshControl()
+        
+        //label.textColor = UIcolor.red
+        
+        return xdlRefreshControl
     }()
 
-    
     
 }

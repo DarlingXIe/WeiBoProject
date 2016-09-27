@@ -24,6 +24,7 @@
 		F72F2E051D93077200F952DB /* XDLStatusPictureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */; };
 		F72F2E091D930A5100F952DB /* XDLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */; };
 		F75D68691D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */; };
+		F75D686D1D99D1B5002FD569 /* XDLRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D686C1D99D1B5002FD569 /* XDLRefreshControl.swift */; };
 		F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */; };
 		F75E9B321D86D6C400D11392 /* XDLDiscoverSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */; };
 		F75E9B421D86E88A00D11392 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B351D86E88A00D11392 /* Constraint.swift */; };
@@ -80,6 +81,7 @@
 		F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureInfo.swift; sourceTree = "<group>"; };
 		F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureView.swift; sourceTree = "<group>"; };
 		F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg; sourceTree = "<group>"; };
+		F75D686C1D99D1B5002FD569 /* XDLRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLRefreshControl.swift; sourceTree = "<group>"; };
 		F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLDiscoverSearchView.xib; sourceTree = "<group>"; };
 		F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLDiscoverSearchView.swift; sourceTree = "<group>"; };
 		F75E9B351D86E88A00D11392 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				F7CE3C521D90647900AB3224 /* XDLStatusToolBar.swift */,
 				F7CE3C541D918AC100AB3224 /* XDLRetweetStatusView.swift */,
 				F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */,
+				F75D686C1D99D1B5002FD569 /* XDLRefreshControl.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				F7FB6A371D8C3BDE00F94BC2 /* XDLOAuthViewController.swift in Sources */,
 				F725B9491D856FF200F3556A /* AppDelegate.swift in Sources */,
 				F75E9B4C1D86E88A00D11392 /* View+SnapKit.swift in Sources */,
+				F75D686D1D99D1B5002FD569 /* XDLRefreshControl.swift in Sources */,
 				F75E9B491D86E88A00D11392 /* EdgeInsets.swift in Sources */,
 				F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */,
 				F725B9711D8575D700F3556A /* UIView+IBExtension.swift in Sources */,
