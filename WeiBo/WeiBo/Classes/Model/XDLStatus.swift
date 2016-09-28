@@ -15,7 +15,7 @@ import UIKit
 
 class XDLStatus: NSObject {
     
-    var create_at: String?
+    var created_at: Date?
     
     var id : Int64 = 0
     

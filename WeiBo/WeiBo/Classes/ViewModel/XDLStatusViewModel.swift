@@ -22,8 +22,10 @@ class XDLStatusViewModel: NSObject {
     var comments_count: String?
     // likesCounts
     var attitudes_count: String?
-
+    // dealWith source
     var sourceString: String?
+    // dealWith createtime
+    var createTime : String?
     
     var status:XDLStatus?{
         
@@ -64,14 +66,81 @@ class XDLStatusViewModel: NSObject {
                     let result = source.substring(with: preRange.upperBound..<sufRange.lowerBound)
                     sourceString = "from \(result)"
                 }
-                
-        
             }
         
+         self.createTime = self.calcCreateAtString(date: status?.created_at)
+            
         }
     
     }
+    //MARK: - dealWithCreateTime
     
+    private func calcCreateAtString(date: Date?) -> String?{
+        
+        //dealwith value for nil createTime
+        guard let createTime = date else{
+            
+            return nil
+        }
+        // create time format
+        let formatter = DateFormatter()
+        // get value for current time
+        let currentDate = Date()
+        // create the variable for judge wether is current day
+        let calendar = NSCalendar.current
+        //passing the value of year from the model is current year or not
+        if isDateInThisYear(target: createTime){
+            // wether is current day or not
+            if calendar.isDateInToday(createTime){
+                
+                let result = currentDate.timeIntervalSince(createTime)
+                print(result)
+                
+                if result < 60{
+                   return "1 minutes ago"
+                }else if result < 3600{
+                   return "\(Int(result) / 60) minutes ago"
+                }else{
+                   return "\(Int(result) / 3600) hours ago"
+                }
+            // this time is yesterday
+            }else if calendar.isDateInYesterday(createTime){
+                
+                formatter.dateFormat = "yesterday HH:mm"
+                return formatter.string(from: createTime)
+            }else{
+                
+                formatter.dateFormat = "MM-dd HH:mm"
+                return formatter.string(from: createTime)
+            }
+        
+        }else{
+            // this time is not current year
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter.string(from: createTime)
+            
+        }
+        
+    }
+    
+    // judge the whether is curentTime about year or not from modelstatus
+    
+    private func isDateInThisYear(target: Date) -> Bool{
+        
+            // get currentDate
+            let currentDate = Date()
+            // define target target time variable
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy"
+            // get target and currentTime Year
+            let targetYear = formatter.string(from: target)
+            let currentYear = formatter.string(from: currentDate)
+        
+        return targetYear == currentYear
+    }
+    
+    
+    // dealWith numbers of counts
     private func calCount(count: Int, defaultTitle: String) -> String{
         
         if count == 0{

@@ -27,8 +27,11 @@ class XDLOriginalStatusView: UIView {
             contentLabel.text = statusViewModel?.status?.text
         
             // deal with source
-            
             sourceLabel.text = statusViewModel?.sourceString
+            
+            // deal with createTime
+            createTimeLabel.text = statusViewModel?.createTime
+            //createTimeLabel.text = statusViewModel?.status?.created_at?.description
             
             bottomCons?.uninstall()
             
@@ -73,7 +76,7 @@ class XDLOriginalStatusView: UIView {
         addSubview(iconView)
         addSubview(nameLabel)
         addSubview(memberIconView)
-        addSubview(createTime)
+        addSubview(createTimeLabel)
         addSubview(sourceLabel)
         addSubview(avatarView)
         addSubview(contentLabel)
@@ -96,9 +99,8 @@ class XDLOriginalStatusView: UIView {
             make.left.equalTo(nameLabel.snp_right).offset(XDLStatusCellMargin)
         }
         
-        createTime.snp_makeConstraints { (make) in
+        createTimeLabel.snp_makeConstraints { (make) in
             
-            //make.top.equalTo(nameLabel.snp_bottom).offset(8)
             make.left.equalTo(nameLabel)
             make.bottom.equalTo(iconView)
             
@@ -106,8 +108,8 @@ class XDLOriginalStatusView: UIView {
         
         sourceLabel.snp_makeConstraints { (make) in
             
-            make.left.equalTo(createTime.snp_right).offset(XDLStatusCellMargin)
-            make.top.equalTo(createTime)
+            make.left.equalTo(createTimeLabel.snp_right).offset(XDLStatusCellMargin)
+            make.top.equalTo(createTimeLabel)
         }
         
         avatarView.snp_makeConstraints { (make) in
@@ -131,7 +133,6 @@ class XDLOriginalStatusView: UIView {
         }
         
         self.snp_makeConstraints { (make) in
-         
         self.bottomCons = make.bottom.equalTo(pictureView).offset(XDLStatusCellMargin).constraint
         }
         
@@ -163,11 +164,11 @@ class XDLOriginalStatusView: UIView {
         return memberIconView
     }()
     
-        private lazy var createTime :UILabel = {()-> UILabel in
+        private lazy var createTimeLabel :UILabel = {()-> UILabel in
         
-        let createTime = UILabel(textColor: UIColor.darkGray, fontSize: 12)
-        
-        createTime.text = "time"
+        let createTime = UILabel(textColor: UIColor.orange, fontSize: 12)
+    
+       // createTime.text = "time"
         
         return createTime
     }()
