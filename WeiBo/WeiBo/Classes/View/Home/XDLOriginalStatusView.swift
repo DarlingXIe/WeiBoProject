@@ -26,6 +26,10 @@ class XDLOriginalStatusView: UIView {
             
             contentLabel.text = statusViewModel?.status?.text
         
+            // deal with source
+            
+            sourceLabel.text = statusViewModel?.sourceString
+            
             bottomCons?.uninstall()
             
             if let pic_urls = statusViewModel?.status?.pic_urls, pic_urls.count > 0 {

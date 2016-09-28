@@ -33,7 +33,6 @@ class XDLHomeViewController: XDLVisitorTableViewController {
         setupUI()
     
       //  loadData()
-       
         homeTableViewReload()
         
     }
@@ -63,8 +62,8 @@ class XDLHomeViewController: XDLVisitorTableViewController {
           make.centerX.equalTo(tableView.tableFooterView!).offset(80)
           make.centerY.equalTo(tableView.tableFooterView!)
        }
-        
        tableView.contentInset = UIEdgeInsetsMake(-10, 0, 0, 0)
+        
        //1. using xcode pullDownUI for load new data
        /*
        self.refreshControl = UIRefreshControl()
@@ -76,12 +75,12 @@ class XDLHomeViewController: XDLVisitorTableViewController {
        tableView.addSubview(xdlRefreshControl)
        
        xdlRefreshControl.addTarget(self, action:#selector(homeTableViewReload), for: .valueChanged)
+        
      //  xdlRefreshControl.snp_makeConstraints { (make) in
         
      //  }
        
     }
-    
     internal func homeTableViewReload(){
         
         homeViewModel.loadData(pullUp: pullUpView.isAnimating) { (isSuccess) in
@@ -90,14 +89,16 @@ class XDLHomeViewController: XDLVisitorTableViewController {
                 
                 self.tableView.reloadData()
                 // this bug: if keep the status of pullUpView.isAnimating is true, than can't load the next action for pull cause cannot recall reload the data for tableView
+                self.pullUpView.stopAnimating()
+                
+                self.xdlRefreshControl.endRefreshing()
+                
             }else{
                 print("load error")
-                
             }
-            self.pullUpView.stopAnimating()
             
-            self.xdlRefreshControl.endRefreshing()
         }
+        
         /*
          homeViewModel.loadData { (isSuccess) in
          
@@ -196,7 +197,7 @@ class XDLHomeViewController: XDLVisitorTableViewController {
             
             pullUpView.startAnimating()
             
-            //homeTableViewReload()
+            homeTableViewReload()
         }
     }
     //MARK: - pullUpUI

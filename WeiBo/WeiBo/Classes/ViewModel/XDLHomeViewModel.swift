@@ -24,23 +24,29 @@ class XDLHomeViewModel: NSObject {
         let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
         
         var max_id: Int64 = 0
-        
+        var sinceId: Int64 = 0
         //if pullUp is true, set the value of max_id for the last datemodel, the function request will load the pullUpDate with this max_id
         
         if pullUp{
             
             if let id = statusArray?.last?.status?.id{
                 
-                max_id = id + 1
+                max_id = id - 1
             
             }
+       }else{
+            
+            if let id = statusArray?.first?.status?.id{
+                
+                sinceId = id
+            }
         }
-        
         let parameters = [
         
             "access_token" : XDLUserAccountViewModel.shareModel.access_token ?? " ",
-            "max_id": "\(max_id)"
+            "max_id": "\(max_id)",
             
+            "since_id": "\(sinceId)"
         ]
         
         XDLNetWorkTools.sharedTools.request(method: .Get, urlSting: urlString, parameters: parameters) { (response, error) in
@@ -54,12 +60,12 @@ class XDLHomeViewModel: NSObject {
                 
                 return
             }
-            print("*&*&*&*&*&*&*&*\(dictArray)")
+            //print("*&*&*&*&*&*&*&*\(dictArray)")
             // change the array of stauses with dict to the model of XDLStatus array
             
             let modelArray = NSArray.yy_modelArray(with: XDLStatus.self, json: dictArray) as! [XDLStatus]
             
-            print("*&*&*&*\(modelArray)")
+            //print("*&*&*&*\(modelArray)")
             
             var tempArray = [XDLStatusViewModel]()
             
@@ -78,19 +84,22 @@ class XDLHomeViewModel: NSObject {
             
             // if the first load data, the self.status would be nill and save the first load modelData
             
-            if(self.statusArray == nil){
-                self.statusArray = tempArray
+//            if(self.statusArray == nil){
+//                
+//               self.statusArray = tempArray
+//           }
+           
+            if self.statusArray == nil {
+               self.statusArray = [XDLStatusViewModel]()
             }
-            
+ 
             if pullUp{
                 
                 self.statusArray = self.statusArray! + tempArray
                 
             }else{
             // if next load pullDown......
-                
                 self.statusArray = tempArray + self.statusArray!
-                
             }
             
            //completion(true)

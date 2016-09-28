@@ -78,6 +78,8 @@ class XDLStatusTableViewCell: UITableViewCell {
     
     private func setupUI(){
         
+        selectionStyle = .none
+        
         contentView.backgroundColor = UIColor.gray
         
         contentView.addSubview(OriginalStatusView)

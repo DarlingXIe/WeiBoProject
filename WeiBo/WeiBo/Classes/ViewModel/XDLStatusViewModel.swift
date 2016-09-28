@@ -23,6 +23,8 @@ class XDLStatusViewModel: NSObject {
     // likesCounts
     var attitudes_count: String?
 
+    var sourceString: String?
+    
     var status:XDLStatus?{
         
         didSet{
@@ -55,8 +57,19 @@ class XDLStatusViewModel: NSObject {
         
         attitudes_count = calCount(count: (status?.attitudes_count) ?? 0, defaultTitle: "like")
             
+             if let source = status?.source{
+                
+                if let preRange = source.range(of: "\">"), let sufRange = source.range(of: "</"){
+                    
+                    let result = source.substring(with: preRange.upperBound..<sufRange.lowerBound)
+                    sourceString = "from \(result)"
+                }
+                
+        
+            }
+        
         }
-
+    
     }
     
     private func calCount(count: Int, defaultTitle: String) -> String{

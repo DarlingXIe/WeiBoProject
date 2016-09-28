@@ -41,35 +41,38 @@ class XDLRefreshControl: UIControl{
                 UIView.animate(withDuration: 0.25, animations: { 
                     self.arrowImage.transform = CGAffineTransform.identity
                 })
-                
                 self.label.text = "preparing loading.........."
                 
-               // if oldValue
-                
-                
+               // if state is refreshState, so change the contraints for tableView
+                if oldValue == .refreshing {
+                    
+                UIView.animate(withDuration: 0.25, animations: {
+                    var inset = self.scrollView!.contentInset
+                    inset.top -= XDLRefreshControlH
+                    self.scrollView!.contentInset = inset
+                })
+            }
+
             case .refreshing:
-                
-                //arrowImage.isHidden = true
-               // indicatorView.startAnimating()
+                arrowImage.isHidden = true
+                indicatorView.startAnimating()
                 self.label.text = "loading..........."
-                /*
                 UIView.animate(withDuration: 0.25, animations: { 
                     var inset = self.scrollView!.contentInset
                     inset.top += XDLRefreshControlH
                     self.scrollView!.contentInset = inset
                 })
-                sendActions(for: UIControlEvents.valueChanged)
-                */
+                
+               sendActions(for: UIControlEvents.valueChanged)
             }
         }
     }
     
     // endingfunction
-
     func endRefreshing(){
         
-        refreshState = .normal
-        
+        self.refreshState = .normal
+    
     }
     
     //MARK: - 1. define the observer value
@@ -104,27 +107,22 @@ class XDLRefreshControl: UIControl{
         let contentInsetTop = self.scrollView!.contentInset.top
         let conditionValue: CGFloat = -contentInsetTop - XDLRefreshControlH
         
-        if self.scrollView!.isDragging{
+        if scrollView!.isDragging{
             
-            if refreshState == .normal && self.scrollView!.contentOffset.y < conditionValue{
+            if refreshState == .normal && self.scrollView!.contentOffset.y < conditionValue {
                 print("refreshingState")
                 refreshState = .pulling
+                
             }else if refreshState == .pulling && self.scrollView!.contentOffset.y >= conditionValue {
                 print("pullingState")
-                self.refreshState = .normal
+                refreshState = .normal
             }
             
          }else{
-            
             if refreshState == .pulling{
-                self.refreshState = .refreshing
+               refreshState = .refreshing
             }
-        
         }
-        
-        
-               
-        
     }
     
     //MARK: - 4. remove the observer
@@ -154,7 +152,7 @@ class XDLRefreshControl: UIControl{
         self.addSubview(indicatorView)
 
         arrowImage.snp_makeConstraints { (make) in
-            make.centerX.equalTo(self).offset(30)
+            make.centerX.equalTo(self)
             make.centerY.equalTo(self)
         }
         
@@ -176,15 +174,13 @@ class XDLRefreshControl: UIControl{
          let indicatorView = UIActivityIndicatorView()
         
          indicatorView.color = UIColor.gray
-        
+    
          return indicatorView
     }()
     
     private lazy var arrowImage :UIImageView = {()-> UIImageView in
         
         let arrowImage = UIImageView(image: UIImage(named: "tableview_pull_refresh"))
-        
-        //label.textColor = UIcolor.red
         
         return arrowImage
     }()
