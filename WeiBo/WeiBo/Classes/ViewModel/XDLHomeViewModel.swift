@@ -19,7 +19,7 @@ class XDLHomeViewModel: NSObject {
     static let shareModel:XDLHomeViewModel = XDLHomeViewModel()
     
     
-    func loadData(pullUp: Bool, completion:@escaping (Bool)->()){
+    func loadData(pullUp: Bool, completion:@escaping (Bool,Int)->()){
         
         let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
         
@@ -114,7 +114,7 @@ class XDLHomeViewModel: NSObject {
         
     }
 
-    private func cacheSingleImage(status:[XDLStatusViewModel], completion:@escaping (Bool)->()){
+    private func cacheSingleImage(status:[XDLStatusViewModel], completion:@escaping (Bool,Int)->()){
         // group to download images when it's completed, recall the block for inform controller 
         let group = DispatchGroup.init()
         
@@ -144,7 +144,7 @@ class XDLHomeViewModel: NSObject {
             
             group.notify(queue: DispatchQueue.main, execute: { 
                 print("download all pics")
-                completion(true)
+                completion(true,status.count)
             })
         }
         

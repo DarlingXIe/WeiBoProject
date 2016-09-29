@@ -79,24 +79,35 @@ class XDLHomeViewController: XDLVisitorTableViewController {
      //  xdlRefreshControl.snp_makeConstraints { (make) in
         
      //  }
+        
+       self.navigationController?.view.insertSubview(pullDownTipView, belowSubview: self.navigationController!.navigationBar)
+        
+       pullDownTipView.frame.origin.y = self.navigationController!.navigationBar.frame.maxY - self.pullDownTipView.frame.size.height
        
     }
     internal func homeTableViewReload(){
         
-        homeViewModel.loadData(pullUp: pullUpView.isAnimating) { (isSuccess) in
+        homeViewModel.loadData(pullUp: pullUpView.isAnimating) { (isSuccess,count) in
             
             if isSuccess {
                 
                 self.tableView.reloadData()
                 // this bug: if keep the status of pullUpView.isAnimating is true, than can't load the next action for pull cause cannot recall reload the data for tableView
-                self.pullUpView.stopAnimating()
-                
-                self.xdlRefreshControl.endRefreshing()
-                
             }else{
                 print("load error")
             }
+            print("*******load \(count) messages*******")
             
+            if !self.pullUpView.isAnimating{
+            
+                self.pullDownTipView(count: count)
+            
+            }
+        
+            self.pullUpView.stopAnimating()
+            
+            self.xdlRefreshControl.endRefreshing()
+        
         }
         
         /*
@@ -125,6 +136,32 @@ class XDLHomeViewController: XDLVisitorTableViewController {
         
             self.navigationController?.pushViewController(vc, animated: true)
     
+    }
+    
+    
+    private func pullDownTipView(count : Int){
+        
+        if pullDownTipView.isHidden == false{
+            return
+        }
+        
+        pullDownTipView.isHidden = false
+        
+        let str = count == 0 ? "no new nessages" : "load \(count) messages"
+        
+        pullDownTipView.text = str
+        
+        UIView.animate(withDuration: 1, animations: {
+            
+            self.pullDownTipView.transform = CGAffineTransform.init(translationX: 0, y: self.pullDownTipView.frame.size.height)
+            
+            }) { (_) in
+                UIView.animate(withDuration: 1, delay: 1, options: [], animations: { 
+                    self.pullDownTipView.transform = CGAffineTransform.identity
+                    }, completion: { (_) in
+                        self.pullDownTipView.isHidden = true
+                })
+        }
     }
     
     /*
@@ -232,6 +269,21 @@ class XDLHomeViewController: XDLVisitorTableViewController {
         //label.textColor = UIcolor.red
         
         return xdlRefreshControl
+    }()
+
+   private lazy var pullDownTipView :UILabel = {()-> UILabel in
+        
+        let label = UILabel(textColor: UIColor.lightGray, fontSize: 12)
+    
+        label.backgroundColor = UIColor.black
+    
+        label.textAlignment = .center
+        //label.textColor = UIcolor.red
+        label.isHidden = true
+    
+        label.frame.size = CGSize(width: XDLScreenW, height: 35)
+    
+        return label
     }()
 
     
