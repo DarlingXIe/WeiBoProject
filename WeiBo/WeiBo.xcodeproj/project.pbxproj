@@ -25,6 +25,8 @@
 		F72F2E091D930A5100F952DB /* XDLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */; };
 		F75D68691D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */; };
 		F75D686D1D99D1B5002FD569 /* XDLRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D686C1D99D1B5002FD569 /* XDLRefreshControl.swift */; };
+		F75D68721D9CA79B002FD569 /* XDLComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D68711D9CA79B002FD569 /* XDLComposeView.swift */; };
+		F75D68741D9CA7AE002FD569 /* XDLComposeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D68731D9CA7AE002FD569 /* XDLComposeButton.swift */; };
 		F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */; };
 		F75E9B321D86D6C400D11392 /* XDLDiscoverSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */; };
 		F75E9B421D86E88A00D11392 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B351D86E88A00D11392 /* Constraint.swift */; };
@@ -82,6 +84,8 @@
 		F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureView.swift; sourceTree = "<group>"; };
 		F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg; sourceTree = "<group>"; };
 		F75D686C1D99D1B5002FD569 /* XDLRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLRefreshControl.swift; sourceTree = "<group>"; };
+		F75D68711D9CA79B002FD569 /* XDLComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLComposeView.swift; sourceTree = "<group>"; };
+		F75D68731D9CA7AE002FD569 /* XDLComposeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLComposeButton.swift; sourceTree = "<group>"; };
 		F75E9B2F1D86D59500D11392 /* XDLDiscoverSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLDiscoverSearchView.xib; sourceTree = "<group>"; };
 		F75E9B311D86D6C400D11392 /* XDLDiscoverSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLDiscoverSearchView.swift; sourceTree = "<group>"; };
 		F75E9B351D86E88A00D11392 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 		F725B95F1D85715E00F3556A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F75D686E1D9CA71C002FD569 /* Compose */,
 				F7FB6A331D8C351800F94BC2 /* OAuth */,
 				F725B9601D85715E00F3556A /* Discover */,
 				F725B9611D85715E00F3556A /* Home */,
@@ -383,6 +388,34 @@
 			children = (
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		F75D686E1D9CA71C002FD569 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				F75D686F1D9CA71C002FD569 /* Controller */,
+				F75D68701D9CA71C002FD569 /* View */,
+			);
+			name = Compose;
+			path = compose;
+			sourceTree = "<group>";
+		};
+		F75D686F1D9CA71C002FD569 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			path = controller;
+			sourceTree = "<group>";
+		};
+		F75D68701D9CA71C002FD569 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F75D68711D9CA79B002FD569 /* XDLComposeView.swift */,
+				F75D68731D9CA7AE002FD569 /* XDLComposeButton.swift */,
+			);
+			name = View;
+			path = view;
 			sourceTree = "<group>";
 		};
 		F75E9B331D86E88A00D11392 /* ThirdLib */ = {
@@ -579,10 +612,12 @@
 				F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */,
 				F75E9B461D86E88A00D11392 /* ConstraintMaker.swift in Sources */,
 				F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */,
+				F75D68741D9CA7AE002FD569 /* XDLComposeButton.swift in Sources */,
 				F72F2E051D93077200F952DB /* XDLStatusPictureInfo.swift in Sources */,
 				F75E9B471D86E88A00D11392 /* ConstraintRelation.swift in Sources */,
 				F7FB6A831D8D9BD200F94BC2 /* XDLNetWorkTools.swift in Sources */,
 				F72F2E091D930A5100F952DB /* XDLStatusPictureView.swift in Sources */,
+				F75D68721D9CA79B002FD569 /* XDLComposeView.swift in Sources */,
 				F7FB6A7F1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift in Sources */,
 				F725B96B1D85727F00F3556A /* XDLNavigationViewController.swift in Sources */,
 				F75E9B4F1D86E92F00D11392 /* XDLVisitorView.swift in Sources */,

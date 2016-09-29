@@ -124,7 +124,6 @@ class XDLHomeViewController: XDLVisitorTableViewController {
          }
          */
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -152,9 +151,7 @@ class XDLHomeViewController: XDLVisitorTableViewController {
         pullDownTipView.text = str
         
         UIView.animate(withDuration: 1, animations: {
-            
             self.pullDownTipView.transform = CGAffineTransform.init(translationX: 0, y: self.pullDownTipView.frame.size.height)
-            
             }) { (_) in
                 UIView.animate(withDuration: 1, delay: 1, options: [], animations: { 
                     self.pullDownTipView.transform = CGAffineTransform.identity
