@@ -13,8 +13,17 @@
  
  */
 import UIKit
+import pop
 
 class XDLComposeView: UIView {
+
+    // define the array with button
+    lazy var buttons :[UIButton] = {()-> [UIButton] in
+        
+        let button = [UIButton]()
+        //label.textColor = UIcolor.red
+        return button
+    }()
 
     
     override init(frame: CGRect){
@@ -64,12 +73,16 @@ class XDLComposeView: UIView {
         
         for i in 0..<array.count{
             //create Button 
-            let button = XDLComposeButton(textColor: UIColor.lightGray, fontSize: 14)
+            let button = XDLComposeButton(textColor: UIColor.darkGray, fontSize: 14)
             //info about picture and tilte
             let dict = array[i] as![String : String]
             //buttoninfor with image and title from the dict
             button.setImage(UIImage(named:dict["icon"]!), for: .normal)
+            print(dict["icon"])
+            
             button.setTitle(dict["title"], for: .normal)
+            //add width and height for buttons
+            button.frame.size = CGSize(width: itemW, height: itemH)
             //col two tows and three cols
             let col = i % 3
             let row = i / 3
@@ -81,14 +94,63 @@ class XDLComposeView: UIView {
             button.frame.origin = CGPoint(x: x, y: y)
             
             addSubview(button)
+            
+            buttons.append(button)
         }
     
     }
     
+    //MARK: - to show this XDLComposeView
+    
+    func show(){
+        
+        let window = UIApplication.shared.keyWindow
+        
+        window?.addSubview(self)
+        
+        for(index,value) in buttons.enumerated(){
+            
+            buttonAnimation(index: index, button: value, isPullUp: true)
+            
+        }
+    }
+    
+    //MARK: - setting the buttons animation
+    func buttonAnimation(index: Int, button: UIButton, isPullUp:Bool){
+        
+        let anim = POPSpringAnimation(propertyNamed: kPOPViewCenter)
+        
+        anim?.toValue = NSValue.init(cgPoint: CGPoint(x: button.center.x, y: button.center.y + (isPullUp ? -300 : 300)))
+        
+        anim?.springBounciness = 12
+        
+        anim?.springSpeed = 10
+        
+        if isPullUp{
+            anim?.beginTime = CACurrentMediaTime() + Double(index)*0.25
+        }else{
+            anim?.beginTime = CACurrentMediaTime()
+        }
+        
+        button.pop_add(anim, forKey: nil)
+        
+    }
+    
     //MARK: - click screen to remove view
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.removeFromSuperview()
+        
+        for (index, button) in buttons.reversed().enumerated(){
+            
+            buttonAnimation(index: index, button: button, isPullUp: false)
+            
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            self.removeFromSuperview()
+        }
+        
     }
+
     
     //MARK: - lazy var to create the UI
     

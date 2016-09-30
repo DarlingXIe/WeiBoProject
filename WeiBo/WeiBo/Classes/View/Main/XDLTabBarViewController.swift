@@ -18,11 +18,10 @@ class XDLTabBarViewController: UITabBarController {
             print("-----ClickComposeButton\(self)")
             
             let v = XDLComposeView()
-            
-            let window = UIApplication.shared.keyWindow
-            
-            window?.addSubview(v)
-            
+           UIView.animate(withDuration: 5, animations: {
+                v.show()
+           })
+           
         }
     
         let tabBar = XDLTabBar()
