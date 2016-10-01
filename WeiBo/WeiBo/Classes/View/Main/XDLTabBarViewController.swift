@@ -19,7 +19,7 @@ class XDLTabBarViewController: UITabBarController {
             
             let v = XDLComposeView()
            UIView.animate(withDuration: 5, animations: {
-                v.show()
+                v.show(target: self!)
            })
            
         }

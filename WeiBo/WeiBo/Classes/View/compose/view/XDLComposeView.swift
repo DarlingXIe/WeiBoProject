@@ -17,6 +17,9 @@ import pop
 
 class XDLComposeView: UIView {
 
+    //define the controller from outside
+    var target : UIViewController?
+    
     // define the array with button
     lazy var buttons :[UIButton] = {()-> [UIButton] in
         
@@ -25,6 +28,7 @@ class XDLComposeView: UIView {
         return button
     }()
 
+    var infoArray: NSArray?
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -43,6 +47,7 @@ class XDLComposeView: UIView {
         frame.size = UIScreen.main.bounds.size
         
         addSubview(bgImage)
+        
         addSubview(logoLabel)
         
         bgImage.snp_makeConstraints { (make) in
@@ -56,7 +61,6 @@ class XDLComposeView: UIView {
         addChildButton()
     
     }
-    
     //MARK: - func addChildButtons()
     func addChildButton(){
         
@@ -70,15 +74,18 @@ class XDLComposeView: UIView {
         let path = Bundle.main.path(forResource: "compose.plist", ofType: nil)!
         //array from plist
         let array = NSArray(contentsOfFile: path)!
-        
+        self.infoArray = array
         for i in 0..<array.count{
             //create Button 
             let button = XDLComposeButton(textColor: UIColor.darkGray, fontSize: 14)
+            
+            button.addTarget(self, action: #selector(childButtonClick(button:)), for: .touchUpInside)
             //info about picture and tilte
-            let dict = array[i] as![String : String]
+            let dict = array[i]as![String : String]
             //buttoninfor with image and title from the dict
-            button.setImage(UIImage(named:dict["icon"]!), for: .normal)
-            print(dict["icon"])
+           button.setImage(UIImage(named:dict["icon"]!), for: .normal)
+            
+           //button.setImage(UIImage(named: "tabbar_compose_weibo"), for: UIControlState.normal)
             
             button.setTitle(dict["title"], for: .normal)
             //add width and height for buttons
@@ -96,17 +103,19 @@ class XDLComposeView: UIView {
             addSubview(button)
             
             buttons.append(button)
+            
         }
     
     }
     
     //MARK: - to show this XDLComposeView
     
-    func show(){
+    func show(target: UIViewController){
         
-        let window = UIApplication.shared.keyWindow
-        
-        window?.addSubview(self)
+        self.target = target
+        //let window = UIApplication.shared.keyWindow
+        //window?.addSubview(self)
+        self.target?.view.addSubview(self)
         
         for(index,value) in buttons.enumerated(){
             
@@ -131,9 +140,7 @@ class XDLComposeView: UIView {
         }else{
             anim?.beginTime = CACurrentMediaTime()
         }
-        
         button.pop_add(anim, forKey: nil)
-        
     }
     
     //MARK: - click screen to remove view
@@ -152,6 +159,42 @@ class XDLComposeView: UIView {
     }
 
     
+    //MARK: - clickButton
+    
+   @objc private func childButtonClick(button:UIButton){
+    
+    UIView.animate(withDuration: 1, animations: { 
+        for value in self.buttons{
+            
+            if button == value{
+                value.transform = CGAffineTransform.init(scaleX: 2, y: 2)
+            }else{
+                value.transform = CGAffineTransform.init(scaleX: 0.2, y: 0.2)
+            }
+            value.alpha = 0.1
+        }
+
+        }) { (_) in
+            print("-----controller")
+            let index = self.buttons.index(of: button) ?? 0
+            
+            let dict = self.infoArray![index] as![String : String]
+            
+            if let name = dict["class"]{
+                
+                //let result = NSStringFromClass(XDLComposeViewController.self)
+                
+                let type = NSClassFromString(name)! as! UIViewController.Type
+                
+                let vc = type.init()
+                
+                self.target?.present(XDLNavigationViewController(rootViewController: vc), animated: true, completion: {
+                    self.removeFromSuperview()
+                })
+            }
+        }
+    }
+
     //MARK: - lazy var to create the UI
     
     private lazy var bgImage :UIImageView = {()-> UIImageView in

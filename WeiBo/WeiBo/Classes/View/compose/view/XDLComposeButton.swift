@@ -9,7 +9,15 @@
 import UIKit
 
 class XDLComposeButton: UIButton {
-    
+
+    override var isHighlighted: Bool {
+        set {
+            
+        }
+        get {
+            return false
+        }
+    }
     override init(frame:CGRect)
     {
         super.init(frame: frame)
@@ -30,13 +38,14 @@ class XDLComposeButton: UIButton {
     //MARK: - layout imageView and titleLabel with frame
     override func layoutSubviews() {
         
+        super.layoutSubviews()
+        
         let width = self.frame.size.width
         let height = self.frame.size.height
         
-        imageView?.frame = CGRect(x: 0, y: 0, width: width, height: height)
-        titleLabel?.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        imageView?.frame = CGRect(x: 0, y: 0, width: width, height: width)
+        titleLabel?.frame = CGRect(x: 0, y: width, width: width, height: height - width)
         
     }
-    
 
 }
