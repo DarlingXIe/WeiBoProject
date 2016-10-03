@@ -13,25 +13,28 @@ class XDLTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let composeClosure = {[weak self] in
-        
-            print("-----ClickComposeButton\(self)")
-            
-            let v = XDLComposeView()
-           UIView.animate(withDuration: 5, animations: {
-                v.show(target: self!)
-           })
-           
-        }
-    
         let tabBar = XDLTabBar()
         
         self.setValue(tabBar, forKey: "tabBar")
-        
+
+        if XDLUserAccountViewModel.shareModel.userlogin{
+            
+            let composeClosure = {[weak self] in
+                
+                print("-----ClickComposeButton\(self)")
+                
+                let v = XDLComposeView()
+                UIView.animate(withDuration: 5, animations: {
+                    v.show(target: self!)
+                })
+            }
+             tabBar.composeButtonClosure = composeClosure
+        }else{
+            
+             tabBar.composeButton.isEnabled = false
+        }
+    
         addChildViewController()
-       
-        tabBar.composeButtonClosure = composeClosure
-        
     }
     
     func addChildViewController(){
