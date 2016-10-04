@@ -26,5 +26,29 @@ extension UIImage{
         //reture image
         return image
     }
-
+    
+    func scaleTo(width: CGFloat) -> UIImage{
+        
+        if self.size.width < width{
+        
+            return self
+        }
+        //100 200
+        //50
+        let height = self.size.height * (width / self.size.width)
+        
+        let rect = CGRect(x: 0, y: 0, width: width, height: height)
+        
+        UIGraphicsBeginImageContext(rect.size)
+        
+        self.draw(in: rect)
+        
+        let result = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        return result
+    }
+    
+    
 }

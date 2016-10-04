@@ -95,6 +95,23 @@ class XDLComposeViewController: UIViewController {
     
         return composeToolBar
     }()
+    
+    internal lazy var pictureView :XDLComposePictureView = {()-> XDLComposePictureView in
+        
+        let view = XDLComposePictureView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+        
+        view.backgroundColor = UIColor.white
+        
+        //label.textColor = UIcolor.red
+        view.addImageClosure = {[weak self] in
+            print("click add button")
+            self?.selectPicture()
+        }
+        
+        return view
+    }()
+
+    var image: UIImage?
 
 }
 
@@ -131,6 +148,10 @@ extension XDLComposeViewController: UIImagePickerControllerDelegate, UINavigatio
         
         view.addSubview(self.composeToolBar)
         
+        textView.addSubview(pictureView)
+        
+        
+        
         //MARK: - judge buttonsType
         self.composeToolBar.clickButtonClosure = {[weak self] (type) ->() in
         
@@ -159,8 +180,14 @@ extension XDLComposeViewController: UIImagePickerControllerDelegate, UINavigatio
             make.bottom.left.right.equalTo(self.view)
             make.height.equalTo(44)
         }
+        
+        pictureView.snp_makeConstraints { (make) in
+            make.top.equalTo(textView).offset(100)
+            make.left.equalTo(textView).offset(10)
+            make.width.equalTo(textView.snp_width).offset(-20)
+            make.height.equalTo(textView.snp_height)
+        }
     }
-    
     //MARK: - selectButtonsFunc
     internal func selectPicture(){
        
@@ -171,9 +198,9 @@ extension XDLComposeViewController: UIImagePickerControllerDelegate, UINavigatio
         // UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice)
         
         // 判断某个数据类型是否可用
-        //        if UIImagePickerController.isSourceTypeAvailable(.camera) == false{
-        //            print("照相机不可用")
-        //        }
+        // if UIImagePickerController.isSourceTypeAvailable(.camera) == false{
+        //          print("照相机不可用")
+        // }
         vc.sourceType = .photoLibrary
         
         vc.allowsEditing = true
@@ -194,6 +221,18 @@ extension XDLComposeViewController: UIImagePickerControllerDelegate, UINavigatio
     }
     internal func selectAdd(){
         print("click selectAdd button")
+    }
+    
+    //MARK: -achieveDelegateFunctionToSelectImagePicker
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        let img = image.scaleTo(width: 500)
+        pictureView.addImage(image: img)
+        let data = UIImagePNGRepresentation(img)!
+        (data as NSData).write(toFile: "/Users/DalinXie/Desktop/bbbb.png", atomically: true)
+        picker.dismiss(animated: true, completion: nil)
     }
     
 }
