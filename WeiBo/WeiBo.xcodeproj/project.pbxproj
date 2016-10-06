@@ -51,6 +51,9 @@
 		F75E9B4F1D86E92F00D11392 /* XDLVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B4E1D86E92F00D11392 /* XDLVisitorView.swift */; };
 		F75E9B511D86E95700D11392 /* XDLVisitorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B501D86E95700D11392 /* XDLVisitorTableViewController.swift */; };
 		F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */; };
+		F76E3BB11DA6C661002A67D0 /* XDLEmotionKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E3BB01DA6C661002A67D0 /* XDLEmotionKeyBoard.swift */; };
+		F76E3BB31DA6D8FC002A67D0 /* XDLEmotionToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E3BB21DA6D8FC002A67D0 /* XDLEmotionToolBar.swift */; };
+		F76E3BB51DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E3BB41DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift */; };
 		F78BEA641D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78BEA631D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift */; };
 		F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */; };
 		F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */; };
@@ -120,6 +123,9 @@
 		F75E9B4E1D86E92F00D11392 /* XDLVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLVisitorView.swift; sourceTree = "<group>"; };
 		F75E9B501D86E95700D11392 /* XDLVisitorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLVisitorTableViewController.swift; sourceTree = "<group>"; };
 		F75E9B521D870E7300D11392 /* UIView+ ConvenienceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ ConvenienceExtension.swift"; sourceTree = "<group>"; };
+		F76E3BB01DA6C661002A67D0 /* XDLEmotionKeyBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotionKeyBoard.swift; sourceTree = "<group>"; };
+		F76E3BB21DA6D8FC002A67D0 /* XDLEmotionToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotionToolBar.swift; sourceTree = "<group>"; };
+		F76E3BB41DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		F78BEA631D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLWelcomViewController.swift; sourceTree = "<group>"; };
 		F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLCommonTools.swift; sourceTree = "<group>"; };
@@ -431,6 +437,7 @@
 		F75D68701D9CA71C002FD569 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F76E3BAF1DA6C634002A67D0 /* emotionKeyBoard */,
 				F75D68711D9CA79B002FD569 /* XDLComposeView.swift */,
 				F75D68731D9CA7AE002FD569 /* XDLComposeButton.swift */,
 				F75D68861DA04EFE002FD569 /* XDLTextView.swift */,
@@ -477,6 +484,16 @@
 				F75E9B411D86E88A00D11392 /* ViewController+SnapKit.swift */,
 			);
 			path = "SnapKit修改版";
+			sourceTree = "<group>";
+		};
+		F76E3BAF1DA6C634002A67D0 /* emotionKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				F76E3BB01DA6C661002A67D0 /* XDLEmotionKeyBoard.swift */,
+				F76E3BB21DA6D8FC002A67D0 /* XDLEmotionToolBar.swift */,
+				F76E3BB41DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift */,
+			);
+			path = emotionKeyBoard;
 			sourceTree = "<group>";
 		};
 		F7FB6A331D8C351800F94BC2 /* OAuth */ = {
@@ -639,6 +656,7 @@
 				F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */,
 				F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */,
 				F75D68871DA04EFE002FD569 /* XDLTextView.swift in Sources */,
+				F76E3BB11DA6C661002A67D0 /* XDLEmotionKeyBoard.swift in Sources */,
 				F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */,
 				F7CE3C491D8F07AD00AB3224 /* XDLStatusTableViewCell.swift in Sources */,
 				F7CE3C531D90647900AB3224 /* XDLStatusToolBar.swift in Sources */,
@@ -664,6 +682,7 @@
 				F75E9B431D86E88A00D11392 /* ConstraintAttributes.swift in Sources */,
 				F7FB6A811D8D96DE00F94BC2 /* XDLUserAccount.swift in Sources */,
 				F725B9691D85726900F3556A /* XDLTabBarViewController.swift in Sources */,
+				F76E3BB51DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift in Sources */,
 				F75E9B4B1D86E88A00D11392 /* SnapKit.swift in Sources */,
 				F75E9B481D86E88A00D11392 /* Debugging.swift in Sources */,
 				F75E9B4D1D86E88A00D11392 /* ViewController+SnapKit.swift in Sources */,
@@ -673,6 +692,7 @@
 				F725B96D1D85735900F3556A /* XDLTempViewController.swift in Sources */,
 				F7CE3C4D1D8F318700AB3224 /* XDLStatusViewModel.swift in Sources */,
 				F7CE3C511D903EF500AB3224 /* XDLUsers.swift in Sources */,
+				F76E3BB31DA6D8FC002A67D0 /* XDLEmotionToolBar.swift in Sources */,
 				F75E9B421D86E88A00D11392 /* Constraint.swift in Sources */,
 				F75E9B441D86E88A00D11392 /* ConstraintDescription.swift in Sources */,
 			);

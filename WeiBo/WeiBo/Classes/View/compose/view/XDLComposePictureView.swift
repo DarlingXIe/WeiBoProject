@@ -47,7 +47,7 @@ class XDLComposePictureView: UICollectionView {
         }
     }
 
-//MARK: - 3. setup size of item for collectionView
+//MARK: - 2. setup size of item for collectionView
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -66,7 +66,7 @@ class XDLComposePictureView: UICollectionView {
     }
     
 }
-//MARK: - 4.Load Image Data to cell.image
+//MARK: - 3.Load Image Data to cell.image
 
 //extension XDLComposePictureView: UICollectionViewDelegate{
 //    
@@ -152,7 +152,7 @@ extension XDLComposePictureView: UICollectionViewDataSource, UICollectionViewDel
 
 
 
-//MARK: - 2.setupUI for cells and register for cells
+//MARK: - 4.setupUI for cells and register for cells
 
 class XDLComposePictureViewCell:UICollectionViewCell{
     
@@ -161,14 +161,12 @@ class XDLComposePictureViewCell:UICollectionViewCell{
     var image: UIImage?{
         
         didSet{
-            
             if image == nil{
                 imageView.image = UIImage(named: "compose_pic_add")
                 imageView.highlightedImage = UIImage(named: "compose_pic_add_highlighted")
             }else{
                 imageView.image = image
                 imageView.highlightedImage = image
-            
             }
                 deleteButton.isHidden = image == nil
         }

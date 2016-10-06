@@ -14,6 +14,28 @@ class XDLComposeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupUI()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChangeFrame(noti:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+        }
+    
+        deinit {
+            NotificationCenter.default.removeObserver(self)
+        }
+    
+    @objc private func keyBoardWillChangeFrame(noti: NSNotification){
+        
+        let frame = (noti.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        let duration = (noti.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        print("键盘的最终的位置\(frame)")
+        
+        composeToolBar.snp_updateConstraints { (make) in
+            make.bottom.equalTo(self.view).offset(frame.origin.y - XDLScreenH)
+        }
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -111,6 +133,16 @@ class XDLComposeViewController: UIViewController {
         return view
     }()
 
+    internal lazy var emotionKeyBorad :XDLEmotionKeyBoard = {()-> XDLEmotionKeyBoard in
+        
+         let emotionKeyBorad = XDLEmotionKeyBoard()
+        
+        emotionKeyBorad.frame.size = CGSize(width: XDLScreenW, height: 216)
+        
+        return emotionKeyBorad
+        
+    }()
+    
     var image: UIImage?
 
 }
@@ -187,6 +219,8 @@ extension XDLComposeViewController: UIImagePickerControllerDelegate, UINavigatio
             make.width.equalTo(textView.snp_width).offset(-20)
             make.height.equalTo(textView.snp_height)
         }
+        
+        
     }
     //MARK: - selectButtonsFunc
     internal func selectPicture(){
@@ -218,7 +252,22 @@ extension XDLComposeViewController: UIImagePickerControllerDelegate, UINavigatio
     }
     internal func selectEmotion(){
         print("click selectEmotion button")
+        
+        if textView.inputView == nil{
+            textView.inputView = emotionKeyBorad
+        }else{
+            textView.inputView = nil
+        }
+        textView.reloadInputViews()
+        
+        if !textView.isFirstResponder{
+            textView.becomeFirstResponder()
+        }
+        
+        composeToolBar.isSystemKeyBorad = textView.inputView == nil
+        
     }
+    
     internal func selectAdd(){
         print("click selectAdd button")
     }
@@ -227,7 +276,7 @@ extension XDLComposeViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
+        //saving the memory for load images from devices. to shrink the images
         let img = image.scaleTo(width: 500)
         pictureView.addImage(image: img)
         let data = UIImagePNGRepresentation(img)!

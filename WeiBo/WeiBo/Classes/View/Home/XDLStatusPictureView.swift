@@ -88,7 +88,6 @@ class XDLStatusPictureView: UICollectionView{
                     }
                 }
                 
-                
                 let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
                 
                 layout.itemSize = result

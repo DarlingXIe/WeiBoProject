@@ -17,6 +17,24 @@ class XDLComposeToolBar: UIView {
 
     var clickButtonClosure: ((ComposeToolBarButtonType)->())?
     
+    var isSystemKeyBorad: Bool = true{
+            didSet{
+                
+                let button = self.viewWithTag(3) as! UIButton
+                
+                var imageNamed = "compose_keyboardbutton_background"
+                
+                if isSystemKeyBorad {
+                    
+                    imageNamed = "compose_emoticonbutton_background"
+                    
+                }
+                button.setImage(UIImage(named:imageNamed), for: .normal)
+                button.setImage(UIImage(named:"\(imageNamed)_highlighted"), for: .highlighted)
+        }
+   }
+    
+    
     override init(frame:CGRect)
     {
         super.init(frame: frame)
