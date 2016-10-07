@@ -10,6 +10,15 @@ import UIKit
 
 class XDLEmotionCollectionViewCell: UICollectionViewCell {
     
+    var emotions : [XDLEmotion]?{
+        
+        didSet{
+            print(emotions)
+        //MARK: add buttons for each cell
+            
+        }
+    
+    }
     
     var indexpPath: IndexPath?{
         

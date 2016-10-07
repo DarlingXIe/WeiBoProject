@@ -54,6 +54,9 @@
 		F76E3BB11DA6C661002A67D0 /* XDLEmotionKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E3BB01DA6C661002A67D0 /* XDLEmotionKeyBoard.swift */; };
 		F76E3BB31DA6D8FC002A67D0 /* XDLEmotionToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E3BB21DA6D8FC002A67D0 /* XDLEmotionToolBar.swift */; };
 		F76E3BB51DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E3BB41DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift */; };
+		F76E3BB71DA72981002A67D0 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F76E3BB61DA72981002A67D0 /* Emoticons.bundle */; };
+		F76E3BB91DA73451002A67D0 /* XDLEmotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E3BB81DA73451002A67D0 /* XDLEmotionViewModel.swift */; };
+		F76E3BBB1DA734DA002A67D0 /* XDLEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E3BBA1DA734DA002A67D0 /* XDLEmotion.swift */; };
 		F78BEA641D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78BEA631D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift */; };
 		F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */; };
 		F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */; };
@@ -126,6 +129,9 @@
 		F76E3BB01DA6C661002A67D0 /* XDLEmotionKeyBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotionKeyBoard.swift; sourceTree = "<group>"; };
 		F76E3BB21DA6D8FC002A67D0 /* XDLEmotionToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotionToolBar.swift; sourceTree = "<group>"; };
 		F76E3BB41DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		F76E3BB61DA72981002A67D0 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		F76E3BB81DA73451002A67D0 /* XDLEmotionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotionViewModel.swift; sourceTree = "<group>"; };
+		F76E3BBA1DA734DA002A67D0 /* XDLEmotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotion.swift; sourceTree = "<group>"; };
 		F78BEA631D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLWelcomViewController.swift; sourceTree = "<group>"; };
 		F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLCommonTools.swift; sourceTree = "<group>"; };
@@ -223,6 +229,7 @@
 				F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */,
 				F7CE3C501D903EF500AB3224 /* XDLUsers.swift */,
 				F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */,
+				F76E3BBA1DA734DA002A67D0 /* XDLEmotion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +330,7 @@
 				F7FB6A7E1D8C890F00F94BC2 /* XDLUserAccountViewModel.swift */,
 				F7CE3C4A1D8F1FEE00AB3224 /* XDLHomeViewModel.swift */,
 				F7CE3C4C1D8F318700AB3224 /* XDLStatusViewModel.swift */,
+				F76E3BB81DA73451002A67D0 /* XDLEmotionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -489,6 +497,7 @@
 		F76E3BAF1DA6C634002A67D0 /* emotionKeyBoard */ = {
 			isa = PBXGroup;
 			children = (
+				F76E3BB61DA72981002A67D0 /* Emoticons.bundle */,
 				F76E3BB01DA6C661002A67D0 /* XDLEmotionKeyBoard.swift */,
 				F76E3BB21DA6D8FC002A67D0 /* XDLEmotionToolBar.swift */,
 				F76E3BB41DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift */,
@@ -577,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F75D687D1D9D9BFD002FD569 /* compose.plist in Resources */,
+				F76E3BB71DA72981002A67D0 /* Emoticons.bundle in Resources */,
 				F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */,
 				F725B9501D856FF200F3556A /* Assets.xcassets in Resources */,
 				F725B94E1D856FF200F3556A /* Main.storyboard in Resources */,
@@ -656,8 +666,10 @@
 				F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */,
 				F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */,
 				F75D68871DA04EFE002FD569 /* XDLTextView.swift in Sources */,
+				F76E3BB91DA73451002A67D0 /* XDLEmotionViewModel.swift in Sources */,
 				F76E3BB11DA6C661002A67D0 /* XDLEmotionKeyBoard.swift in Sources */,
 				F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */,
+				F76E3BBB1DA734DA002A67D0 /* XDLEmotion.swift in Sources */,
 				F7CE3C491D8F07AD00AB3224 /* XDLStatusTableViewCell.swift in Sources */,
 				F7CE3C531D90647900AB3224 /* XDLStatusToolBar.swift in Sources */,
 				F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */,

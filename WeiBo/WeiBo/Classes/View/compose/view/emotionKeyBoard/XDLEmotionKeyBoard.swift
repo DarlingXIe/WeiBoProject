@@ -17,7 +17,9 @@ class XDLEmotionKeyBoard: UIView {
         super.init(frame: frame)
         
         setupUI()
-    
+        let result = XDLEmotionViewModel.sharedViewModel.allEmotions
+        print(result)
+        
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -99,13 +101,19 @@ class XDLEmotionKeyBoard: UIView {
 
 extension XDLEmotionKeyBoard: UICollectionViewDataSource, UICollectionViewDelegate{
     
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return XDLEmotionViewModel.sharedViewModel.allEmotions.count
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return XDLEmotionViewModel.sharedViewModel.allEmotions[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: emotionCollectionViewCellId, for: indexPath) as! XDLEmotionCollectionViewCell
         cell.indexpPath = indexPath
+        cell.emotions = XDLEmotionViewModel.sharedViewModel.allEmotions[indexPath.section][indexPath.item]
         cell.backgroundColor = RandomColor
         
         return cell
