@@ -33,15 +33,25 @@ class XDLEmotionKeyBoard: UIView {
         
         addSubview(emotionCollectionView)
         
-        emotionToolBar.snp_updateConstraints { (make) in
+        addSubview(pageControl)
+        
+        emotionToolBar.snp_makeConstraints { (make) in
             make.bottom.left.right.equalTo(self)
             make.height.equalTo(37)
         }
         
         emotionCollectionView.snp_makeConstraints { (make) in
             make.left.top.right.equalTo(self)
-            make.bottom.equalTo(emotionToolBar.snp_bottom)
+            make.bottom.equalTo(emotionToolBar.snp_top)
         }
+        
+        pageControl.snp_makeConstraints { (make) in
+            
+            make.centerX.equalTo(emotionCollectionView.snp_centerX)
+            make.bottom.equalTo(emotionCollectionView)
+            
+        }
+        
     }
     
     
@@ -67,8 +77,10 @@ class XDLEmotionKeyBoard: UIView {
             
             print("switchButtons\(type)")
             
+            let indexPath = IndexPath(item: 0, section: type.rawValue)
+            
+            self.emotionCollectionView.scrollToItem(at: indexPath, at: .left, animated: false)
         }
-        
         return toolBar
     }()
     
@@ -96,6 +108,19 @@ class XDLEmotionKeyBoard: UIView {
         return emotionCollectionView
     }()
 
+    
+    internal lazy var pageControl :UIPageControl = {()-> UIPageControl in
+        
+        let pageControl = UIPageControl();
+        pageControl.isUserInteractionEnabled = false
+        pageControl.setValue(UIImage(named:"compose_keyboard_dot_normal"), forKey: "_pageImage")
+        pageControl.setValue((UIImage(named:"compose_keyboard_dot_selected")), forKey: "_currentPageImage")
+        
+        //label.textColor = UIcolor.red
+        
+        return pageControl
+    }()
+
 }
 
 
@@ -113,12 +138,35 @@ extension XDLEmotionKeyBoard: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: emotionCollectionViewCellId, for: indexPath) as! XDLEmotionCollectionViewCell
         cell.indexpPath = indexPath
-        cell.emotions = XDLEmotionViewModel.sharedViewModel.allEmotions[indexPath.section][indexPath.item]
+//        cell.emotions = XDLEmotionViewModel.sharedViewModel.allEmotions[indexPath.section][indexPath.item]
         cell.backgroundColor = RandomColor
         
         return cell
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let cells = emotionCollectionView.visibleCells
+        
+        if cells.count == 2{
+            
+            let firstCells = cells.first!
+            let lastCells = cells.last!
+            let screen = UIScreen.main.bounds
+            let x = firstCells.center.x - scrollView.contentOffset.x
+            let firstPoint = CGPoint(x: x, y: firstCells.center.y)
+            let index: IndexPath
+            if screen.contains(firstPoint){
+                index = emotionCollectionView.indexPath(for: firstCells)!
+            }else{
+                index = emotionCollectionView.indexPath(for: lastCells)!
+                
+            }
+              print("current \(index.section) group emotions")
+              self.emotionToolBar.selectedIndexPath = index
+        }
+    }
+    
 }
 
 

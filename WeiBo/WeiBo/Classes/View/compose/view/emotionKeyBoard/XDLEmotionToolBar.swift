@@ -25,6 +25,23 @@ class XDLEmotionToolBar: UIView {
     
     var currentSelectedButton: UIButton?
     
+    var selectedIndexPath: IndexPath? {
+        
+        didSet{
+            
+            let button = self.stackView.viewWithTag((selectedIndexPath?.section)!)! as! UIButton
+            
+            if currentSelectedButton == button{
+                return
+            }
+            currentSelectedButton?.isSelected = false
+            
+            button.isSelected = true
+            
+            currentSelectedButton = button
+        }
+    }
+    
     var emotionTypeChangedClosure: ((XDLEmotionType) ->())?
     
     override init(frame: CGRect){
@@ -39,6 +56,7 @@ class XDLEmotionToolBar: UIView {
     
     private func setupUI(){
         
+        backgroundColor = UIColor.white
         addSubview(stackView)
         
         stackView.snp_updateConstraints { (make) in
