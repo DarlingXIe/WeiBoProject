@@ -9,13 +9,28 @@
 import UIKit
 
 class XDLEmotionButton: UIButton {
+    
+    var emotions : XDLEmotion?{
+        
+        didSet{
+            
+            if emotions!.type == 0{
+            
+                let bundle = XDLEmotionViewModel.sharedViewModel.emotionBundle
+                // 从bundle里面加载对应的图片
+                let image = UIImage(named: "\(emotions!.path!)/\(emotions!.png!)", in: bundle, compatibleWith: nil)
+                // 将图片设置到button上面
+                self.setImage(image, for: .normal)
+                self.setTitle(nil, for: .normal)
+        
+            }else{
+                
+                self.setTitle((emotions!.code! as NSString).emoji(), for: .normal)
+                self.setImage(nil, for: .normal)
+                
+            }
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+       }
+    
     }
-    */
-
 }

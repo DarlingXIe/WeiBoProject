@@ -12,16 +12,27 @@ let XDLEmotionButtonsCount = 20;
 
 class XDLEmotionCollectionViewCell: UICollectionViewCell {
     
-    lazy var emtionButtons = [UIButton]()
+    lazy var emtionButtons = [XDLEmotionButton]()
     
     var emotions : [XDLEmotion]?{
         
         didSet{
             print(emotions)
         //MARK: add buttons for each cell
+            for button in emtionButtons{
+                button.isHidden = true
+            }
             
+            for (index, emotion) in emotions!.enumerated(){
+            
+                let button = emtionButtons[index]
+                
+                button.isHidden = false
+                
+                button.emotions = emotion
+            
+            }
         }
-    
     }
     
     var indexpPath: IndexPath?{
@@ -29,7 +40,7 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
         didSet{
             
             Testlabel.text = "第\(indexpPath!.section)组, 第 \(indexpPath!.item)页"
-            
+            recentEmotionLabel.isHidden = indexpPath!.section != 0
         }
     
     }
@@ -39,7 +50,12 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupUI()
         addButtons()
-        
+        contentView.addSubview(deleteButton)
+        contentView.addSubview(recentEmotionLabel)
+        recentEmotionLabel.snp_makeConstraints { (make) in
+            make.centerX.equalTo(contentView.snp_centerX)
+            make.bottom.equalTo(contentView).offset(-10)
+        }
     }
     
     override func layoutSubviews() {
@@ -62,8 +78,18 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
             value.frame = CGRect(x: x, y: y, width: itemW, height: itemH)
             
         }
+            deleteButton.frame = CGRect(x: self.bounds.width - itemW, y: itemH * 2, width: itemW, height: itemH)
     
     }
+    
+    //itemW = self.screen.width/3
+    //itemH = self.screen.height/21
+    // col = index % 3
+    // row = index /3
+    // let x = CGFloat(col) * itemW
+    // let y = CGFLoat(row) * itemH
+    
+    
     
     private func setupUI(){
     
@@ -78,9 +104,10 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
         
         for _ in 0..<XDLEmotionButtonsCount{
             
-            let button =  UIButton()
+            let button =  XDLEmotionButton()
             
-            button.backgroundColor = RandomColor
+             button.titleLabel?.font = UIFont.systemFont(ofSize: 34)
+            //button.backgroundColor = RandomColor
             
             contentView.addSubview(button)
             
@@ -96,6 +123,23 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
     private lazy var Testlabel : UILabel = {()-> UILabel in
         
         let label = UILabel()
+        
+        return label
+    }()
+
+    private lazy var deleteButton :UIButton = {()-> UIButton in
+        
+        let button = UIButton()
+        button.setImage(UIImage(named: "compose_emotion_delete_highlighted"), for: .highlighted)
+        button.setImage(UIImage(named: "compose_emotion_delete"), for: .normal)
+        return button
+    }()
+
+    private lazy var recentEmotionLabel :UILabel = {()-> UILabel in
+        
+        let label = UILabel(textColor: UIColor.lightGray, fontSize: 12)
+        
+        label.text = "Recent emotions"
         
         return label
     }()

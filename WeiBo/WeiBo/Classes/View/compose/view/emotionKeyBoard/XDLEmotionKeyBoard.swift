@@ -48,7 +48,7 @@ class XDLEmotionKeyBoard: UIView {
         pageControl.snp_makeConstraints { (make) in
             
             make.centerX.equalTo(emotionCollectionView.snp_centerX)
-            make.bottom.equalTo(emotionCollectionView)
+            make.bottom.equalTo(emotionCollectionView).offset(10)
             
         }
         
@@ -125,9 +125,10 @@ class XDLEmotionKeyBoard: UIView {
     func setPageControl(indexPath: IndexPath){
         
         pageControl.numberOfPages = XDLEmotionViewModel.sharedViewModel.allEmotions[indexPath.section].count
+        //pageControl.pop_animationKeys()
         
         pageControl.currentPage = indexPath.item
-        
+       
         pageControl.isHidden = indexPath.section == 0
     
     }
@@ -141,14 +142,15 @@ extension XDLEmotionKeyBoard: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return XDLEmotionViewModel.sharedViewModel.allEmotions[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: emotionCollectionViewCellId, for: indexPath) as! XDLEmotionCollectionViewCell
         cell.indexpPath = indexPath
-//        cell.emotions = XDLEmotionViewModel.sharedViewModel.allEmotions[indexPath.section][indexPath.item]
-        cell.backgroundColor = RandomColor
+        cell.emotions = XDLEmotionViewModel.sharedViewModel.allEmotions[indexPath.section][indexPath.item]
+        cell.backgroundColor = UIColor.white
         
         return cell
     }
@@ -169,11 +171,12 @@ extension XDLEmotionKeyBoard: UICollectionViewDataSource, UICollectionViewDelega
                 index = emotionCollectionView.indexPath(for: firstCells)!
             }else{
                 index = emotionCollectionView.indexPath(for: lastCells)!
-                
             }
               print("current \(index.section) group emotions")
-              self.emotionToolBar.selectedIndexPath = index
-              self.setPageControl(indexPath: self.emotionToolBar.selectedIndexPath!)
+          
+                self.emotionToolBar.selectedIndexPath = index
+            
+                self.setPageControl(indexPath: self.emotionToolBar.selectedIndexPath!)
         }
     }
 }

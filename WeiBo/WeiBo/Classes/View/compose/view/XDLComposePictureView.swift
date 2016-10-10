@@ -148,10 +148,6 @@ extension XDLComposePictureView: UICollectionViewDataSource, UICollectionViewDel
     }
 }
 
-
-
-
-
 //MARK: - 4.setupUI for cells and register for cells
 
 class XDLComposePictureViewCell:UICollectionViewCell{

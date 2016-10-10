@@ -15,7 +15,7 @@ class XDLEmotionViewModel: NSObject {
     
         static let sharedViewModel = XDLEmotionViewModel()
     
-        private lazy var emotionBundle :Bundle = {()-> Bundle in
+        lazy var emotionBundle :Bundle = {()-> Bundle in
         
         let path = Bundle.main.path(forResource: "Emoticons.bundle", ofType: nil)!
         let result = Bundle(path:path)!
@@ -97,12 +97,16 @@ class XDLEmotionViewModel: NSObject {
         //MARK: define the Funtion for array with dict to array with model
         private func emotions(path: String) -> [XDLEmotion]{
         
-        let path = self.emotionBundle.path(forResource: path, ofType: nil)!
+        let file = self.emotionBundle.path(forResource: path, ofType: nil)!
         
-        let array = NSArray(contentsOfFile: path)!
+        let array = NSArray(contentsOfFile: file)!
         
         let emotions = NSArray.yy_modelArray(with: XDLEmotion.self, json: array)! as! [XDLEmotion]
         
+            for value in emotions {
+                let p = (path as NSString).deletingLastPathComponent
+                value.path = p
+            }
         return emotions
         
     }

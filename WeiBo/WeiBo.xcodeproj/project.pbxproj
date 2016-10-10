@@ -21,6 +21,8 @@
 		F725B97F1D85776400F3556A /* XDLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B97E1D85776400F3556A /* XDLHomeViewController.swift */; };
 		F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9801D85778300F3556A /* XDLMessageViewController.swift */; };
 		F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9821D8577B700F3556A /* XDLProfileViewController.swift */; };
+		F729F0BB1DAC3254001B44A1 /* XDLEmotionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F729F0BA1DAC3254001B44A1 /* XDLEmotionButton.swift */; };
+		F729F0BF1DAC35BD001B44A1 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = F729F0BE1DAC35BD001B44A1 /* NSString+Emoji.m */; };
 		F72F2E051D93077200F952DB /* XDLStatusPictureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */; };
 		F72F2E091D930A5100F952DB /* XDLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */; };
 		F758276A1DA339E900BF028E /* XDLComposePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75827691DA339E800BF028E /* XDLComposePictureView.swift */; };
@@ -93,6 +95,9 @@
 		F725B97E1D85776400F3556A /* XDLHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLHomeViewController.swift; sourceTree = "<group>"; };
 		F725B9801D85778300F3556A /* XDLMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLMessageViewController.swift; sourceTree = "<group>"; };
 		F725B9821D8577B700F3556A /* XDLProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLProfileViewController.swift; sourceTree = "<group>"; };
+		F729F0BA1DAC3254001B44A1 /* XDLEmotionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotionButton.swift; sourceTree = "<group>"; };
+		F729F0BD1DAC35BD001B44A1 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		F729F0BE1DAC35BD001B44A1 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureInfo.swift; sourceTree = "<group>"; };
 		F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureView.swift; sourceTree = "<group>"; };
 		F75827691DA339E800BF028E /* XDLComposePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLComposePictureView.swift; sourceTree = "<group>"; };
@@ -423,6 +428,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		F729F0BC1DAC35BD001B44A1 /* NSStringEmoji */ = {
+			isa = PBXGroup;
+			children = (
+				F729F0BD1DAC35BD001B44A1 /* NSString+Emoji.h */,
+				F729F0BE1DAC35BD001B44A1 /* NSString+Emoji.m */,
+			);
+			path = NSStringEmoji;
+			sourceTree = "<group>";
+		};
 		F75D686E1D9CA71C002FD569 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +482,7 @@
 		F75E9B331D86E88A00D11392 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				F729F0BC1DAC35BD001B44A1 /* NSStringEmoji */,
 				F75D68771D9D95C1002FD569 /* UIImage+ImageEffects */,
 				F75E9B341D86E88A00D11392 /* SnapKit修改版 */,
 			);
@@ -501,6 +516,7 @@
 				F76E3BB01DA6C661002A67D0 /* XDLEmotionKeyBoard.swift */,
 				F76E3BB21DA6D8FC002A67D0 /* XDLEmotionToolBar.swift */,
 				F76E3BB41DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift */,
+				F729F0BA1DAC3254001B44A1 /* XDLEmotionButton.swift */,
 			);
 			path = emotionKeyBoard;
 			sourceTree = "<group>";
@@ -669,6 +685,7 @@
 				F76E3BB91DA73451002A67D0 /* XDLEmotionViewModel.swift in Sources */,
 				F76E3BB11DA6C661002A67D0 /* XDLEmotionKeyBoard.swift in Sources */,
 				F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */,
+				F729F0BB1DAC3254001B44A1 /* XDLEmotionButton.swift in Sources */,
 				F76E3BBB1DA734DA002A67D0 /* XDLEmotion.swift in Sources */,
 				F7CE3C491D8F07AD00AB3224 /* XDLStatusTableViewCell.swift in Sources */,
 				F7CE3C531D90647900AB3224 /* XDLStatusToolBar.swift in Sources */,
@@ -678,6 +695,7 @@
 				F7CE3C4F1D9024F100AB3224 /* XDLOriginalStatusView.swift in Sources */,
 				F725B9811D85778300F3556A /* XDLMessageViewController.swift in Sources */,
 				F75E9B461D86E88A00D11392 /* ConstraintMaker.swift in Sources */,
+				F729F0BF1DAC35BD001B44A1 /* NSString+Emoji.m in Sources */,
 				F75D687A1D9D95C1002FD569 /* UIImage+ImageEffects.m in Sources */,
 				F75E9B531D870E7300D11392 /* UIView+ ConvenienceExtension.swift in Sources */,
 				F75D68741D9CA7AE002FD569 /* XDLComposeButton.swift in Sources */,
