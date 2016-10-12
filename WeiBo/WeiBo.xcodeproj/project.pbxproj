@@ -25,6 +25,8 @@
 		F729F0BF1DAC35BD001B44A1 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = F729F0BE1DAC35BD001B44A1 /* NSString+Emoji.m */; };
 		F72F2E051D93077200F952DB /* XDLStatusPictureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */; };
 		F72F2E091D930A5100F952DB /* XDLStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */; };
+		F74632B21DAD55CC00B3B9D8 /* XDLEmotionButtonPaopaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74632B11DAD55CC00B3B9D8 /* XDLEmotionButtonPaopaoView.swift */; };
+		F74632B41DAD55F200B3B9D8 /* XDLEmotionPaopaoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F74632B31DAD55F200B3B9D8 /* XDLEmotionPaopaoView.xib */; };
 		F758276A1DA339E900BF028E /* XDLComposePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75827691DA339E800BF028E /* XDLComposePictureView.swift */; };
 		F75D68691D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */; };
 		F75D686D1D99D1B5002FD569 /* XDLRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D686C1D99D1B5002FD569 /* XDLRefreshControl.swift */; };
@@ -100,6 +102,8 @@
 		F729F0BE1DAC35BD001B44A1 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureInfo.swift; sourceTree = "<group>"; };
 		F72F2E081D930A5100F952DB /* XDLStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureView.swift; sourceTree = "<group>"; };
+		F74632B11DAD55CC00B3B9D8 /* XDLEmotionButtonPaopaoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotionButtonPaopaoView.swift; sourceTree = "<group>"; };
+		F74632B31DAD55F200B3B9D8 /* XDLEmotionPaopaoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLEmotionPaopaoView.xib; sourceTree = "<group>"; };
 		F75827691DA339E800BF028E /* XDLComposePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLComposePictureView.swift; sourceTree = "<group>"; };
 		F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg; sourceTree = "<group>"; };
 		F75D686C1D99D1B5002FD569 /* XDLRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLRefreshControl.swift; sourceTree = "<group>"; };
@@ -517,6 +521,8 @@
 				F76E3BB21DA6D8FC002A67D0 /* XDLEmotionToolBar.swift */,
 				F76E3BB41DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift */,
 				F729F0BA1DAC3254001B44A1 /* XDLEmotionButton.swift */,
+				F74632B11DAD55CC00B3B9D8 /* XDLEmotionButtonPaopaoView.swift */,
+				F74632B31DAD55F200B3B9D8 /* XDLEmotionPaopaoView.xib */,
 			);
 			path = emotionKeyBoard;
 			sourceTree = "<group>";
@@ -607,6 +613,7 @@
 				F725B9501D856FF200F3556A /* Assets.xcassets in Resources */,
 				F725B94E1D856FF200F3556A /* Main.storyboard in Resources */,
 				F75D68691D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg in Resources */,
+				F74632B41DAD55F200B3B9D8 /* XDLEmotionPaopaoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,6 +694,7 @@
 				F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */,
 				F729F0BB1DAC3254001B44A1 /* XDLEmotionButton.swift in Sources */,
 				F76E3BBB1DA734DA002A67D0 /* XDLEmotion.swift in Sources */,
+				F74632B21DAD55CC00B3B9D8 /* XDLEmotionButtonPaopaoView.swift in Sources */,
 				F7CE3C491D8F07AD00AB3224 /* XDLStatusTableViewCell.swift in Sources */,
 				F7CE3C531D90647900AB3224 /* XDLStatusToolBar.swift in Sources */,
 				F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */,

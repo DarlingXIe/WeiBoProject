@@ -30,7 +30,6 @@ class XDLEmotionButton: UIButton {
                 
             }
 
-       }
-    
+         }
     }
 }

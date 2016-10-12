@@ -42,7 +42,6 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
             Testlabel.text = "第\(indexpPath!.section)组, 第 \(indexpPath!.item)页"
             recentEmotionLabel.isHidden = indexpPath!.section != 0
         }
-    
     }
 
     override init(frame: CGRect)
@@ -56,6 +55,8 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
             make.centerX.equalTo(contentView.snp_centerX)
             make.bottom.equalTo(contentView).offset(-10)
         }
+        
+        
     }
     
     override func layoutSubviews() {
@@ -88,25 +89,39 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
     // row = index /3
     // let x = CGFloat(col) * itemW
     // let y = CGFLoat(row) * itemH
-    
-    
-    
     private func setupUI(){
     
         contentView.addSubview(Testlabel)
         
         Testlabel.snp_makeConstraints { (make) in
         make.center.equalTo(self)
+            
+          
+        
         }
+        let ges = UILongPressGestureRecognizer(target: self, action: #selector(longPress(ges:)))
+        addGestureRecognizer(ges)
     
-}
+    }
+    
+    
+    @objc private func longPress(ges: UILongPressGestureRecognizer){
+        
+        
+        
+        
+    }
+    
+    
+    
+    //MARK: - addChildButtons
     private func addButtons(){
         
         for _ in 0..<XDLEmotionButtonsCount{
             
             let button =  XDLEmotionButton()
             
-             button.titleLabel?.font = UIFont.systemFont(ofSize: 34)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 34)
             //button.backgroundColor = RandomColor
             
             contentView.addSubview(button)
