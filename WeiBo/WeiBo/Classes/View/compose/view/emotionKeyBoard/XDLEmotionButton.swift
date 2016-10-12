@@ -17,9 +17,7 @@ class XDLEmotionButton: UIButton {
             if emotions!.type == 0{
             
                 let bundle = XDLEmotionViewModel.sharedViewModel.emotionBundle
-                // 从bundle里面加载对应的图片
                 let image = UIImage(named: "\(emotions!.path!)/\(emotions!.png!)", in: bundle, compatibleWith: nil)
-                // 将图片设置到button上面
                 self.setImage(image, for: .normal)
                 self.setTitle(nil, for: .normal)
         
@@ -29,7 +27,6 @@ class XDLEmotionButton: UIButton {
                 self.setImage(nil, for: .normal)
                 
             }
-
-         }
+        }
     }
 }

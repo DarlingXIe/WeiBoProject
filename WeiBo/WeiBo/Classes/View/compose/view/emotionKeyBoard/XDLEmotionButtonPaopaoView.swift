@@ -14,10 +14,9 @@ class XDLEmotionButtonPaopaoView: UIView {
     
     class func paopaoView() -> XDLEmotionButtonPaopaoView{
         
-        let result = Bundle.main.loadNibNamed("XDLEmotionPaopaoView", owner: nil, options: nil)!.last! as! XDLEmotionButtonPaopaoView
+        let result = Bundle.main.loadNibNamed("XDLEmotionButtonPaopaoView", owner: nil, options: nil)!.last! as! XDLEmotionButtonPaopaoView
         
         return result
-    
     }
 
 }

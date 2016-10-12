@@ -48,15 +48,6 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
     {
         super.init(frame: frame)
         setupUI()
-        addButtons()
-        contentView.addSubview(deleteButton)
-        contentView.addSubview(recentEmotionLabel)
-        recentEmotionLabel.snp_makeConstraints { (make) in
-            make.centerX.equalTo(contentView.snp_centerX)
-            make.bottom.equalTo(contentView).offset(-10)
-        }
-        
-        
     }
     
     override func layoutSubviews() {
@@ -95,24 +86,63 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
         
         Testlabel.snp_makeConstraints { (make) in
         make.center.equalTo(self)
-            
-          
-        
         }
+        addButtons()
+        
+        contentView.addSubview(deleteButton)
+        contentView.addSubview(recentEmotionLabel)
+        recentEmotionLabel.snp_makeConstraints { (make) in
+            make.centerX.equalTo(contentView.snp_centerX)
+            make.bottom.equalTo(contentView).offset(-10)
+        }
+
+        
         let ges = UILongPressGestureRecognizer(target: self, action: #selector(longPress(ges:)))
         addGestureRecognizer(ges)
     
     }
-    
-    
+
     @objc private func longPress(ges: UILongPressGestureRecognizer){
         
+        func getButton(loction: CGPoint) -> XDLEmotionButton?{
+            
+            for button in emtionButtons{
+                
+                if button.frame.contains(loction){
+                    return button
+                }
+            }
+            return nil
+        }
         
-        
-        
-    }
-    
-    
+        switch ges.state {
+        case .began, .changed:
+            
+            let location = ges.location(in: self)
+            
+            if let button = getButton(loction: location) {
+                
+                let emotion = button.emotions
+                
+                paopaoView.XDLEmotionButton.emotions = emotion
+                
+                let window = UIApplication.shared.windows.last!
+                
+                let rect = button.convert(button.bounds, to: window)
+                
+                paopaoView.center.x = rect.midX
+                
+                paopaoView.frame.origin.y = rect.maxY - paopaoView.frame.height
+                window.addSubview(paopaoView)
+            }else{
+                paopaoView.removeFromSuperview()
+            }
+        case .ended, .cancelled, .failed:
+            paopaoView.removeFromSuperview()
+        default:
+            break
+        }
+   }
     
     //MARK: - addChildButtons
     private func addButtons(){
@@ -159,5 +189,5 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    
+    private lazy var paopaoView: XDLEmotionButtonPaopaoView = XDLEmotionButtonPaopaoView.paopaoView()
 }
