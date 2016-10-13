@@ -16,8 +16,11 @@ class XDLComposeViewController: UIViewController {
         setupUI()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChangeFrame(noti:)), name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(emotionButtonClick(noti:)), name: NSNotification.Name(rawValue: XDLEmoticonButtonDidSelectedNotification), object: nil)
+        
         }
-    
+
         deinit {
             NotificationCenter.default.removeObserver(self)
         }
@@ -53,6 +56,48 @@ class XDLComposeViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         
     }
+    
+    //MARK: NotificationCenter funciton to observer click emotionButtons
+    @objc private func emotionButtonClick(noti: NSNotification){
+        
+        
+        let emotion = noti.userInfo!["emotion"]! as! XDLEmotion
+        
+        if emotion.type == 1{
+            textView.insertText((emotion.code! as NSString).emoji())
+        }else{
+            //1. capture the bundle
+            let bundle = XDLEmotionViewModel.sharedViewModel.emotionBundle
+            let image = UIImage(named: "\(emotion.path!)/\(emotion.png!)", in: bundle, compatibleWith: nil)
+            //2. init with TextAttachment for image
+            
+            let attachment = NSTextAttachment()
+            //2.1 get the size of picture
+            let imageWH = textView.font!.lineHeight
+            attachment.bounds = CGRect(x: 0, y: -4, width: imageWH, height: imageWH)
+            //2.2
+            attachment.image = image
+            //3. 
+            let attr = NSMutableAttributedString(attributedString: textView.attributedText)
+            //attr.append(NSAttributedString(attachment:attachment))
+            //3.1 get mouse loaciton
+            var selectedRange = textView.selectedRange
+//
+//            attr.insert(NSAttributedString(attachment: attachment), at: selectedRange.location)
+            attr.replaceCharacters(in: selectedRange, with: NSAttributedString(attachment: attachment))
+//
+              attr.addAttribute(NSFontAttributeName, value: textView.font!, range: NSMakeRange(0, attr.length))
+            
+             textView.attributedText = attr
+            
+             selectedRange.location += 1
+//            
+             selectedRange.length = 0
+//            
+             textView.selectedRange = selectedRange
+        }
+    }
+
     //MARK: - setting UI lazy var
     internal lazy var titleLable :UILabel = {()-> UILabel in
         

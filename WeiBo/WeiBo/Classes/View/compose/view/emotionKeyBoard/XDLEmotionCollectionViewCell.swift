@@ -168,7 +168,11 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
     
     @objc private func emotionButtonClick(button:XDLEmotionButton){
         
-        paopaoView.XDLEmotionButton.emotions = button.emotions
+        let emotion = button.emotions
+        
+        paopaoView.XDLEmotionButton.emotions = emotion
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: XDLEmoticonButtonDidSelectedNotification), object: nil, userInfo: ["emotion" : emotion!])
         
         let window = UIApplication.shared.windows.last!
         
