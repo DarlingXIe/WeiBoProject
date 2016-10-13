@@ -52,6 +52,14 @@ class XDLEmotionKeyBoard: UIView {
             
         }
         
+        DispatchQueue.main.async {
+            
+            let indexPath = IndexPath(item: 0, section: 1)
+            
+            self.emotionCollectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+            
+            self.emotionToolBar.selectedIndexPath = indexPath
+        }
     }
     
     

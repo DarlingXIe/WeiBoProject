@@ -16,7 +16,7 @@
                     <frame key="frameInset" width="64" height="91"/>
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3V-8C-sDY" customClass="XDLEmotionButton" customModule="WeiBo" customModuleProvider="target"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3V-8C-sDY" customClass="XDLEmotionButton" customModule="WeiBo" customModuleProvider="target"/>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

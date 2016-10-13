@@ -46,13 +46,11 @@ class XDLOriginalStatusView: UIView {
             }else{
                 pictureView.isHidden = true
                 self.snp_updateConstraints(closure: { (make) in
-                  self.bottomCons = make.bottom.equalTo(contentLabel.snp_bottom).offset(XDLStatusCellMargin).constraint
+                  self.bottomCons = make.bottom.equalTo(contentLabel).offset(XDLStatusCellMargin).constraint
                 })
                 
             }
-    
         }
-        
     }
     
     
@@ -129,6 +127,7 @@ class XDLOriginalStatusView: UIView {
         pictureView.snp_makeConstraints { (make) in
             
             make.top.equalTo(contentLabel.snp_bottom).offset(XDLStatusCellMargin)
+            
             make.leading.equalTo(contentLabel)
         }
         
@@ -152,7 +151,7 @@ class XDLOriginalStatusView: UIView {
         
         let nameLabel = UILabel(textColor: UIColor.darkGray, fontSize: 14)
         
-        nameLabel.text = "DarlingXie"
+        //nameLabel.text = "DarlingXie"
         
         return nameLabel
     }()

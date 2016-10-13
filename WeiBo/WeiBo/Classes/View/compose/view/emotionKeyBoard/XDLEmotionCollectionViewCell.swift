@@ -116,11 +116,12 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
         }
         
         switch ges.state {
+            
         case .began, .changed:
             
             let location = ges.location(in: self)
             
-            if let button = getButton(loction: location) {
+            if let button = getButton(loction: location), button.isHidden == false {
                 
                 let emotion = button.emotions
                 
@@ -138,7 +139,9 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
                 paopaoView.removeFromSuperview()
             }
         case .ended, .cancelled, .failed:
+            
             paopaoView.removeFromSuperview()
+            
         default:
             break
         }
@@ -153,11 +156,33 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
             
             button.titleLabel?.font = UIFont.systemFont(ofSize: 34)
             //button.backgroundColor = RandomColor
+            button.addTarget(self, action: #selector(emotionButtonClick(button:)), for: .touchUpInside)
             
             contentView.addSubview(button)
             
             emtionButtons.append(button)
+            
         }
+    
+    }
+    
+    @objc private func emotionButtonClick(button:XDLEmotionButton){
+        
+        paopaoView.XDLEmotionButton.emotions = button.emotions
+        
+        let window = UIApplication.shared.windows.last!
+        
+        let rect = button.convert(button.bounds, to: window)
+        
+        paopaoView.center.x = rect.midX
+        
+        paopaoView.frame.origin.y = rect.maxY - paopaoView.frame.height
+        
+        window.addSubview(paopaoView)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {
+            self.paopaoView.removeFromSuperview()
+        })
     
     }
     
