@@ -63,6 +63,7 @@
 		F76E3BBB1DA734DA002A67D0 /* XDLEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76E3BBA1DA734DA002A67D0 /* XDLEmotion.swift */; };
 		F78BEA641D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78BEA631D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift */; };
 		F78C5F501DB07951001162F1 /* UIView + UITextview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C5F4F1DB07951001162F1 /* UIView + UITextview.swift */; };
+		F78C5F521DB164B8001162F1 /* XDLTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C5F511DB164B8001162F1 /* XDLTextAttachment.swift */; };
 		F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */; };
 		F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */; };
 		F7CE3C471D8F06D200AB3224 /* XDLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */; };
@@ -144,6 +145,7 @@
 		F76E3BBA1DA734DA002A67D0 /* XDLEmotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLEmotion.swift; sourceTree = "<group>"; };
 		F78BEA631D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		F78C5F4F1DB07951001162F1 /* UIView + UITextview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + UITextview.swift"; sourceTree = "<group>"; };
+		F78C5F511DB164B8001162F1 /* XDLTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLTextAttachment.swift; sourceTree = "<group>"; };
 		F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLWelcomViewController.swift; sourceTree = "<group>"; };
 		F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLCommonTools.swift; sourceTree = "<group>"; };
 		F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatus.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				F7CE3C501D903EF500AB3224 /* XDLUsers.swift */,
 				F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */,
 				F76E3BBA1DA734DA002A67D0 /* XDLEmotion.swift */,
+				F78C5F511DB164B8001162F1 /* XDLTextAttachment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */,
 				F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */,
 				F75D68871DA04EFE002FD569 /* XDLTextView.swift in Sources */,
+				F78C5F521DB164B8001162F1 /* XDLTextAttachment.swift in Sources */,
 				F76E3BB91DA73451002A67D0 /* XDLEmotionViewModel.swift in Sources */,
 				F76E3BB11DA6C661002A67D0 /* XDLEmotionKeyBoard.swift in Sources */,
 				F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */,

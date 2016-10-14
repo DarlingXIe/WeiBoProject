@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SVProgressHUD
+
 class XDLComposeViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -24,6 +26,103 @@ class XDLComposeViewController: UIViewController {
         deinit {
             NotificationCenter.default.removeObserver(self)
         }
+    
+    //MAEK: - notification funcation 
+    @objc private func send(){
+        
+        //MARK: - decide to update textfile or picture
+        if pictureView.images.count == 0{
+            
+            updateText()
+        
+        }else{
+            
+            uploadPictureWithText()
+            
+        }
+       
+    }
+    
+    private func updateText(){
+        
+        let urlString = "https://api.weibo.com/2/statuses/update.json"
+        
+        let accessToken = XDLUserAccountViewModel.shareModel.access_token
+        
+        let params = [
+            
+            "access_token" : accessToken,
+            "status": textView.emotionText ?? ""
+        ]
+        
+        XDLNetWorkTools.sharedTools.request(method: .Post, urlSting: urlString, parameters: params) { (response, error) in
+            if response == nil && error != nil {
+                print(error)
+                SVProgressHUD.showError(withStatus: "send error")
+                return
+            }else{
+                print(response)
+                SVProgressHUD.showSuccess(withStatus: "send successed")
+            }
+        }
+    }
+
+    private func uploadPictureWithText(){
+        
+        let urlSting = "https://upload.api.weibo.com/2/statuses/upload.json"
+        
+        let accessToken = XDLUserAccountViewModel.shareModel.access_token
+        
+        let params = [
+            
+            "access_token" : accessToken,
+            
+            "status" : textView.emotionText ?? ""
+        
+        ]
+    
+        let dict = [
+            
+            "png" : UIImagePNGRepresentation(self.pictureView.images.first!)!
+        ]
+        
+        XDLNetWorkTools.sharedTools.requestUploadPost(method: .Post, urlSting: urlSting, params: params, fileDict: dict) { (response, error) in
+            
+            if error != nil{
+                
+                print(error)
+                
+                SVProgressHUD.showError(withStatus: "upload error")
+                
+                return
+                
+            }
+            
+                print(response)
+            
+                SVProgressHUD.showError(withStatus: "uplaod success")
+            
+        }
+    
+        XDLNetWorkTools.sharedTools.post(urlSting, parameters: params, constructingBodyWith: { (formData) in
+            
+             let data = UIImagePNGRepresentation(self.pictureView.images.first!)!
+            
+             formData.appendPart(withFileData: data, name: "png", fileName: "bbbb", mimeType: "application/octet-stream")
+            
+            }, progress: nil, success: { (response, _) in
+                
+                print("request successed")
+                SVProgressHUD.showSuccess(withStatus: "upload success")
+            
+            }) { (_, error) in
+                
+                print("request failed")
+                
+                SVProgressHUD.showSuccess(withStatus: "upload failed")
+            }
+    }
+    
     
     @objc private func keyBoardWillChangeFrame(noti: NSNotification){
         
@@ -129,6 +228,7 @@ class XDLComposeViewController: UIViewController {
     internal lazy var rightButton :UIButton = {()-> UIButton in
         
         let button = UIButton()
+        button.addTarget(self, action: #selector(send), for: .touchUpInside)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setBackgroundImage(#imageLiteral(resourceName: "common_button_orange"), for: .normal)
         button.setBackgroundImage(#imageLiteral(resourceName: "common_button_orange_highlighted"), for: .highlighted)

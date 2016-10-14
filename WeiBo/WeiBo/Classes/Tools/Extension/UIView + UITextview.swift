@@ -48,4 +48,27 @@ extension UITextView{
         NotificationCenter.default.post(name: NSNotification.Name.UITextViewTextDidChange, object: self)
         delegate?.textViewDidChange?(self)
      }
+    
+    var emotionText: String?{
+       
+        get{
+            
+            var result = String()
+            
+            self.attributedText.enumerateAttributes(in: NSMakeRange(0, self.attributedText.length), options: []) { (dict, range, _) in
+                print(dict)
+                if let attachment = dict["NSAttachment"] as? XDLTextAttachment{
+                    
+                    print(attachment.chs)
+                    result += attachment.chs!
+                    
+                }else{
+                    
+                    result += (attributedText.string as NSString).substring(with: range)
+                }
+            }
+            
+            return result
+        }
+    }
 }
