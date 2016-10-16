@@ -52,6 +52,8 @@ class XDLEmotionKeyBoard: UIView {
             
         }
         
+        NotificationCenter.default.addObserver(self, selector:#selector(reloadData), name: NSNotification.Name(rawValue: XDLEmotionReloadNotification), object: nil)
+    
         DispatchQueue.main.async {
             
             let indexPath = IndexPath(item: 0, section: 1)
@@ -60,6 +62,11 @@ class XDLEmotionKeyBoard: UIView {
             
             self.emotionToolBar.selectedIndexPath = indexPath
         }
+    }
+    deinit{
+            
+            NotificationCenter.default.removeObserver(self)
+        
     }
     
     
@@ -75,6 +82,14 @@ class XDLEmotionKeyBoard: UIView {
         layout.scrollDirection = .horizontal
         
         layout.itemSize = emotionCollectionView.frame.size
+    }
+    
+    @objc private func reloadData(){
+
+        let indexPath = IndexPath(item: 0, section: 0)
+        
+        self.emotionCollectionView.reloadItems(at: [indexPath])
+        
     }
     
     internal lazy var emotionToolBar :XDLEmotionToolBar = {()-> XDLEmotionToolBar in

@@ -147,6 +147,13 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
         }
    }
     
+    //MARK: - deleteButtonFunction
+    
+    @objc private func deleteButtonfunc(){
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue:XDLEmoticonButtonDidSelectedNotification), object: nil)
+    }
+    
     //MARK: - addChildButtons
     private func addButtons(){
         
@@ -172,6 +179,8 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
         
         paopaoView.XDLEmotionButton.emotions = emotion
         
+        XDLEmotionViewModel.sharedViewModel.savetoRecent(emotion!)
+    
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: XDLEmoticonButtonDidSelectedNotification), object: nil, userInfo: ["emotion" : emotion!])
         
         let window = UIApplication.shared.windows.last!
@@ -204,6 +213,7 @@ class XDLEmotionCollectionViewCell: UICollectionViewCell {
     private lazy var deleteButton :UIButton = {()-> UIButton in
         
         let button = UIButton()
+        button.addTarget(self, action: #selector(deleteButtonfunc),for: .touchUpInside)
         button.setImage(UIImage(named: "compose_emotion_delete_highlighted"), for: .highlighted)
         button.setImage(UIImage(named: "compose_emotion_delete"), for: .normal)
         return button

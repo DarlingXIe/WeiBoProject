@@ -159,11 +159,18 @@ class XDLComposeViewController: UIViewController {
     //MARK: NotificationCenter funciton to observer click emotionButtons
     @objc private func emotionButtonClick(noti: NSNotification){
         
-        
-        let emotion = noti.userInfo!["emotion"]! as! XDLEmotion
+        if noti.userInfo != nil {
+            
+         let emotion = noti.userInfo!["emotion"]! as! XDLEmotion
     
-        textView.insertEmotion(emotion: emotion)
+         textView.insertEmotion(emotion: emotion)
         
+        }else{
+        
+        textView.deleteBackward()
+            
+        }
+    
 //        if emotion.type == 1{
 //            textView.insertText((emotion.code! as NSString).emoji())
 //        }else{

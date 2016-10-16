@@ -10,11 +10,12 @@ import UIKit
 
 let XDLEmotionKeyBoardPageCount = 20
 
-
 class XDLEmotionViewModel: NSObject {
     
         static let sharedViewModel = XDLEmotionViewModel()
     
+        private lazy var archivePath : String = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as NSString).appendingPathComponent("recent.archive")
+
         lazy var emotionBundle :Bundle = {()-> Bundle in
         
         let path = Bundle.main.path(forResource: "Emoticons.bundle", ofType: nil)!
@@ -26,6 +27,11 @@ class XDLEmotionViewModel: NSObject {
         lazy var recentEmotion :[XDLEmotion] = {()-> [XDLEmotion] in
             
         let recentArray = [XDLEmotion]()
+        
+            if let result = NSKeyedUnarchiver.unarchiveObject(withFile:self.archivePath) as? [XDLEmotion]{
+                
+                return result
+            }
         
         return recentArray
     }()
@@ -64,7 +70,7 @@ class XDLEmotionViewModel: NSObject {
 
     private func typeEmotionPages(emotion:[XDLEmotion]) -> [[XDLEmotion]]{
     
-        let pages = (emotion.count - 1) / 20 + 1
+        let pages = (emotion.count - 1) / XDLEmotionKeyBoardPageCount + 1
     
         var result = [[XDLEmotion]]()
         
@@ -94,6 +100,61 @@ class XDLEmotionViewModel: NSObject {
         super.init()
 
     }
+    
+        //MARK: - saveFunction for recentButton
+    
+        func savetoRecent(_ emotion:XDLEmotion){
+            
+//            if self.recentEmotion.contains(emotion){
+//                
+//                let index = self.recentEmotion.index(of: emotion)
+//                self.recentEmotion.remove(at: index!)
+//                
+//            }
+            var index = 0
+        
+            let isContains = self.recentEmotion.contains(where: { (value) -> Bool in
+                
+                if value.type == emotion.type{
+                    
+                    var result = false
+                    if value.type == 0{
+                        result = value.png == emotion.png
+                    }else{
+                        result = value.code == emotion.code
+                    }
+                    
+                    if result == true{
+                      index = self.recentEmotion.index(of: value)!
+                    }
+                    return result
+                }
+                return false
+            })
+            
+            if isContains{
+                
+                self.recentEmotion.remove(at: index)
+            }
+            
+             self.recentEmotion.insert(emotion, at: 0)
+            
+             let overCount = self.recentEmotion.count - XDLEmotionKeyBoardPageCount
+                
+             if overCount > 0{
+                
+                 self.recentEmotion.removeLast(overCount)
+              }
+            
+            allEmotions[0][0] = self.recentEmotion
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue:XDLEmotionReloadNotification), object: nil)
+            
+            let file = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as NSString).appendingPathComponent("recent.archive")
+            
+            NSKeyedArchiver.archiveRootObject(self.recentEmotion, toFile: file)
+        }
+    
         //MARK: define the Funtion for array with dict to array with model
         private func emotions(path: String) -> [XDLEmotion]{
         
@@ -108,8 +169,5 @@ class XDLEmotionViewModel: NSObject {
                 value.path = p
             }
         return emotions
-        
     }
-
-
 }

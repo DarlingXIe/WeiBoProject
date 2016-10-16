@@ -8,7 +8,9 @@
 
 import UIKit
 
-class XDLEmotion: NSObject {
+import YYModel
+
+class XDLEmotion: NSObject, NSCoding{
     
         var chs: String?
     
@@ -21,5 +23,16 @@ class XDLEmotion: NSObject {
         var code: String?
     
         var path: String?
+    
+    override init(){
+        super.init()
+    }
+    func encode(with aCoder: NSCoder) {
+        self.yy_modelEncode(with: aCoder)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init()
+        self.yy_modelInit(with: aDecoder)
+    }
 
 }

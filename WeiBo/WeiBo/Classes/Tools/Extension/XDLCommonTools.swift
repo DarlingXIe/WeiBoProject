@@ -11,7 +11,8 @@ let XDLChangeRootController = "XDLChangeRootController"
 
 // click the EmotionButtonSelected   Notification 
 let XDLEmoticonButtonDidSelectedNotification = "XDLEmoticonButtonDidSelectedNotification"
-
+// click theEmotionButton for saving into recentButtons to reload
+let XDLEmotionReloadNotification = "HMEmoticonReloadNotification"
 
 let XDLScreenW = UIScreen.main.bounds.width
 let XDLScreenH = UIScreen.main.bounds.height

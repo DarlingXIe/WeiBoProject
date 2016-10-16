@@ -67,7 +67,6 @@ extension UITextView{
                     result += (attributedText.string as NSString).substring(with: range)
                 }
             }
-            
             return result
         }
     }
