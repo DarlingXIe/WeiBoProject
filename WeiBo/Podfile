@@ -10,6 +10,7 @@ pod ’SDWebImage’
 pod ’SVProgressHUD’
 pod 'YYModel'
 pod 'pop'
+pod 'YYText'
 
   # Pods for WeiBo
 

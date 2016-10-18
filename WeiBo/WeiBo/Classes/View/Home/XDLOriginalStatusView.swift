@@ -8,6 +8,8 @@
 
 import UIKit
 
+import YYText
+
 class XDLOriginalStatusView: UIView {
     
     var bottomCons : Constraint?
@@ -24,8 +26,10 @@ class XDLOriginalStatusView: UIView {
             
             avatarView.image = statusViewModel?.avatarImage
             
-            contentLabel.text = statusViewModel?.status?.text
-        
+            //contentLabel.text = statusViewModel?.status?.text
+            
+            contentLabel.attributedText = statusViewModel?.originalAttributedString
+            
             // deal with source
             sourceLabel.text = statusViewModel?.sourceString
             
@@ -191,11 +195,28 @@ class XDLOriginalStatusView: UIView {
         return avatarView
     }()
     
-       lazy var contentLabel :UILabel = {()-> UILabel in
+//       lazy var contentLabel :UILabel = {()-> UILabel in
+//        
+//        let contentLabel = UILabel(textColor: UIColor.darkGray, fontSize: 14)
+//        
+//        contentLabel.numberOfLines = 0
+//        
+//        contentLabel.text = "sdfasdfadsfadsfasdfadsfafdsfadsf"
+//        
+//        contentLabel.preferredMaxLayoutWidth = XDLScreenW - 2 * XDLStatusCellMargin
+//        
+//        return contentLabel
+//    }()
+    
+    lazy var contentLabel :YYLabel = {()-> YYLabel in
         
-        let contentLabel = UILabel(textColor: UIColor.darkGray, fontSize: 14)
-        
+        let contentLabel = YYLabel()
+            
         contentLabel.numberOfLines = 0
+    
+        contentLabel.textColor = UIColor.darkGray
+        
+        contentLabel.font = UIFont.systemFont(ofSize: 15)
         
         contentLabel.text = "sdfasdfadsfadsfasdfadsfafdsfadsf"
         
@@ -203,6 +224,7 @@ class XDLOriginalStatusView: UIView {
         
         return contentLabel
     }()
+
 
     private lazy var pictureView :XDLStatusPictureView = {()-> XDLStatusPictureView in
         

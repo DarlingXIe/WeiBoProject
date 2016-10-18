@@ -8,3 +8,4 @@
 
 #import "UIImage+ImageEffects.h"
 #import "NSString+Emoji.h"
+#import "RegexKitLite.h"

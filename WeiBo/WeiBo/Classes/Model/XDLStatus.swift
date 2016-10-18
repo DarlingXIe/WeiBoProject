@@ -41,6 +41,7 @@ class XDLStatus: NSObject {
                 
                 retweeted_status_text = "@\(text):\(name)"
                 
+                
             }
         }
     

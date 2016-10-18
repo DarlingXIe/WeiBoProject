@@ -8,6 +8,10 @@
 
 import UIKit
 
+import YYText
+
+import SVProgressHUD
+
 class XDLStatusViewModel: NSObject {
     
     // member Icon
@@ -72,6 +76,11 @@ class XDLStatusViewModel: NSObject {
         }
         
     }
+    // creatting the original and retweet atttibuted text
+    var originalAttributedString: NSAttributedString?
+    
+    var retweetAttributedString: NSAttributedString?
+    
     
     var status:XDLStatus?{
         
@@ -115,10 +124,94 @@ class XDLStatusViewModel: NSObject {
             }
         
         // self.createTime = self.calcCreateAtString(date: status?.created_at)
+             //MARK: - match with Regx Func for certain text
+        originalAttributedString = dealWithStatusText(text: status?.text ?? "")
             
+            if status?.retweeted_status?.text != nil{
+                retweetAttributedString = dealWithStatusText(text: status?.retweeted_status?.text ?? "" )
+            }
         }
-    
     }
+    //
+    private func dealWithStatusText(text: String) -> NSAttributedString{
+        
+        let result = NSMutableAttributedString(string: text)
+        
+        var matchResults = [XDLMatchResult]()
+        
+        (text as NSString).enumerateStringsMatched(byRegex: "\\[[a-zA-Z0-9\\u4e00-\\u9fa5]+\\]") { (captureCount, captureString, captureRange, _) in
+            // 取到匹配出来的字符串
+            let chs = captureString!.pointee!
+            // 取到匹配的范围
+            let range = captureRange!.pointee
+            // 将匹配结果初始化成一个模型
+            let matchResult = XDLMatchResult(string: chs as String, range: range)
+            // 并且保存到一个数组里面
+            matchResults.append(matchResult)
+        }
+        
+    //   why reversed
+        for match in matchResults.reversed(){
+            
+            if let matchEmotion = XDLEmotionViewModel.sharedViewModel.emoticon(chs: match.captureString){
+              
+              let bundle = XDLEmotionViewModel.sharedViewModel.emotionBundle
+            
+              let image = UIImage(named: "\(matchEmotion.path!)/\(matchEmotion.png!)", in: bundle, compatibleWith: nil)
+                
+              let font = UIFont.systemFont(ofSize: 15)
+                
+              let imageWH = font.lineHeight
+                
+              let attr = NSAttributedString.yy_attachmentString(withContent: image, contentMode: .scaleAspectFill, attachmentSize: CGSize(width: imageWH, height: imageWH), alignTo: font, alignment: YYTextVerticalAlignment.center)
+                
+              result.replaceCharacters(in: match.captureRange, with: attr)
+              
+            }
+        }
+        
+    // dealWithMatchStringForHighlightedText
+        addHighlightedFunc(regex: "#[^#]#", attr: result)
+    
+        addHighlightedFunc(regex: "@[a-zA-Z0-9\\u4e00-\\u9fa5_\\-]+", attr: result)
+        // url
+        addHighlightedFunc(regex: "([hH]ttp[s]{0,1})://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\-~!@#$%^&*+?:_/=<>.',;]*)?", attr: result)
+        
+        return result
+    }
+    
+    private func addHighlightedFunc(regex: String, attr: NSMutableAttributedString){
+        
+        (attr.string as NSString).enumerateStringsMatched(byRegex: regex) { (captureCount, captureString, captureRange, _) in
+            
+            let color = UIColor(red: 80/255, green: 125/255, blue: 175/255, alpha: 1)
+            
+            let bgColor = UIColor(red: 177/255, green: 215/255, blue: 175/255, alpha: 1)
+            
+            attr.addAttribute(NSForegroundColorAttributeName, value: color, range: captureRange!.pointee)
+            //setting highlighted attributes
+            let border = YYTextBorder(fill: bgColor, cornerRadius: 3)
+            
+            border.insets = UIEdgeInsets.zero
+            
+            let highLight = YYTextHighlight()
+            
+            highLight.userInfo = ["value":  captureString!.pointee as! String]
+            
+            highLight.setBackgroundBorder(border)
+            
+            highLight.tapAction = {(containerView, text, range, rect) in
+                
+            let highlighted = text.yy_attribute(YYTextHighlightAttributeName, at: UInt(range.location)) as! YYTextHighlight
+                print(highlighted.userInfo)
+                
+            SVProgressHUD.showInfo(withStatus: highlighted.userInfo!["value"] as! String)
+            }
+            attr.yy_setTextHighlight(highLight, range: captureRange!.pointee)
+        }
+    }
+    
+    
     //MARK: - dealWithCreateTime
     
 //    private func calcCreateAtString(date: Date?) -> String?{

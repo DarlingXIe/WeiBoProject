@@ -95,6 +95,28 @@ class XDLEmotionViewModel: NSObject {
     
         return result
     }
+    
+    func emoticon(chs : String) -> XDLEmotion? {
+        
+        for value in defaultEmotions{
+            
+            if value.chs == chs{
+                return value
+            }
+        }
+        
+        
+        for value in LxhEmotions{
+            
+            if value.chs == chs{
+                return value
+            }
+        }
+    
+        return nil
+    }
+    
+    
         override init(){
         
         super.init()

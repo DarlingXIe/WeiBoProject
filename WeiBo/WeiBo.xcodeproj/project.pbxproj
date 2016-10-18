@@ -64,6 +64,9 @@
 		F78BEA641D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78BEA631D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift */; };
 		F78C5F501DB07951001162F1 /* UIView + UITextview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C5F4F1DB07951001162F1 /* UIView + UITextview.swift */; };
 		F78C5F521DB164B8001162F1 /* XDLTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C5F511DB164B8001162F1 /* XDLTextAttachment.swift */; };
+		F78C5F561DB54A12001162F1 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = F78C5F551DB54A12001162F1 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F78C5F581DB54B5F001162F1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F78C5F571DB54B5F001162F1 /* libicucore.tbd */; };
+		F78C5F5A1DB54F1D001162F1 /* XDLMatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C5F591DB54F1D001162F1 /* XDLMatchResult.swift */; };
 		F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */; };
 		F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */; };
 		F7CE3C471D8F06D200AB3224 /* XDLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */; };
@@ -146,6 +149,10 @@
 		F78BEA631D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusPictureCollectionViewCell.swift; sourceTree = "<group>"; };
 		F78C5F4F1DB07951001162F1 /* UIView + UITextview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + UITextview.swift"; sourceTree = "<group>"; };
 		F78C5F511DB164B8001162F1 /* XDLTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLTextAttachment.swift; sourceTree = "<group>"; };
+		F78C5F541DB54A12001162F1 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		F78C5F551DB54A12001162F1 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		F78C5F571DB54B5F001162F1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		F78C5F591DB54F1D001162F1 /* XDLMatchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLMatchResult.swift; sourceTree = "<group>"; };
 		F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLWelcomViewController.swift; sourceTree = "<group>"; };
 		F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLCommonTools.swift; sourceTree = "<group>"; };
 		F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatus.swift; sourceTree = "<group>"; };
@@ -167,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78C5F581DB54B5F001162F1 /* libicucore.tbd in Frameworks */,
 				0BC2CDD4D465D457EF55C5ED /* Pods_WeiBo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +185,7 @@
 		C40300BB7E1D572B40160BAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F78C5F571DB54B5F001162F1 /* libicucore.tbd */,
 				4819A88CC860E1166782CD8D /* Pods_WeiBo.framework */,
 			);
 			name = Frameworks;
@@ -244,6 +253,7 @@
 				F72F2E041D93077200F952DB /* XDLStatusPictureInfo.swift */,
 				F76E3BBA1DA734DA002A67D0 /* XDLEmotion.swift */,
 				F78C5F511DB164B8001162F1 /* XDLTextAttachment.swift */,
+				F78C5F591DB54F1D001162F1 /* XDLMatchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -492,6 +502,7 @@
 		F75E9B331D86E88A00D11392 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				F78C5F531DB54A12001162F1 /* RegexKitLite */,
 				F729F0BC1DAC35BD001B44A1 /* NSStringEmoji */,
 				F75D68771D9D95C1002FD569 /* UIImage+ImageEffects */,
 				F75E9B341D86E88A00D11392 /* SnapKit修改版 */,
@@ -531,6 +542,15 @@
 				F74632B31DAD55F200B3B9D8 /* XDLEmotionButtonPaopaoView.xib */,
 			);
 			path = emotionKeyBoard;
+			sourceTree = "<group>";
+		};
+		F78C5F531DB54A12001162F1 /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				F78C5F541DB54A12001162F1 /* RegexKitLite.h */,
+				F78C5F551DB54A12001162F1 /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
 			sourceTree = "<group>";
 		};
 		F7FB6A331D8C351800F94BC2 /* OAuth */ = {
@@ -704,6 +724,7 @@
 				F76E3BBB1DA734DA002A67D0 /* XDLEmotion.swift in Sources */,
 				F74632B21DAD55CC00B3B9D8 /* XDLEmotionButtonPaopaoView.swift in Sources */,
 				F7CE3C491D8F07AD00AB3224 /* XDLStatusTableViewCell.swift in Sources */,
+				F78C5F561DB54A12001162F1 /* RegexKitLite.m in Sources */,
 				F7CE3C531D90647900AB3224 /* XDLStatusToolBar.swift in Sources */,
 				F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */,
 				F75E9B321D86D6C400D11392 /* XDLDiscoverSearchView.swift in Sources */,
@@ -727,6 +748,7 @@
 				F78BEA641D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift in Sources */,
 				F75E9B431D86E88A00D11392 /* ConstraintAttributes.swift in Sources */,
 				F7FB6A811D8D96DE00F94BC2 /* XDLUserAccount.swift in Sources */,
+				F78C5F5A1DB54F1D001162F1 /* XDLMatchResult.swift in Sources */,
 				F725B9691D85726900F3556A /* XDLTabBarViewController.swift in Sources */,
 				F76E3BB51DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift in Sources */,
 				F75E9B4B1D86E88A00D11392 /* SnapKit.swift in Sources */,

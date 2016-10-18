@@ -8,6 +8,8 @@
 
 import UIKit
 
+import YYText
+
 class XDLRetweetStatusView: UIView {
     
     var bottomCons : Constraint?
@@ -16,7 +18,9 @@ class XDLRetweetStatusView: UIView {
        /**/
         didSet{
             
-            retweetContentLabel.text = statusViewModel?.status?.retweeted_status?.retweeted_status_text
+            //retweetContentLabel.text = statusViewModel?.status?.retweeted_status?.retweeted_status_text
+            
+            retweetContentLabel.attributedText = statusViewModel?.retweetAttributedString
             
             self.bottomCons?.uninstall()
             
@@ -75,9 +79,25 @@ class XDLRetweetStatusView: UIView {
     
     }
 
-    private lazy var retweetContentLabel:UILabel = {()-> UILabel in
+//    private lazy var retweetContentLabel:UILabel = {()-> UILabel in
+//        
+//        let contentLabel = UILabel(textColor: UIColor.darkGray, fontSize: 15)
+//        
+//        contentLabel.numberOfLines = 0
+//        
+//        contentLabel.preferredMaxLayoutWidth = XDLScreenW - 2*XDLStatusCellMargin
+//        
+//        return contentLabel
+//        
+//    }()
+    
+    private lazy var retweetContentLabel:YYLabel = {()-> YYLabel in
         
-        let contentLabel = UILabel(textColor: UIColor.darkGray, fontSize: 15)
+        let  contentLabel = YYLabel()
+        
+        contentLabel.textColor = UIColor.darkGray
+        
+        contentLabel.font = UIFont.systemFont(ofSize: 15)
         
         contentLabel.numberOfLines = 0
         
@@ -86,6 +106,7 @@ class XDLRetweetStatusView: UIView {
         return contentLabel
         
     }()
+
 
    // private lazy var pictureView: XDLStatusPictureView = XDLStatusPictureView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
     
