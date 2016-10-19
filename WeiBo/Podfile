@@ -11,7 +11,7 @@ pod ’SVProgressHUD’
 pod 'YYModel'
 pod 'pop'
 pod 'YYText'
-
+pod 'FMDB'
   # Pods for WeiBo
 
 end
