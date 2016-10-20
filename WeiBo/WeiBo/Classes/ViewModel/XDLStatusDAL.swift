@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let cacheMaxTimeInterval: TimeInterval = -7 * 24 * 60 * 60
+private let cacheMaxTimeInterval: TimeInterval = -2*60 //-7 * 24 * 60 * 60
 
 class XDLStatusDAL: NSObject {
     
@@ -39,11 +39,36 @@ class XDLStatusDAL: NSObject {
             guard let dictArray = (response! as! [String: Any])["statuses"] as? [[String: Any]] else {
                 return
             }
-            // 4.
+            // 4.insertData into table
             XDLStatusDAL.loadDataIntoTable(status: dictArray)
-        
+            // recall the data
             completion(dictArray)
         }
+    }
+    
+    class func clearData(){
+        
+        let date = Date(timeIntervalSinceNow: cacheMaxTimeInterval)
+        
+        let fm = DateFormatter()
+        //get TimeDiference in location area
+        fm.locale = Locale(identifier: "en_US")
+        fm.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = fm.string(from: date)
+        
+        let sql = "DELETE FROM T_Status WHERE createTime < ?"
+        
+        SQLiteManager.shared.queue?.inDatabase({ (db) in
+            
+            let result = db!.executeUpdate(sql, withArgumentsIn: [dateString])
+            
+            if result{
+                print("delete success")
+            }else{
+                print("delete failed")
+            }
+            
+        })
     }
     
     class func checkData(maxId: Int64, sinceId: Int64) -> [[String: Any]] {
