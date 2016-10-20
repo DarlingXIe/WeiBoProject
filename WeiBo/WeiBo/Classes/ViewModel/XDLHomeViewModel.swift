@@ -17,11 +17,10 @@ class XDLHomeViewModel: NSObject {
     var statusArray: [XDLStatusViewModel]?
     
     static let shareModel:XDLHomeViewModel = XDLHomeViewModel()
-    
-    
+
     func loadData(pullUp: Bool, completion:@escaping (Bool,Int)->()){
         
-        let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
+        //let urlString = "https://api.weibo.com/2/statuses/friends_timeline.json"
         
         var max_id: Int64 = 0
         var sinceId: Int64 = 0
@@ -41,29 +40,41 @@ class XDLHomeViewModel: NSObject {
                 sinceId = id
             }
         }
-        let parameters = [
         
-            "access_token" : XDLUserAccountViewModel.shareModel.access_token ?? " ",
-            "max_id": "\(max_id)",
+        XDLStatusDAL.loadData(maxId:max_id, sinceId:sinceId) { (result) in
             
-            "since_id": "\(sinceId)"
-        ]
+            guard let dictArray = result else{
+                print("request error")
+                completion(false,0)
+                return
+            }
+//        let parameters = [
+//        
+//            "access_token" : XDLUserAccountViewModel.shareModel.access_token ?? " ",
+//            "max_id": "\(max_id)",
+//            
+//            "since_id": "\(sinceId)"
+//        ]
         
-        XDLNetWorkTools.sharedTools.request(method: .Get, urlSting: urlString, parameters: parameters) { (response, error) in
-            if response == nil && error != nil{
-                print("-------\(error)")
-                return
-            }
-            print("******\(response)")
-            // the array of statuses with dict of array
-            guard let dictArray = (response! as! [String : Any])["statuses"] as? [[String : Any]] else{
-                
-                return
-            }
+//        XDLNetWorkTools.sharedTools.request(method: .Get, urlSting: urlString, parameters: parameters) { (response, error) in
+//            if response == nil && error != nil{
+//                print("-------\(error)")
+//                return
+//            }
+//            print("******\(response)")
+//            // the array of statuses with dict of array
+//            guard let dictArray = (response! as! [String : Any])["statuses"] as? [[String : Any]] else{
+//                
+//                return
+//            }
             //print("*&*&*&*&*&*&*&*\(dictArray)")
             // change the array of stauses with dict to the model of XDLStatus array
             
+//            XDLStatusDAL.loadData(status: dictArray)
+        
             let modelArray = NSArray.yy_modelArray(with: XDLStatus.self, json: dictArray) as! [XDLStatus]
+            
+            //dataSaveTocache
             
             //print("*&*&*&*\(modelArray)")
             
@@ -111,9 +122,7 @@ class XDLHomeViewModel: NSObject {
             self.cacheSingleImage(status: tempArray, completion: completion)
             
         }
-        
-    }
-
+}
     private func cacheSingleImage(status:[XDLStatusViewModel], completion:@escaping (Bool,Int)->()){
         // group to download images when it's completed, recall the block for inform controller 
         let group = DispatchGroup.init()

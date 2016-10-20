@@ -13,11 +13,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
+        // Override point for customization after application launch.
         NotificationCenter.default.addObserver(self, selector: #selector(switchRootControllerVC(noti:)), name: NSNotification.Name(XDLChangeRootController), object: nil)
         
         window = UIWindow(frame: UIScreen.main.bounds)

@@ -67,6 +67,9 @@
 		F78C5F561DB54A12001162F1 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = F78C5F551DB54A12001162F1 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F78C5F581DB54B5F001162F1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F78C5F571DB54B5F001162F1 /* libicucore.tbd */; };
 		F78C5F5A1DB54F1D001162F1 /* XDLMatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C5F591DB54F1D001162F1 /* XDLMatchResult.swift */; };
+		F7945FFB1DB84B98007B8DF2 /* db.sql in Resources */ = {isa = PBXBuildFile; fileRef = F7945FFA1DB84B98007B8DF2 /* db.sql */; };
+		F7945FFD1DB84C24007B8DF2 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945FFC1DB84C24007B8DF2 /* SQLiteManager.swift */; };
+		F7945FFF1DB85241007B8DF2 /* XDLStatusDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945FFE1DB85241007B8DF2 /* XDLStatusDAL.swift */; };
 		F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */; };
 		F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */; };
 		F7CE3C471D8F06D200AB3224 /* XDLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */; };
@@ -153,6 +156,9 @@
 		F78C5F551DB54A12001162F1 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		F78C5F571DB54B5F001162F1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		F78C5F591DB54F1D001162F1 /* XDLMatchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLMatchResult.swift; sourceTree = "<group>"; };
+		F7945FFA1DB84B98007B8DF2 /* db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.sql; sourceTree = "<group>"; };
+		F7945FFC1DB84C24007B8DF2 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		F7945FFE1DB85241007B8DF2 /* XDLStatusDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusDAL.swift; sourceTree = "<group>"; };
 		F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLWelcomViewController.swift; sourceTree = "<group>"; };
 		F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLCommonTools.swift; sourceTree = "<group>"; };
 		F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatus.swift; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 				F75D68681D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg */,
 				F725B9541D856FF200F3556A /* Info.plist */,
 				F75D687C1D9D9BFD002FD569 /* compose.plist */,
+				F7945FFA1DB84B98007B8DF2 /* db.sql */,
 			);
 			path = WeiBo;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 		F725B95C1D85715E00F3556A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F7945FFC1DB84C24007B8DF2 /* SQLiteManager.swift */,
 				F7FB6A821D8D9BD200F94BC2 /* XDLNetWorkTools.swift */,
 				F75E9B331D86E88A00D11392 /* ThirdLib */,
 				F725B95D1D85715E00F3556A /* Extension */,
@@ -356,6 +364,7 @@
 				F7CE3C4A1D8F1FEE00AB3224 /* XDLHomeViewModel.swift */,
 				F7CE3C4C1D8F318700AB3224 /* XDLStatusViewModel.swift */,
 				F76E3BB81DA73451002A67D0 /* XDLEmotionViewModel.swift */,
+				F7945FFE1DB85241007B8DF2 /* XDLStatusDAL.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -635,6 +644,7 @@
 			files = (
 				F75D687D1D9D9BFD002FD569 /* compose.plist in Resources */,
 				F76E3BB71DA72981002A67D0 /* Emoticons.bundle in Resources */,
+				F7945FFB1DB84B98007B8DF2 /* db.sql in Resources */,
 				F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */,
 				F725B9501D856FF200F3556A /* Assets.xcassets in Resources */,
 				F725B94E1D856FF200F3556A /* Main.storyboard in Resources */,
@@ -713,6 +723,7 @@
 				F75D68851DA03F85002FD569 /* XDLComposeToolBar.swift in Sources */,
 				F75E9B451D86E88A00D11392 /* ConstraintItem.swift in Sources */,
 				F75E9B4A1D86E88A00D11392 /* LayoutConstraint.swift in Sources */,
+				F7945FFD1DB84C24007B8DF2 /* SQLiteManager.swift in Sources */,
 				F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */,
 				F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */,
 				F75D68871DA04EFE002FD569 /* XDLTextView.swift in Sources */,
@@ -762,6 +773,7 @@
 				F7CE3C511D903EF500AB3224 /* XDLUsers.swift in Sources */,
 				F76E3BB31DA6D8FC002A67D0 /* XDLEmotionToolBar.swift in Sources */,
 				F75E9B421D86E88A00D11392 /* Constraint.swift in Sources */,
+				F7945FFF1DB85241007B8DF2 /* XDLStatusDAL.swift in Sources */,
 				F75E9B441D86E88A00D11392 /* ConstraintDescription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
