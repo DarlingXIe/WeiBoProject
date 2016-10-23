@@ -15,6 +15,8 @@ enum XDLQRToolBarButtonType: Int {
 
 class XDLQRToolBar: UIView {
     
+   
+    
     var clickSQClosure: ((XDLQRToolBarButtonType)->())?
     
     var buttonArray: [UIButton]?//    var isSystemKeyBorad: Bool = true{

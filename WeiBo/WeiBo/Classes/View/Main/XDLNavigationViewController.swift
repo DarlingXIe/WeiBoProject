@@ -14,8 +14,7 @@ class XDLNavigationViewController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    
-    
+        //navigationBar.barTintColor = UIColor.lightGray
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

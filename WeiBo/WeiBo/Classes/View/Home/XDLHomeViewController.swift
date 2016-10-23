@@ -132,10 +132,21 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     func pop(){
         
             let vc = XDLQRToolBarController()
-        
-        
+//    
             self.navigationController?.pushViewController(vc, animated: true)
-    
+        
+//            self.navigationController?.present(vc, animated: true, completion: { 
+//                print("present successed")
+//            })
+        
+//            let navc = XDLNavigationViewController(rootViewController: vc)
+//        
+//            navc.addChildViewController(vc)
+//        
+//            navc.present(vc, animated: true) { 
+//                print("present successed")
+//        }
+            //self.navigationController?.navigationBar.barTintColor = UIColor.darkGray
     }
     
     private func pullDownTipView(count : Int){

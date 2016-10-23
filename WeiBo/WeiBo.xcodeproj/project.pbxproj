@@ -71,6 +71,8 @@
 		F7945FFD1DB84C24007B8DF2 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945FFC1DB84C24007B8DF2 /* SQLiteManager.swift */; };
 		F7945FFF1DB85241007B8DF2 /* XDLStatusDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945FFE1DB85241007B8DF2 /* XDLStatusDAL.swift */; };
 		F794608F1DBC5E58007B8DF2 /* XDLQRToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794608E1DBC5E57007B8DF2 /* XDLQRToolBar.swift */; };
+		F79460911DBD3C48007B8DF2 /* XDLQRScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79460901DBD3C48007B8DF2 /* XDLQRScanView.swift */; };
+		F79460931DBD3C5D007B8DF2 /* XDLQRScanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79460921DBD3C5D007B8DF2 /* XDLQRScanView.xib */; };
 		F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */; };
 		F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */; };
 		F7CE3C471D8F06D200AB3224 /* XDLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */; };
@@ -161,6 +163,8 @@
 		F7945FFC1DB84C24007B8DF2 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		F7945FFE1DB85241007B8DF2 /* XDLStatusDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusDAL.swift; sourceTree = "<group>"; };
 		F794608E1DBC5E57007B8DF2 /* XDLQRToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLQRToolBar.swift; sourceTree = "<group>"; };
+		F79460901DBD3C48007B8DF2 /* XDLQRScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLQRScanView.swift; sourceTree = "<group>"; };
+		F79460921DBD3C5D007B8DF2 /* XDLQRScanView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLQRScanView.xib; sourceTree = "<group>"; };
 		F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLWelcomViewController.swift; sourceTree = "<group>"; };
 		F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLCommonTools.swift; sourceTree = "<group>"; };
 		F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatus.swift; sourceTree = "<group>"; };
@@ -578,6 +582,8 @@
 			isa = PBXGroup;
 			children = (
 				F794608E1DBC5E57007B8DF2 /* XDLQRToolBar.swift */,
+				F79460901DBD3C48007B8DF2 /* XDLQRScanView.swift */,
+				F79460921DBD3C5D007B8DF2 /* XDLQRScanView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 				F76E3BB71DA72981002A67D0 /* Emoticons.bundle in Resources */,
 				F7945FFB1DB84B98007B8DF2 /* db.sql in Resources */,
 				F75E9B301D86D59500D11392 /* XDLDiscoverSearchView.xib in Resources */,
+				F79460931DBD3C5D007B8DF2 /* XDLQRScanView.xib in Resources */,
 				F725B9501D856FF200F3556A /* Assets.xcassets in Resources */,
 				F725B94E1D856FF200F3556A /* Main.storyboard in Resources */,
 				F75D68691D99A1B8002FD569 /* ac593e95jw1f7haqv7e40j20gx5yg4qp.jpg in Resources */,
@@ -745,6 +752,7 @@
 				F75E9B4A1D86E88A00D11392 /* LayoutConstraint.swift in Sources */,
 				F7945FFD1DB84C24007B8DF2 /* SQLiteManager.swift in Sources */,
 				F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */,
+				F79460911DBD3C48007B8DF2 /* XDLQRScanView.swift in Sources */,
 				F725B9831D8577B700F3556A /* XDLProfileViewController.swift in Sources */,
 				F75D68871DA04EFE002FD569 /* XDLTextView.swift in Sources */,
 				F78C5F521DB164B8001162F1 /* XDLTextAttachment.swift in Sources */,

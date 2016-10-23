@@ -44,7 +44,8 @@ class XDLVisitorTableViewController: UITableViewController {
             self?.present(vc, animated: true, completion: nil)
         
         }
-    
+       
+       
     
     }
     lazy var visitorView : XDLVisitorView = {()-> XDLVisitorView in
@@ -89,7 +90,7 @@ class XDLVisitorTableViewController: UITableViewController {
         return cell
     }
     */
-
+   
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
