@@ -335,9 +335,7 @@ extension XDLComposeViewController: UIImagePickerControllerDelegate, UINavigatio
         view.addSubview(self.composeToolBar)
         
         textView.addSubview(pictureView)
-        
-        
-        
+    
         //MARK: - judge buttonsType
         self.composeToolBar.clickButtonClosure = {[weak self] (type) ->() in
         

@@ -13,7 +13,7 @@
 		F725B9501D856FF200F3556A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F725B94F1D856FF200F3556A /* Assets.xcassets */; };
 		F725B9691D85726900F3556A /* XDLTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9681D85726900F3556A /* XDLTabBarViewController.swift */; };
 		F725B96B1D85727F00F3556A /* XDLNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B96A1D85727F00F3556A /* XDLNavigationViewController.swift */; };
-		F725B96D1D85735900F3556A /* XDLTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B96C1D85735900F3556A /* XDLTempViewController.swift */; };
+		F725B96D1D85735900F3556A /* XDLQRToolBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B96C1D85735900F3556A /* XDLQRToolBarController.swift */; };
 		F725B96F1D85758600F3556A /* XDLTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B96E1D85758600F3556A /* XDLTabBar.swift */; };
 		F725B9711D8575D700F3556A /* UIView+IBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9701D8575D700F3556A /* UIView+IBExtension.swift */; };
 		F725B9731D85760200F3556A /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725B9721D85760200F3556A /* UIBarButtonItem+Extension.swift */; };
@@ -70,6 +70,7 @@
 		F7945FFB1DB84B98007B8DF2 /* db.sql in Resources */ = {isa = PBXBuildFile; fileRef = F7945FFA1DB84B98007B8DF2 /* db.sql */; };
 		F7945FFD1DB84C24007B8DF2 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945FFC1DB84C24007B8DF2 /* SQLiteManager.swift */; };
 		F7945FFF1DB85241007B8DF2 /* XDLStatusDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7945FFE1DB85241007B8DF2 /* XDLStatusDAL.swift */; };
+		F794608F1DBC5E58007B8DF2 /* XDLQRToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794608E1DBC5E57007B8DF2 /* XDLQRToolBar.swift */; };
 		F79A2B791D8DDAB200346DA3 /* XDLWelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */; };
 		F79A2B7B1D8DEA6E00346DA3 /* XDLCommonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */; };
 		F7CE3C471D8F06D200AB3224 /* XDLStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */; };
@@ -97,7 +98,7 @@
 		F725B9541D856FF200F3556A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F725B9681D85726900F3556A /* XDLTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLTabBarViewController.swift; sourceTree = "<group>"; };
 		F725B96A1D85727F00F3556A /* XDLNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLNavigationViewController.swift; sourceTree = "<group>"; };
-		F725B96C1D85735900F3556A /* XDLTempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLTempViewController.swift; sourceTree = "<group>"; };
+		F725B96C1D85735900F3556A /* XDLQRToolBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLQRToolBarController.swift; sourceTree = "<group>"; };
 		F725B96E1D85758600F3556A /* XDLTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLTabBar.swift; sourceTree = "<group>"; };
 		F725B9701D8575D700F3556A /* UIView+IBExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+IBExtension.swift"; sourceTree = "<group>"; };
 		F725B9721D85760200F3556A /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 		F7945FFA1DB84B98007B8DF2 /* db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.sql; sourceTree = "<group>"; };
 		F7945FFC1DB84C24007B8DF2 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		F7945FFE1DB85241007B8DF2 /* XDLStatusDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatusDAL.swift; sourceTree = "<group>"; };
+		F794608E1DBC5E57007B8DF2 /* XDLQRToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLQRToolBar.swift; sourceTree = "<group>"; };
 		F79A2B781D8DDAB200346DA3 /* XDLWelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLWelcomViewController.swift; sourceTree = "<group>"; };
 		F79A2B7A1D8DEA6E00346DA3 /* XDLCommonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLCommonTools.swift; sourceTree = "<group>"; };
 		F7CE3C461D8F06D200AB3224 /* XDLStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDLStatus.swift; sourceTree = "<group>"; };
@@ -272,7 +274,7 @@
 				F7FB6A821D8D9BD200F94BC2 /* XDLNetWorkTools.swift */,
 				F75E9B331D86E88A00D11392 /* ThirdLib */,
 				F725B95D1D85715E00F3556A /* Extension */,
-				F725B95E1D85715E00F3556A /* Temp */,
+				F725B95E1D85715E00F3556A /* QRCode */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -290,11 +292,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		F725B95E1D85715E00F3556A /* Temp */ = {
+		F725B95E1D85715E00F3556A /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
-				F725B96C1D85735900F3556A /* XDLTempViewController.swift */,
+				F794608D1DBC5E1C007B8DF2 /* View */,
+				F794608C1DBC5E05007B8DF2 /* Controller */,
+				F725B96C1D85735900F3556A /* XDLQRToolBarController.swift */,
 			);
+			name = QRCode;
 			path = Temp;
 			sourceTree = "<group>";
 		};
@@ -562,6 +567,21 @@
 			path = RegexKitLite;
 			sourceTree = "<group>";
 		};
+		F794608C1DBC5E05007B8DF2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F794608D1DBC5E1C007B8DF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F794608E1DBC5E57007B8DF2 /* XDLQRToolBar.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		F7FB6A331D8C351800F94BC2 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -759,6 +779,7 @@
 				F78BEA641D95C61500B14C13 /* XDLStatusPictureCollectionViewCell.swift in Sources */,
 				F75E9B431D86E88A00D11392 /* ConstraintAttributes.swift in Sources */,
 				F7FB6A811D8D96DE00F94BC2 /* XDLUserAccount.swift in Sources */,
+				F794608F1DBC5E58007B8DF2 /* XDLQRToolBar.swift in Sources */,
 				F78C5F5A1DB54F1D001162F1 /* XDLMatchResult.swift in Sources */,
 				F725B9691D85726900F3556A /* XDLTabBarViewController.swift in Sources */,
 				F76E3BB51DA6FDA3002A67D0 /* XDLEmotionCollectionViewCell.swift in Sources */,
@@ -768,7 +789,7 @@
 				F7CE3C551D918AC100AB3224 /* XDLRetweetStatusView.swift in Sources */,
 				F725B97F1D85776400F3556A /* XDLHomeViewController.swift in Sources */,
 				F758276A1DA339E900BF028E /* XDLComposePictureView.swift in Sources */,
-				F725B96D1D85735900F3556A /* XDLTempViewController.swift in Sources */,
+				F725B96D1D85735900F3556A /* XDLQRToolBarController.swift in Sources */,
 				F7CE3C4D1D8F318700AB3224 /* XDLStatusViewModel.swift in Sources */,
 				F7CE3C511D903EF500AB3224 /* XDLUsers.swift in Sources */,
 				F76E3BB31DA6D8FC002A67D0 /* XDLEmotionToolBar.swift in Sources */,

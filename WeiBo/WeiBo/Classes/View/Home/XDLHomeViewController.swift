@@ -131,12 +131,12 @@ class XDLHomeViewController: XDLVisitorTableViewController {
  
     func pop(){
         
-            let vc = XDLTempViewController()
+            let vc = XDLQRToolBarController()
+        
         
             self.navigationController?.pushViewController(vc, animated: true)
     
     }
-    
     
     private func pullDownTipView(count : Int){
         
@@ -203,6 +203,11 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     }
     
    */
+    
+    override func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        print("scrollView");
+    }
+    
     //MARK: - tableView loadData
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -282,6 +287,6 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     
         return label
     }()
-
+    
     
 }
