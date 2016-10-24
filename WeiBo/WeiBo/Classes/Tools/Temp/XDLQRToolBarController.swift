@@ -17,9 +17,7 @@
  */
 
 import UIKit
-
-
-
+import AVFoundation
 class XDLQRToolBarController: UIViewController {
 
     var flag = 0
@@ -123,6 +121,8 @@ class XDLQRToolBarController: UIViewController {
 /****************************************************************/
             }
         }
+        
+        startScanCode()
     }
     private func startAnimation(type: XDLQRToolBarButtonType){
     
@@ -175,6 +175,45 @@ class XDLQRToolBarController: UIViewController {
         
     }
     
+    private func startScanCode(){
+        
+        
+        let videoCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+
+        // 创建 input object.
+        //let videoInput: AVCaptureDeviceInput?
+        do {
+           let videoInput = try! AVCaptureDeviceInput(device: videoCaptureDevice)
+            
+            //1. input
+            if  session.canAddInput(videoInput) == false{
+                return
+            }
+            //2. output
+            if session.canAddOutput(deviceOutput) == false{
+                return
+            }
+            //3. add input and output into sesstion
+            session.addInput(videoInput)
+            session.addOutput(deviceOutput)
+            //4. setting output to deal with data
+            deviceOutput.metadataObjectTypes = deviceOutput.availableMetadataObjectTypes
+            //5. monitor data from the output
+            deviceOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            //6. add preScanView
+            view.layer.insertSublayer(preViewScan, at: 0)
+            //6. startScan
+            session.startRunning()
+        } catch {
+            
+            return
+        }
+        
+    }
+    //
+    
+    /* optional public func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!)*/
+    
     override func viewWillAppear(_ animated: Bool) {
         print("qrLineCodeView appear")
         
@@ -211,7 +250,46 @@ class XDLQRToolBarController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - lazy var QRScanCode
+    //1. input
+//    internal lazy var deviceInput :AVCaptureDeviceInput = {()-> AVCaptureDeviceInput in
+//        
+//        let videoCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) ?? ""
+////        let deviceInput = AVCaptureDevice.defaultDevice(withDeviceType: nil, mediaType: AVMediaTypeVideo, position: AVCaptureDevicePositionUnspecified)
+//        //label.textColor = UIcolor.red
+//        return try AVCaptureDeviceInput.init(device:videoCaptureDevice)
+//        return AnyObject! = AVCaptureDeviceInput.deviceInputWithDevice(videoCaptureDevice, error: nil)
+//        //return deviceInput
+//    }()
+    //2. session
+    internal lazy var session :AVCaptureSession = {()-> AVCaptureSession in
+        
+        let Session = AVCaptureSession()
+        
+        //label.textColor = UIcolor.red
+        
+        return Session
+    }()
+    //3. output
+    internal lazy var deviceOutput :AVCaptureMetadataOutput = {()-> AVCaptureMetadataOutput in
+        
+        let deviceOutput = AVCaptureMetadataOutput()
+        
+        //label.textColor = UIcolor.red
+        
+        return deviceOutput
+    }()
+    internal lazy var preViewScan :AVCaptureVideoPreviewLayer = {()-> AVCaptureVideoPreviewLayer in
+        
+        let preViewScan = AVCaptureVideoPreviewLayer(session: self.session)
+        
+        //label.textColor = UIcolor.red
+        
+        return preViewScan!
+    }()
 
+    
+    
     //MARK: - lazy var UI
    internal lazy var SQToolBar :XDLQRToolBar = {()-> XDLQRToolBar in
         
@@ -243,3 +321,14 @@ class XDLQRToolBarController: UIViewController {
     }()
 
 }
+extension XDLQRToolBarController:AVCaptureMetadataOutputObjectsDelegate{
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!){
+        
+        print(metadataObjects.last as! NSString)
+    
+    }
+
+}
+
+
