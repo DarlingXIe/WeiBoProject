@@ -83,7 +83,7 @@ class XDLHomeViewController: XDLVisitorTableViewController {
        self.navigationController?.view.insertSubview(pullDownTipView, belowSubview: self.navigationController!.navigationBar)
         
        pullDownTipView.frame.origin.y = self.navigationController!.navigationBar.frame.maxY - self.pullDownTipView.frame.size.height
-       
+      
     }
     internal func homeTableViewReload(){
         
@@ -214,7 +214,6 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     }
     
    */
-    
     override func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
         print("scrollView");
     }
@@ -298,6 +297,4 @@ class XDLHomeViewController: XDLVisitorTableViewController {
     
         return label
     }()
-    
-    
 }

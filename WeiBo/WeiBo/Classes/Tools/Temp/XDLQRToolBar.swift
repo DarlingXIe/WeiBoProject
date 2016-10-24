@@ -85,16 +85,16 @@ class XDLQRToolBar: UIView {
     @objc private func clickButtonType(button:UIButton){
         
         let type = XDLQRToolBarButtonType(rawValue: button.tag)
-        if button.tag == 0 {
+        if button.tag == 1 {
             //buttonArray?[0].isSelected = false
-            button.isSelected = false
+           buttonArray?[0].isSelected = false
+            //clickSQClosure?(type!)
         }else{
-            buttonArray?[0].isSelected = false
-            buttonArray?[0].setImage(UIImage(named: "qrcode_tabbar_icon_qrcode"), for: .normal)
-            buttonArray?[0].setImage(UIImage(named:"\("qrcode_tabbar_icon_qrcode")_highlighted"), for: .highlighted)
-            layoutIfNeeded()
+//            buttonArray?[1].isSelected = true
+//            buttonArray?[1].setImage(UIImage(named: "qrcode_tabbar_icon_qrcode"), for: .normal)
+//            buttonArray?[1].setImage(UIImage(named:"\("qrcode_tabbar_icon_qrcode")_highlighted"), for: .highlighted)
+//            layoutIfNeeded()
         }
-        
         clickSQClosure?(type!)
     }
     

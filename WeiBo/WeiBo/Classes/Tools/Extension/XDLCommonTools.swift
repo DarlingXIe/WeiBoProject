@@ -17,6 +17,8 @@ let XDLEmotionReloadNotification = "HMEmoticonReloadNotification"
 let XDLScreenW = UIScreen.main.bounds.width
 let XDLScreenH = UIScreen.main.bounds.height
 
+var SQScanCodeWH = 300
+
 var RandomColor: UIColor {
         get {
     return UIColor(red: CGFloat(arc4random() % 256) / 255, green: CGFloat(arc4random() % 256) / 255, blue: CGFloat(arc4random() % 256) / 255, alpha: 1)

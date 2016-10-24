@@ -10,14 +10,12 @@ import UIKit
 
 class XDLQRScanView: UIView {
 
-    @IBOutlet weak var ScanLineView: UIImageView!
-    
-    class func QRScanView() -> XDLQRScanView{
-    
-        let result = Bundle.main.loadNibNamed("XDLQRScanView", owner: nil, options: nil)!.last! as! XDLQRScanView
-        
-        return result
-    }
-
-
+//    @IBOutlet weak var ScanLineView: UIImageView!
+//    
+//    class func QRScanView() -> XDLQRScanView{
+//    
+//        let result = Bundle.main.loadNibNamed("XDLQRScanView", owner: nil, options: nil)!.last! as! XDLQRScanView
+//        
+//        return result
+//    }
 }

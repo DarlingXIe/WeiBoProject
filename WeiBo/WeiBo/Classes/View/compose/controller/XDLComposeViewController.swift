@@ -21,8 +21,7 @@ class XDLComposeViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(emotionButtonClick(noti:)), name: NSNotification.Name(rawValue: XDLEmoticonButtonDidSelectedNotification), object: nil)
         
-        }
-
+      }
         deinit {
             NotificationCenter.default.removeObserver(self)
         }
